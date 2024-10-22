@@ -48,21 +48,24 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include "gfx/legato/generated/le_gen_harmony.h"
 #include "peripheral/mmu/plib_mmu.h"
 #include "peripheral/clk/plib_clk.h"
 #include "peripheral/pio/plib_pio.h"
 #include "peripheral/aic/plib_aic.h"
+#include "peripheral/tc/plib_tc1.h"
 #include "gfx/driver/controller/lcdc/drv_gfx_lcdc.h"
-#include "peripheral/tc/plib_tc0.h"
-#include "peripheral/flexcom/twi/master/plib_flexcom6_twi_master.h"
 #include "peripheral/lcdc/plib_lcdc.h"
 #include "driver/i2c/drv_i2c.h"
 #include "system/time/sys_time.h"
+#include "gfx/canvas/gfx_canvas_api.h"
 #include "system/input/sys_input.h"
-#include "gfx/driver/processor/gfx2d/drv_gfx2d.h"
+#include "driver/input/drv_touch_controller.h"
+#include "peripheral/flexcom/twi/master/plib_flexcom10_twi_master.h"
+#include "peripheral/rtt/plib_rtt.h"
+#include "peripheral/dbgu/plib_dbgu.h"
 #include "bsp/bsp.h"
-#include "driver/input/drv_maxtouch.h"
 #include "system/int/sys_int.h"
 #include "system/cache/sys_cache.h"
 #include "osal/osal.h"
@@ -202,8 +205,6 @@ typedef struct
     SYS_MODULE_OBJ drvI2C0;
 
     SYS_MODULE_OBJ  sysTime;
-    SYS_MODULE_OBJ  drvMAXTOUCH;
-
 
 } SYSTEM_OBJECTS;
 

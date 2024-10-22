@@ -83,7 +83,7 @@ extern "C" {
 #define SYS_TIME_INDEX_0                            (0)
 #define SYS_TIME_MAX_TIMERS                         (5)
 #define SYS_TIME_HW_COUNTER_WIDTH                   (32)
-#define SYS_TIME_HW_COUNTER_PERIOD                  (4294967295U)
+#define SYS_TIME_HW_COUNTER_PERIOD                  (0xFFFFFFFFU)
 #define SYS_TIME_HW_COUNTER_HALF_PERIOD             (SYS_TIME_HW_COUNTER_PERIOD>>1)
 #define SYS_TIME_CPU_CLOCK_FREQUENCY                (600000000)
 #define SYS_TIME_COMPARE_UPDATE_EXECUTION_CYCLES    (470)
@@ -99,15 +99,11 @@ extern "C" {
 #define DRV_I2C_INDEX_0                       0
 #define DRV_I2C_CLIENTS_NUMBER_IDX0           1
 #define DRV_I2C_QUEUE_SIZE_IDX0               2
-#define DRV_I2C_CLOCK_SPEED_IDX0              100000
+#define DRV_I2C_CLOCK_SPEED_IDX0              400000
 
 /* I2C Driver Common Configuration Options */
 #define DRV_I2C_INSTANCES_NUMBER              (1U)
 
-
-
-/*** MXT336T Driver Configuration ***/
-#define DRV_MAXTOUCH_I2C_MODULE_INDEX   0
 
 
 

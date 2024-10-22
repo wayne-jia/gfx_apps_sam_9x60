@@ -77,26 +77,26 @@ static DRV_I2C_TRANSFER_OBJ drvI2C0TransferObj[DRV_I2C_QUEUE_SIZE_IDX0];
 static const DRV_I2C_PLIB_INTERFACE drvI2C0PLibAPI = {
 
     /* I2C PLib Transfer Read Add function */
-    .read_t = (DRV_I2C_PLIB_READ)FLEXCOM6_TWI_Read,
+    .read_t = (DRV_I2C_PLIB_READ)FLEXCOM10_TWI_Read,
 
     /* I2C PLib Transfer Write Add function */
-    .write_t = (DRV_I2C_PLIB_WRITE)FLEXCOM6_TWI_Write,
+    .write_t = (DRV_I2C_PLIB_WRITE)FLEXCOM10_TWI_Write,
 
 
     /* I2C PLib Transfer Write Read Add function */
-    .writeRead = (DRV_I2C_PLIB_WRITE_READ)FLEXCOM6_TWI_WriteRead,
+    .writeRead = (DRV_I2C_PLIB_WRITE_READ)FLEXCOM10_TWI_WriteRead,
 
     /*I2C PLib Transfer Abort function */
-    .transferAbort = (DRV_I2C_PLIB_TRANSFER_ABORT)FLEXCOM6_TWI_TransferAbort,
+    .transferAbort = (DRV_I2C_PLIB_TRANSFER_ABORT)FLEXCOM10_TWI_TransferAbort,
 
     /* I2C PLib Transfer Status function */
-    .errorGet = (DRV_I2C_PLIB_ERROR_GET)FLEXCOM6_TWI_ErrorGet,
+    .errorGet = (DRV_I2C_PLIB_ERROR_GET)FLEXCOM10_TWI_ErrorGet,
 
     /* I2C PLib Transfer Setup function */
-    .transferSetup = (DRV_I2C_PLIB_TRANSFER_SETUP)FLEXCOM6_TWI_TransferSetup,
+    .transferSetup = (DRV_I2C_PLIB_TRANSFER_SETUP)FLEXCOM10_TWI_TransferSetup,
 
     /* I2C PLib Callback Register */
-    .callbackRegister = (DRV_I2C_PLIB_CALLBACK_REGISTER)FLEXCOM6_TWI_CallbackRegister,
+    .callbackRegister = (DRV_I2C_PLIB_CALLBACK_REGISTER)FLEXCOM10_TWI_CallbackRegister,
 };
 
 
@@ -106,7 +106,7 @@ static const DRV_I2C_INTERRUPT_SOURCES drvI2C0InterruptSources =
     .isSingleIntSrc                        = true,
 
     /* Peripheral interrupt line */
-    .intSources.i2cInterrupt             = (int32_t)FLEXCOM6_IRQn,
+    .intSources.i2cInterrupt             = (int32_t)FLEXCOM10_IRQn,
 };
 
 /* I2C Driver Initialization Data */
@@ -135,19 +135,6 @@ static const DRV_I2C_INIT drvI2C0InitData =
 };
 // </editor-fold>
 
-// <editor-fold defaultstate="collapsed" desc="DRV_INPUT_MXT336T Initialization Data">
-/*** MaxTouch Driver Initialization Data ***/
-const DRV_MAXTOUCH_INIT drvMAXTOUCHInitData =
-{
-    .drvOpen                     = DRV_I2C_Open,
-    .drvClose                    = DRV_I2C_Close,
-    .orientation                 = 0,
-    .horizontalResolution        = 800,
-    .verticalResolution          = 480,
-};
-
-// </editor-fold>
-
 
 
 
@@ -174,19 +161,19 @@ SYSTEM_OBJECTS sysObj;
 // <editor-fold defaultstate="collapsed" desc="SYS_TIME Initialization Data">
 
 static const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
-    .timerCallbackSet = (SYS_TIME_PLIB_CALLBACK_REGISTER)TC0_CH0_TimerCallbackRegister,
-    .timerStart = (SYS_TIME_PLIB_START)TC0_CH0_TimerStart,
-    .timerStop = (SYS_TIME_PLIB_STOP)TC0_CH0_TimerStop ,
-    .timerFrequencyGet = (SYS_TIME_PLIB_FREQUENCY_GET)TC0_CH0_TimerFrequencyGet,
-    .timerPeriodSet = (SYS_TIME_PLIB_PERIOD_SET)TC0_CH0_TimerPeriodSet,
-    .timerCompareSet = (SYS_TIME_PLIB_COMPARE_SET)TC0_CH0_TimerCompareSet,
-    .timerCounterGet = (SYS_TIME_PLIB_COUNTER_GET)TC0_CH0_TimerCounterGet,
+    .timerCallbackSet = (SYS_TIME_PLIB_CALLBACK_REGISTER)RTT_CallbackRegister,
+    .timerStart = (SYS_TIME_PLIB_START)RTT_Enable,
+    .timerStop = (SYS_TIME_PLIB_STOP)RTT_Disable,
+    .timerFrequencyGet = (SYS_TIME_PLIB_FREQUENCY_GET)RTT_FrequencyGet,
+    .timerPeriodSet = (SYS_TIME_PLIB_PERIOD_SET)NULL,
+    .timerCompareSet = (SYS_TIME_PLIB_COMPARE_SET)RTT_AlarmValueSet,
+    .timerCounterGet = (SYS_TIME_PLIB_COUNTER_GET)RTT_TimerValueGet,
 };
 
 static const SYS_TIME_INIT sysTimeInitData =
 {
     .timePlib = &sysTimePlibAPI,
-    .hwTimerIntNum = TC0_IRQn,
+    .hwTimerIntNum = RTT_IRQn,
 };
 
 // </editor-fold>
@@ -224,14 +211,6 @@ static void SYSC_Disable( void )
     //Clear interrupt status
     RTC_REGS->RTC_SCCR = RTC_SCCR_Msk;
 
-    /* ----------------------------   RTT  -------------------------------*/
-    //Disable Timer and interrupt
-    uint32_t rtt_mr = RTT_REGS->RTT_MR;
-    RTT_REGS->RTT_MR = rtt_mr & ~(RTT_MR_RTTDIS_Msk | RTT_MR_RTTINCIEN_Msk);
-
-    //Clear status
-    RTT_REGS->RTT_SR;
-
     /* ----------------------------   RSTC  ------------------------------*/
     // Disable interrupt
     uint32_t rstc_mr = RSTC_REGS->RSTC_MR & (RSTC_MR_ENGCLR_Msk |
@@ -256,6 +235,28 @@ static void SYSC_Disable( void )
 }
 
 
+/*******************************************************************************
+  Function:
+    void STDIO_BufferModeSet ( void )
+
+  Summary:
+    Sets the buffering mode for stdin and stdout
+
+  Remarks:
+ ********************************************************************************/
+static void STDIO_BufferModeSet(void)
+{
+    /* MISRAC 2012 deviation block start */
+    /* MISRA C-2012 Rule 21.6 deviated 2 times in this file.  Deviation record ID -  H3_MISRAC_2012_R_21_6_DR_3 */
+
+    /* Make stdin unbuffered */
+    setbuf(stdin, NULL);
+
+    /* Make stdout unbuffered */
+    setbuf(stdout, NULL);
+}
+
+
 /* MISRAC 2012 deviation block end */
 
 /*******************************************************************************
@@ -276,12 +277,15 @@ void SYS_Initialize ( void* data )
 
 	SYSC_Disable( );
 
+    STDIO_BufferModeSet();
+
+
   
     CLK_Initialize();
 
 	PIO_Initialize();
 
-
+    
 
     MMU_Initialize();
 
@@ -291,10 +295,14 @@ void SYS_Initialize ( void* data )
     WDT_REGS->WDT_MR = WDT_MR_WDDIS_Msk;
 
  
-    TC0_CH0_TimerInitialize(); 
+    TC1_CH0_TimerInitialize(); 
+    TC1_CH1_TimerInitialize(); 
      
+    FLEXCOM10_TWI_Initialize();
+
+	RTT_Initialize();
     
-    FLEXCOM6_TWI_Initialize();
+    DBGU_Initialize();
 
 	BSP_Initialize();
 
@@ -309,10 +317,7 @@ void SYS_Initialize ( void* data )
 
     DRV_LCDC_Initialize();
 
-    DRV_GFX2D_Initialize();
-
-
-    sysObj.drvMAXTOUCH = DRV_MAXTOUCH_Initialize(0, (SYS_MODULE_INIT *)&drvMAXTOUCHInitData);
+    GFX_CANVAS_Initialize();
 
 
     /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  

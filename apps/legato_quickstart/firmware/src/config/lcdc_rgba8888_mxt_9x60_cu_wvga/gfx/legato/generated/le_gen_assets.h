@@ -63,83 +63,157 @@ extern const lePalette leGlobalPalette;
  *****************************************************************************/
 /*********************************
  * Legato Image Asset
- * Name:   QuickstartDown_WVGA
- * Size:   260x120 pixels
+ * Name:   mchp_circle
+ * Size:   80x80 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage QuickstartDown_WVGA;
+extern leImage mchp_circle;
 
 /*********************************
  * Legato Image Asset
- * Name:   QuickstartUp_WVGA
- * Size:   260x120 pixels
+ * Name:   bg240
+ * Size:   240x240 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage QuickstartUp_WVGA;
+extern leImage bg240;
 
 /*********************************
  * Legato Image Asset
- * Name:   MHGS_logo_WVGA
- * Size:   320x300 pixels
+ * Name:   bulb_m
+ * Size:   40x40 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage MHGS_logo_WVGA;
+extern leImage bulb_m;
 
 /*********************************
  * Legato Image Asset
- * Name:   mchpLogo_light
- * Size:   152x40 pixels
+ * Name:   clock_m
+ * Size:   32x32 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage mchpLogo_light;
+extern leImage clock_m;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   fan_m
+ * Size:   32x32 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage fan_m;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   gear_m
+ * Size:   32x32 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage gear_m;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   home_m
+ * Size:   32x32 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage home_m;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   leaf_m
+ * Size:   32x28 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage leaf_m;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   sound_m
+ * Size:   36x28 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage sound_m;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   thermo_m
+ * Size:   24x44 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage thermo_m;
 
 /*****************************************************************************
  * Legato Graphics Font Assets
  *****************************************************************************/
 /*********************************
  * Legato Font Asset
- * Name:         NotoSans_48
+ * Name:         NotoSansBoldItalic20
  * Height:       21
- * Baseline:     35
+ * Baseline:     14
  * Style:        Antialias
- * Glyph Count:  10
- * Range Count:  7
- * Glyph Ranges: 0x2E
-                 0x45-0x46
-                 0x53
-                 0x61
-                 0x6D
-                 0x72-0x74
-                 0x79
+ * Glyph Count:  95
+ * Range Count:  11
+ * Glyph Ranges: 0x20-0x7E
 ***********************************/
-extern leRasterFont NotoSans_48;
+extern leRasterFont NotoSansBoldItalic20;
+
+/*********************************
+ * Legato Font Asset
+ * Name:         sc22
+ * Height:       23
+ * Baseline:     21
+ * Style:        Antialias
+ * Glyph Count:  105
+ * Range Count:  11
+ * Glyph Ranges: 0x20-0x7E
+                 0x4F60
+                 0x56DE
+                 0x597D
+                 0x6469
+                 0x6839
+                 0x7CFB
+                 0x7EDF
+                 0x7F6E
+                 0x8BBE
+                 0x8FD4
+***********************************/
+extern leRasterFont sc22;
 
 /*****************************************************************************
  * Legato String Table
- * Encoding        ASCII
+ * Encoding        UTF8
  * Language Count: 1
- * String Count:   3
+ * String Count:   5
  *****************************************************************************/
 
 // language IDs
 #define language_English    0
 
 // string IDs
-#define stringID_Smart    0
-#define stringID_Fast    1
-#define stringID_Easy    2
+#define stringID_ret    0
+#define stringID_set    1
+#define stringID_sc    2
+#define stringID_Hello    3
+#define stringID_Shezhi    4
 
 extern const leStringTable stringTable;
 
 
 // string list
-extern leTableString string_Smart;
-extern leTableString string_Fast;
-extern leTableString string_Easy;
+extern leTableString string_ret;
+extern leTableString string_set;
+extern leTableString string_sc;
+extern leTableString string_Hello;
+extern leTableString string_Shezhi;
 
 void initializeStrings(void);
 //DOM-IGNORE-BEGIN

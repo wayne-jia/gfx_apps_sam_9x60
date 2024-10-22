@@ -41,6 +41,23 @@ extern "C" {
 #endif
 // DOM-IGNORE-END
 
+//Layer and canvas ID
+#define BACKGROUND_LAYER_ID 0
+#define NEEDLE_LAYER_ID 1
+#define LOGO_LAYER_ID 2
+#define BLUR_LAYER_ID 3
+    
+#define BACKGROUND_CANVAS_ID 0
+#define NEEDLE_CANVAS_ID 1
+#define LOGO_CANVAS_ID 2
+#define BLUR_CANVAS_ID 3
+
+#define BLUR_ALPHA_LOW         100
+#define BLUR_ALPHA_HIGH        255
+    
+#define FADE_IN_START_ALPHA 0
+#define FADE_IN_END_ALPHA 255  
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Type Definitions
@@ -62,7 +79,14 @@ typedef enum
 {
     /* Application's state machine's initial state. */
     APP_STATE_INIT=0,
+    APP_STATE_SHOW_BASE,
+    APP_STATE_HIDE_ICONS,
+    APP_STATE_SHOW_LABEL,
+    APP_STATE_LABEL_EFFECT,
+    APP_STATE_SHOW_ICONS,
+    APP_STATE_RUNNING,
     APP_STATE_SERVICE_TASKS,
+
     /* TODO: Define states used by the application state machine. */
 
 } APP_STATES;
@@ -137,7 +161,7 @@ typedef struct
 
 void APP_Initialize ( void );
 
-
+void Panel_Initialize(void);
 /*******************************************************************************
   Function:
     void APP_Tasks ( void )

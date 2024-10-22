@@ -78,8 +78,10 @@ void SYS_Tasks ( void )
     /* Maintain Device Drivers */
     DRV_LCDC_Update();
 
+    GFX_CANVAS_Task();
 
-    DRV_MAXTOUCH_Tasks(sysObj.drvMAXTOUCH);
+
+    drv_touch_controller_task();
 
 
 

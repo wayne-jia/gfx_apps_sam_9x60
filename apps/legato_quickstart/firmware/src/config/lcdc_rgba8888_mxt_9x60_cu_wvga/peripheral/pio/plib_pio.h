@@ -62,14 +62,71 @@
 // *****************************************************************************
 
 
-/*** Macros for BSP_MAXTOUCH_CHG pin ***/
-#define BSP_MAXTOUCH_CHG_Set()               (PIOC_REGS->PIO_SODR = (1<<25))
-#define BSP_MAXTOUCH_CHG_Clear()             (PIOC_REGS->PIO_CODR = (1<<25))
-#define BSP_MAXTOUCH_CHG_Toggle()            (PIOC_REGS->PIO_ODSR ^= (1<<25))
-#define BSP_MAXTOUCH_CHG_OutputEnable()      (PIOC_REGS->PIO_OER = (1<<25))
-#define BSP_MAXTOUCH_CHG_InputEnable()       (PIOC_REGS->PIO_ODR = (1<<25))
-#define BSP_MAXTOUCH_CHG_Get()               ((PIOC_REGS->PIO_PDSR >> 25) & 0x1)
-#define BSP_MAXTOUCH_CHG_PIN                  PIO_PIN_PC25
+/*** Macros for DRV_TOUCH_PIN_INT pin ***/
+#define DRV_TOUCH_PIN_INT_Set()               (PIOB_REGS->PIO_SODR = ((uint32_t)1U<<0U))
+#define DRV_TOUCH_PIN_INT_Clear()             (PIOB_REGS->PIO_CODR = ((uint32_t)1U<<0U))
+#define DRV_TOUCH_PIN_INT_Toggle()            (PIOB_REGS->PIO_ODSR ^= ((uint32_t)1U<<0U))
+#define DRV_TOUCH_PIN_INT_OutputEnable()      (PIOB_REGS->PIO_OER = ((uint32_t)1U<<0U))
+#define DRV_TOUCH_PIN_INT_InputEnable()       (PIOB_REGS->PIO_ODR = ((uint32_t)1U<<0U))
+#define DRV_TOUCH_PIN_INT_Get()               ((PIOB_REGS->PIO_PDSR >> 0U) & 0x1U)
+#define DRV_TOUCH_PIN_INT_PIN                  PIO_PIN_PB0
+
+/*** Macros for GPIO_PA13 pin ***/
+#define GPIO_PA13_Set()               (PIOA_REGS->PIO_SODR = ((uint32_t)1U<<13U))
+#define GPIO_PA13_Clear()             (PIOA_REGS->PIO_CODR = ((uint32_t)1U<<13U))
+#define GPIO_PA13_Toggle()            (PIOA_REGS->PIO_ODSR ^= ((uint32_t)1U<<13U))
+#define GPIO_PA13_OutputEnable()      (PIOA_REGS->PIO_OER = ((uint32_t)1U<<13U))
+#define GPIO_PA13_InputEnable()       (PIOA_REGS->PIO_ODR = ((uint32_t)1U<<13U))
+#define GPIO_PA13_Get()               ((PIOA_REGS->PIO_PDSR >> 13U) & 0x1U)
+#define GPIO_PA13_PIN                  PIO_PIN_PA13
+#define GPIO_PA13_IDR()               (PIOA_REGS->PIO_IDR = ((uint32_t)1U<<13U))
+#define GPIO_PA13_PPUER()             (PIOA_REGS->PIO_PUER = ((uint32_t)1U<<13U))
+#define GPIO_PA13_PER()               (PIOA_REGS->PIO_PER = ((uint32_t)1U<<13U))
+
+/*** Macros for GPIO_PA14 pin ***/
+#define GPIO_PA14_Set()               (PIOA_REGS->PIO_SODR = ((uint32_t)1U<<14U))
+#define GPIO_PA14_Clear()             (PIOA_REGS->PIO_CODR = ((uint32_t)1U<<14U))
+#define GPIO_PA14_Toggle()            (PIOA_REGS->PIO_ODSR ^= ((uint32_t)1U<<14U))
+#define GPIO_PA14_OutputEnable()      (PIOA_REGS->PIO_OER = ((uint32_t)1U<<14U))
+#define GPIO_PA14_InputEnable()       (PIOA_REGS->PIO_ODR = ((uint32_t)1U<<14U))
+#define GPIO_PA14_Get()               ((PIOA_REGS->PIO_PDSR >> 14U) & 0x1U)
+#define GPIO_PA14_PIN                  PIO_PIN_PA14
+#define GPIO_PA14_IDR()               (PIOA_REGS->PIO_IDR = ((uint32_t)1U<<14U))
+#define GPIO_PA14_PPUER()             (PIOA_REGS->PIO_PUER = ((uint32_t)1U<<14U))
+#define GPIO_PA14_PER()               (PIOA_REGS->PIO_PER = ((uint32_t)1U<<14U))
+
+/*** Macros for GPIO_PA12 pin ***/
+#define GPIO_PA12_Set()               (PIOA_REGS->PIO_SODR = ((uint32_t)1U<<12U))
+#define GPIO_PA12_Clear()             (PIOA_REGS->PIO_CODR = ((uint32_t)1U<<12U))
+#define GPIO_PA12_Toggle()            (PIOA_REGS->PIO_ODSR ^= ((uint32_t)1U<<12U))
+#define GPIO_PA12_OutputEnable()      (PIOA_REGS->PIO_OER = ((uint32_t)1U<<12U))
+#define GPIO_PA12_InputEnable()       (PIOA_REGS->PIO_ODR = ((uint32_t)1U<<12U))
+#define GPIO_PA12_Get()               ((PIOA_REGS->PIO_PDSR >> 12U) & 0x1U)
+#define GPIO_PA12_PIN                  PIO_PIN_PA12
+#define GPIO_PA12_IDR()               (PIOA_REGS->PIO_IDR = ((uint32_t)1U<<12U))
+#define GPIO_PA12_PPUER()             (PIOA_REGS->PIO_PUER = ((uint32_t)1U<<12U))
+#define GPIO_PA12_PER()               (PIOA_REGS->PIO_PER = ((uint32_t)1U<<12U))
+
+/*** Macros for DRV_TOUCH_PIN_RESET pin ***/
+#define DRV_TOUCH_PIN_RESET_Set()               (PIOC_REGS->PIO_SODR = ((uint32_t)1U<<25U))
+#define DRV_TOUCH_PIN_RESET_Clear()             (PIOC_REGS->PIO_CODR = ((uint32_t)1U<<25U))
+#define DRV_TOUCH_PIN_RESET_Toggle()            (PIOC_REGS->PIO_ODSR ^= ((uint32_t)1U<<25U))
+#define DRV_TOUCH_PIN_RESET_OutputEnable()      (PIOC_REGS->PIO_OER = ((uint32_t)1U<<25U))
+#define DRV_TOUCH_PIN_RESET_InputEnable()       (PIOC_REGS->PIO_ODR = ((uint32_t)1U<<25U))
+#define DRV_TOUCH_PIN_RESET_Get()               ((PIOC_REGS->PIO_PDSR >> 25U) & 0x1U)
+#define DRV_TOUCH_PIN_RESET_PIN                  PIO_PIN_PC25
+
+/*** Macros for GPIO_PC31 pin ***/
+#define GPIO_PC31_Set()               (PIOC_REGS->PIO_SODR = ((uint32_t)1U<<31U))
+#define GPIO_PC31_Clear()             (PIOC_REGS->PIO_CODR = ((uint32_t)1U<<31U))
+#define GPIO_PC31_Toggle()            (PIOC_REGS->PIO_ODSR ^= ((uint32_t)1U<<31U))
+#define GPIO_PC31_OutputEnable()      (PIOC_REGS->PIO_OER = ((uint32_t)1U<<31U))
+#define GPIO_PC31_InputEnable()       (PIOC_REGS->PIO_ODR = ((uint32_t)1U<<31U))
+#define GPIO_PC31_Get()               ((PIOC_REGS->PIO_PDSR >> 31U) & 0x1U)
+#define GPIO_PC31_PIN                  PIO_PIN_PC31
+#define GPIO_PC31_IDR()               (PIOA_REGS->PIO_IDR = ((uint32_t)1U<<31U))
+#define GPIO_PC31_PPUER()             (PIOA_REGS->PIO_PUER = ((uint32_t)1U<<31U))
+#define GPIO_PC31_PER()               (PIOA_REGS->PIO_PER = ((uint32_t)1U<<31U))
 
 
 // *****************************************************************************

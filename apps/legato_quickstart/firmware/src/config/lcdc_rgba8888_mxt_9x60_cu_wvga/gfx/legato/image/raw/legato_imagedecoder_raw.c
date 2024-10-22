@@ -211,11 +211,12 @@ static void _directBlit(const lePixelBuffer* src,
                         const leRect* srcRect,
                         const leRect* destRect)
 {
-    void* srcPtr;
-    void* destPtr;
+    uint32_t* srcPtr;
+    uint32_t* destPtr;
     lePixelBuffer dest;
     int32_t row, rowSize;
     leRect frameRect;
+    int32_t i;
 
     leRenderer_GetFrameRect(&frameRect);
 
@@ -233,7 +234,15 @@ static void _directBlit(const lePixelBuffer* src,
         srcPtr = lePixelBufferOffsetGet(src, srcRect->x, srcRect->y + row);
         destPtr = lePixelBufferOffsetGet(&dest, destRect->x - frameRect.x, destRect->y - frameRect.y + row);
 
-        memcpy(destPtr, srcPtr, rowSize);
+        //memcpy(destPtr, srcPtr, rowSize);
+        for (i = 0; i < rowSize; i += 4) {
+            if ((*srcPtr & RGBA_8888_ALPHA_MASK) != 0xFF)
+                *destPtr = leColorBlend_RGBA_8888(*srcPtr, *destPtr);
+            else
+                *destPtr = *srcPtr;
+            srcPtr++;
+            destPtr++;
+        }
     }
 }
 
