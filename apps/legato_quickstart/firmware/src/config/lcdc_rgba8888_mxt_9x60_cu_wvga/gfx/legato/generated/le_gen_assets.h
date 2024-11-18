@@ -63,15 +63,6 @@ extern const lePalette leGlobalPalette;
  *****************************************************************************/
 /*********************************
  * Legato Image Asset
- * Name:   mchp_circle
- * Size:   80x80 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage mchp_circle;
-
-/*********************************
- * Legato Image Asset
  * Name:   bg240
  * Size:   240x240 pixels
  * Type:   RGB Data
@@ -151,6 +142,24 @@ extern leImage sound_m;
  ***********************************/
 extern leImage thermo_m;
 
+/*********************************
+ * Legato Image Asset
+ * Name:   m
+ * Size:   80x80 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage m;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   lbbg
+ * Size:   148x70 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage lbbg;
+
 /*****************************************************************************
  * Legato Graphics Font Assets
  *****************************************************************************/
@@ -172,8 +181,8 @@ extern leRasterFont NotoSansBoldItalic20;
  * Height:       23
  * Baseline:     21
  * Style:        Antialias
- * Glyph Count:  105
- * Range Count:  11
+ * Glyph Count:  106
+ * Range Count:  12
  * Glyph Ranges: 0x20-0x7E
                  0x4F60
                  0x56DE
@@ -185,6 +194,7 @@ extern leRasterFont NotoSansBoldItalic20;
                  0x7F6E
                  0x8BBE
                  0x8FD4
+                 0xFF01
 ***********************************/
 extern leRasterFont sc22;
 

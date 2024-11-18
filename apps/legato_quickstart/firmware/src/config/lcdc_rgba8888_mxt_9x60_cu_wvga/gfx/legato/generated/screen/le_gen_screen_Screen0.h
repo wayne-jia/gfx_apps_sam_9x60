@@ -15,7 +15,6 @@ extern "C" {
 // screen member widget declarations
 extern leWidget* Screen0_default_Layer0_FillPanel;
 extern leImageWidget* Screen0_ImageWidget0;
-extern leLabelWidget* Screen0_LabelWidget_0;
 extern leImageWidget* Screen0_ImageWidget_1;
 extern leImageWidget* Screen0_ImageWidget_2;
 extern leImageWidget* Screen0_ImageWidget_3;
@@ -24,13 +23,17 @@ extern leImageWidget* Screen0_ImageWidget_5;
 extern leImageWidget* Screen0_ImageWidget_6;
 extern leImageWidget* Screen0_ImageWidget_7;
 extern leImageWidget* Screen0_ImageWidget_8;
-extern leLabelWidget* Screen0_LabelWidget_1;
-extern leImageWidget* Screen0_ImageWidget_0;
-extern leWidget* Screen0_PanelWidget_1;
+extern leWidget* Screen0_PanelButton;
 extern leButtonWidget* Screen0_ButtonWidget_0;
-extern leButtonWidget* Screen0_ButtonWidget_1;
 extern leLabelWidget* Screen0_LabelWidget_2;
 extern leLabelWidget* Screen0_LabelWidget_3;
+extern leButtonWidget* Screen0_ButtonWidget_1;
+extern leWidget* Screen0_PanelWidget_3;
+extern leImageWidget* Screen0_ImageWidget_9;
+extern leLabelWidget* Screen0_LabelWidget_0;
+extern leLabelWidget* Screen0_LabelWidget_1;
+extern leWidget* Screen0_PanelWidget_2;
+extern leImageWidget* Screen0_ImageWidget_0;
 
 // event handlers
 // !!THESE MUST BE IMPLEMENTED IN THE APPLICATION CODE!!

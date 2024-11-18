@@ -63,6 +63,7 @@
 #include "system/input/sys_input.h"
 #include "driver/input/drv_touch_controller.h"
 #include "peripheral/flexcom/twi/master/plib_flexcom10_twi_master.h"
+#include "gfx/driver/processor/gfx2d/drv_gfx2d.h"
 #include "peripheral/rtt/plib_rtt.h"
 #include "peripheral/dbgu/plib_dbgu.h"
 #include "bsp/bsp.h"

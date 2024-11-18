@@ -15,7 +15,7 @@ compiler: XC32 4.35
 
 modules:
     - {name: "core", version: "v3.13.5"}
-    - {name: "csp", version: "v3.19.4"}
+    - {name: "csp", version: "v3.19.5"}
     - {name: "gfx", version: "v3.15.1"}
     - {name: "bsp", version: "v3.20.1"}
 

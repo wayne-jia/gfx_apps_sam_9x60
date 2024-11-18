@@ -43,16 +43,16 @@ extern "C" {
 
 //Layer and canvas ID
 #define BACKGROUND_LAYER_ID 0
-#define NEEDLE_LAYER_ID 1
+#define BLUR_LAYER_ID 1
 #define LOGO_LAYER_ID 2
-#define BLUR_LAYER_ID 3
+#define WELCOME_LAYER_ID 3
     
 #define BACKGROUND_CANVAS_ID 0
-#define NEEDLE_CANVAS_ID 1
+#define BLUR_CANVAS_ID 1
 #define LOGO_CANVAS_ID 2
-#define BLUR_CANVAS_ID 3
+#define WELCOME_CANVAS_ID 3
 
-#define BLUR_ALPHA_LOW         100
+#define BLUR_ALPHA_LOW         0
 #define BLUR_ALPHA_HIGH        255
     
 #define FADE_IN_START_ALPHA 0
@@ -81,10 +81,14 @@ typedef enum
     APP_STATE_INIT=0,
     APP_STATE_SHOW_BASE,
     APP_STATE_HIDE_ICONS,
-    APP_STATE_SHOW_LABEL,
-    APP_STATE_LABEL_EFFECT,
+    APP_STATE_FADEOUT_LOGO,
+    APP_STATE_FADEIN_WELCOME,
+    APP_STATE_SHOW_WELCOME,
+    APP_STATE_FADEOUT_WELCOME,
     APP_STATE_SHOW_ICONS,
+    APP_STATE_FADEIN_LOGO,
     APP_STATE_RUNNING,
+    APP_STATE_SETTINGS,
     APP_STATE_SERVICE_TASKS,
 
     /* TODO: Define states used by the application state machine. */

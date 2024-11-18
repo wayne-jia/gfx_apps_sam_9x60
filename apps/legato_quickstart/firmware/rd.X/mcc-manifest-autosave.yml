@@ -19,6 +19,6 @@ device_library: {library_class: com.microchip.mcc.harmony.Harmony3Library, name:
 packs: {name: SAM9X6_DFP, version: 1.9.218}
 modules:
 - {name: core, type: HARMONY, version: v3.13.5}
-- {name: csp, type: HARMONY, version: v3.19.4}
+- {name: csp, type: HARMONY, version: v3.19.5}
 - {name: gfx, type: HARMONY, version: v3.15.1}
 - {name: bsp, type: HARMONY, version: v3.20.1}

@@ -67,7 +67,7 @@
 #define LCDC_SYNC_EDGE LCDC_SYNC_EDGE_FIRST
 #define LCDC_PWM_POLARITY LCDC_POLARITY_NEGATIVE
 #define GFX_LCDC_BACKGROUND_COLOR 0xffffffff
-#define GFX_LCDC_LAYERS 2
+#define GFX_LCDC_LAYERS 4
 #define LCDC_DEFAULT_BRIGHTNESS_PCT 0
 
 #define SYNC_RECT_COUNT 200
@@ -79,6 +79,7 @@
 
 #define LCDC_HSYNC_POLARITY LCDC_POLARITY_NEGATIVE
 
+#define LCDC_ENABLE_GLOBAL_HW_ALPHA 1
 
 #define LCDC_PWM_CLOCK_SOURCE LCDC_PWM_SOURCE_SYSTEM
 #define LCDC_PWM_PRESCALER 6
@@ -115,8 +116,13 @@ typedef struct
 
 LCDC_DMA_DESC __attribute__ ((section(".region_nocache"), aligned (64))) channelDesc0;
 LCDC_DMA_DESC __attribute__ ((section(".region_nocache"), aligned (64))) channelDesc1;
+LCDC_DMA_DESC __attribute__ ((section(".region_nocache"), aligned (64))) channelDesc2;
+LCDC_DMA_DESC __attribute__ ((section(".region_nocache"), aligned (64))) channelDesc3;
 
 static volatile DRV_STATE state[GFX_LCDC_LAYERS];
+static gfxRect srcRect, destRect;
+volatile gfxPixelBuffer* blitBuff = NULL;
+static volatile unsigned int blitLayer = 0;
 static unsigned int vsyncCount = 0;
 static unsigned int activeLayer = 0;
 
@@ -157,7 +163,9 @@ static DISPLAY_LAYER drvLayer[GFX_LCDC_LAYERS];
 static LCDC_LAYER_ID lcdcLayerZOrder[GFX_LCDC_LAYERS] =
 {
     LCDC_LAYER_BASE,
+    LCDC_LAYER_OVR1,
     LCDC_LAYER_HEO,
+    LCDC_LAYER_OVR2,
 };
 
 
@@ -428,6 +436,8 @@ gfxResult DRV_LCDC_Initialize()
 
     drvLayer[0].desc = &channelDesc0;
     drvLayer[1].desc = &channelDesc1;
+    drvLayer[2].desc = &channelDesc2;
+    drvLayer[3].desc = &channelDesc3;
 
     for (layerCount = 0; layerCount < GFX_LCDC_LAYERS; layerCount++)
     {
@@ -464,9 +474,9 @@ gfxResult DRV_LCDC_Initialize()
         //Note: Blender APIs don't do anything to the base layer
         LCDC_SetBlenderOverlayLayerEnable(drvLayer[layerCount].hwLayerID, true);
         LCDC_SetBlenderDMALayerEnable(drvLayer[layerCount].hwLayerID, true); //Enable blender DMA
-        LCDC_SetBlenderLocalAlphaEnable(drvLayer[layerCount].hwLayerID, true); //Use local alpha
-        LCDC_SetBlenderIteratedColorEnable(drvLayer[layerCount].hwLayerID, true); //Enable iterated color
-        LCDC_SetBlenderUseIteratedColor(drvLayer[layerCount].hwLayerID, true); //Use iterated color
+		//Using Global Alpha
+        LCDC_SetBlenderGlobalAlphaEnable(drvLayer[layerCount].hwLayerID, true);
+        LCDC_SetBlenderGlobalAlpha(drvLayer[layerCount].hwLayerID, 0xFF);
         LCDC_UpdateOverlayAttributesEnable(drvLayer[layerCount].hwLayerID);
         LCDC_UpdateAttribute(drvLayer[layerCount].hwLayerID); //Apply the attributes
 
@@ -513,7 +523,7 @@ void _IntHandlerLayerReadComplete(uintptr_t context)
     {
         status = LCDC_LAYER_IRQ_Status(drvLayer[i].hwLayerID);
 
-        if (status)
+        if (status && blitLayer == i)
         {
         LCDC_LAYER_IRQ_Disable(drvLayer[i].hwLayerID, LCDC_LAYER_INTERRUPT_DMA);
             if (drvLayer[i].updateLock == LAYER_LOCKED_PENDING)
@@ -527,9 +537,22 @@ void _IntHandlerLayerReadComplete(uintptr_t context)
         }
     }
 
+    if (blitBuff != NULL)
+    {
+        gfxGPUInterface.blitBuffer((const gfxPixelBuffer*) blitBuff,
+                                 &srcRect,
+                                 &drvLayer[blitLayer].pixelBuffer[drvLayer[blitLayer].frontBufferIdx],
+                                 &destRect);
+
+        gfxPixelBuffer_SetLocked((gfxPixelBuffer*) blitBuff,
+                                 LE_FALSE);
+
+        blitBuff = NULL;
+    }
 
     if (i < SYNC && state[i] == SWAP)
     {
+        LCDC_LAYER_IRQ_Enable(drvLayer[i].hwLayerID, LCDC_LAYER_INTERRUPT_DMA);
         state[i] = SYNC;
     }
 }
@@ -538,9 +561,6 @@ gfxResult DRV_LCDC_BlitBuffer(int32_t x,
                              int32_t y,
                              gfxPixelBuffer* buf)
 {
-    void* srcPtr;
-    void* destPtr;
-    uint32_t row, rowSize;
 
     if (state[activeLayer] != DRAW)
 	{
@@ -548,15 +568,22 @@ gfxResult DRV_LCDC_BlitBuffer(int32_t x,
 	}
 
 
-    rowSize = buf->size.width * gfxColorInfoTable[buf->mode].size;
+    srcRect.x = 0;
+    srcRect.y = 0;
+    srcRect.height = buf->size.height;
+    srcRect.width = buf->size.width;
 
-    for(row = 0; row < buf->size.height; row++)
-    {
-        srcPtr = gfxPixelBufferOffsetGet(buf, 0, row);
-        destPtr = gfxPixelBufferOffsetGet(&drvLayer[activeLayer].pixelBuffer[drvLayer[activeLayer].backBufferIdx], x, y + row);
+    destRect.x = x;
+    destRect.y = y;
+    destRect.height = buf->size.height;
+    destRect.width = buf->size.width;
 
-        memcpy(destPtr, srcPtr, rowSize);
-    }
+    gfxPixelBuffer_SetLocked(buf, LE_TRUE);
+
+    blitBuff = buf;
+    blitLayer = activeLayer;
+    LCDC_LAYER_IRQ_Status(blitLayer);
+    LCDC_LAYER_IRQ_Enable(drvLayer[blitLayer].hwLayerID, LCDC_LAYER_INTERRUPT_DMA);
 
     return GFX_SUCCESS;
 }
@@ -635,10 +662,8 @@ static gfxDriverIOCTLResponse DRV_LCDC_layerConfig(gfxDriverIOCTLRequest request
 
         LCDC_SetRGBModeInput(drvLayer[arg->id].hwLayerID, drvLayer[arg->id].colorspace);
 
-        //If global alpha is not supported, disable the layer if alpha is = 0
-        if (drvLayer[arg->id].alpha == 0)
-            LCDC_SetChannelEnable(drvLayer[arg->id].hwLayerID, false);
-        else
+        LCDC_SetBlenderGlobalAlpha(drvLayer[arg->id].hwLayerID, drvLayer[arg->id].alpha);
+
             LCDC_SetChannelEnable(drvLayer[arg->id].hwLayerID, drvLayer[arg->id].enabled);
 
         //Update overlay attributes before the start of the next frame

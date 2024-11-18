@@ -28,6 +28,9 @@
               <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/canvas/gfx_canvas.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="driver" projectFiles="true">
+              <logicalFolder name="gfx2d" displayName="gfx2d" projectFiles="true">
+                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/driver/processor/gfx2d/drv_gfx2d.h</itemPath>
+              </logicalFolder>
               <logicalFolder name="f1" displayName="lcdc" projectFiles="true">
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/driver/gfx_driver.h</itemPath>
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/driver/controller/lcdc/drv_gfx_lcdc.h</itemPath>
@@ -227,6 +230,9 @@
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/flexcom/twi/master/plib_flexcom_twi_master_common.h</itemPath>
                 </logicalFolder>
               </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="gfx2d" displayName="gfx2d" projectFiles="true">
+              <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/gfx2d/plib_gfx2d.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f7" displayName="lcdc" projectFiles="true">
               <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/lcdc/plib_lcdc.h</itemPath>
@@ -597,6 +603,9 @@
               <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/canvas/gfx_canvas.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="driver" projectFiles="true">
+              <logicalFolder name="gfx2d" displayName="gfx2d" projectFiles="true">
+                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/driver/processor/gfx2d/drv_gfx2d.c</itemPath>
+              </logicalFolder>
               <logicalFolder name="f1" displayName="lcdc" projectFiles="true">
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/driver/gfx_driver.c</itemPath>
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/driver/controller/lcdc/drv_gfx_lcdc.c</itemPath>
@@ -854,6 +863,9 @@
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/flexcom/twi/master/plib_flexcom10_twi_master.c</itemPath>
                 </logicalFolder>
               </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="gfx2d" displayName="gfx2d" projectFiles="true">
+              <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/gfx2d/plib_gfx2d.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f7" displayName="lcdc" projectFiles="true">
               <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/lcdc/plib_lcdc.c</itemPath>
