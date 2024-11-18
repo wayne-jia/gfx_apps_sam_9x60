@@ -92,7 +92,7 @@ extern "C" {
 // widget inclusion
 #define LE_ARC_WIDGET_ENABLED              0
 #define LE_BARGRAPH_WIDGET_ENABLED         0
-#define LE_BUTTON_WIDGET_ENABLED           1
+#define LE_BUTTON_WIDGET_ENABLED           0
 #define LE_CHECKBOX_WIDGET_ENABLED         0
 #define LE_CIRCLE_WIDGET_ENABLED           0
 #define LE_CIRCULARGAUGE_WIDGET_ENABLED    0
@@ -148,7 +148,7 @@ extern "C" {
 // renderer configuration
 //#define LE_VSYNC_STALL
 
-#define LE_LAYER_COUNT                     4
+#define LE_LAYER_COUNT                     2
 
 #define LE_WIDGET_MAX_EVENT_FILTERS        2
 

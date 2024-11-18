@@ -90,9 +90,7 @@ const gfxDisplayDriver gfxDriverInterface =
 };
 
 uint32_t __attribute__ ((section(".region_nocache"), aligned (32))) canvasfb0[240 *240] = { 0 };
-uint32_t __attribute__ ((section(".region_nocache"), aligned (32))) canvasfb1[148 *70] = { 0 };
-uint32_t __attribute__ ((section(".region_nocache"), aligned (32))) canvasfb2[80 *80] = { 0 };
-uint32_t __attribute__ ((section(".region_nocache"), aligned (32))) canvasfb3[146 *100] = { 0 };
+uint32_t __attribute__ ((section(".region_nocache"), aligned (32))) canvasfb1[136 *46] = { 0 };
 
 static void gfxcObjectsInitialize(void)
 {
@@ -102,14 +100,8 @@ static void gfxcObjectsInitialize(void)
     gfxcSetPixelBuffer(id, 240, 240, GFX_COLOR_MODE_RGBA_8888,
                        (void *) canvasfb0);
     id = gfxcCreate();
-    gfxcSetPixelBuffer(id, 148, 70, GFX_COLOR_MODE_RGBA_8888,
+    gfxcSetPixelBuffer(id, 136, 46, GFX_COLOR_MODE_RGBA_8888,
                        (void *) canvasfb1);
-    id = gfxcCreate();
-    gfxcSetPixelBuffer(id, 80, 80, GFX_COLOR_MODE_RGBA_8888,
-                       (void *) canvasfb2);
-    id = gfxcCreate();
-    gfxcSetPixelBuffer(id, 146, 100, GFX_COLOR_MODE_RGBA_8888,
-                       (void *) canvasfb3);
 }
 
 static void effectsTimerCallback ( uintptr_t context )

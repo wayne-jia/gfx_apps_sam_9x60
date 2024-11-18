@@ -6683,7 +6683,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
   &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas1Height&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;70&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;46&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_canvas&gt;
 &lt;/gfx_canvas&gt;
@@ -6705,7 +6705,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
   &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas1Width&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;148&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;136&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_canvas&gt;
 &lt;/gfx_canvas&gt;
@@ -8093,7 +8093,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
   &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;NumCanvasObjects&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;4&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;2&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_canvas&gt;
 &lt;/gfx_canvas&gt;
@@ -12596,7 +12596,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
   &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;HEOLayerEnable&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/le_gfx_lcdc&gt;
 &lt;/le_gfx_lcdc&gt;
@@ -12629,7 +12629,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
   &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;Overlay2LayerEnable&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/le_gfx_lcdc&gt;
 &lt;/le_gfx_lcdc&gt;
@@ -12673,7 +12673,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
   &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;TotalNumLayers&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;4&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;2&quot;/&gt;
     &lt;/Values&gt;
   &lt;/le_gfx_lcdc&gt;
 &lt;/le_gfx_lcdc&gt;
@@ -14423,7 +14423,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\definitions.h</file>
-         <hash>34ef373f6f59f2edc8ac2dceddfe6fcdcb60459f3e26714779ff4b2203792cd0</hash>
+         <hash>b177a87ccca3f9a41c9655a62576d11c6f54cba06d26944a3c742f82aadbeec8</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\device.h</file>
@@ -14471,11 +14471,11 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\canvas\gfx_canvas.c</file>
-         <hash>be03685f2fb98832d7daf485fafc58ade3e988fd7c99d15787cf0c7eeabfc56a</hash>
+         <hash>aac3d1996857cace574d3e91ff8ca95f90cb9d0f3fe2e3ce33506aaf9b9b72a9</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\canvas\gfx_canvas.h</file>
-         <hash>94b2b295d27382b706cf0964f02403fbf93935daeba985b289a598fe86bc1d4d</hash>
+         <hash>01510e4a92a75716c4bf92b3dea5ef316d789d98bf245781a1992db62a8f3ce8</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\canvas\gfx_canvas_api.c</file>
@@ -14487,7 +14487,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\driver\controller\lcdc\drv_gfx_lcdc.c</file>
-         <hash>4c073d6e1cfdd0af3287e3f08e586c7fd893af1929a24d762ed7fa973092698b</hash>
+         <hash>56a34c9f79d2fc6682b7ae8ca252d03c4ad5b60c57a043f0d4bc1ca2fc5aa780</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\driver\controller\lcdc\drv_gfx_lcdc.h</file>
@@ -14663,15 +14663,15 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\font\le_gen_fonts.c</file>
-         <hash>3e8980c46cb38ab376aa922e7eb5b7c4d7ab0e796301a3496843a0e82364fb5c</hash>
+         <hash>f5662ac4c03a2babce0285036d36591a4041ff4eaaed98fedcd65d1bbb6f3658</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\image\le_gen_images.c</file>
-         <hash>7e3b0c1bd50ee9e8fbc16252f6894986d317aa37e5c97c007fcbb5e9ab2d8251</hash>
+         <hash>a581c90d055d85ce5554b5fff8d7c9eade493a7b91f62b4063713663f5c58056</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\le_gen_assets.h</file>
-         <hash>0d39cbf25b6d4c2e8b0d3bcfb72afa369d25b5c43917f74c678958cb21e57a9d</hash>
+         <hash>294c275ed0a78d9e678792fb060de1ebd3d0c5659e58b389b6a6eac03cea00a4</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\le_gen_globalpalette.c</file>
@@ -14703,15 +14703,15 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\le_gen_stringtable.c</file>
-         <hash>c21195509f461bb732cc405f9bbcaaf7191a2419b1d7863d1801489f1db082cf</hash>
+         <hash>b6be63eb2f743b960254ece6290e7ffad0a965fb54f9bd3dcbcbb364d155ad82</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\screen\le_gen_screen_Screen0.c</file>
-         <hash>8fe2a34c1a208727aa7610ac147c02d3b2b882ee672adae0a41b21ad4a7e71e3</hash>
+         <hash>4c9211db6309cdba31a6e67c55e5c4083b161d7d02d38081f2a99793b125a3a6</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\screen\le_gen_screen_Screen0.h</file>
-         <hash>68ee262663442f17bc688fc950efa5a9a0733d3e026be857a7d738debc2ed91e</hash>
+         <hash>1f1056700ae59e3f72e9adc98cc804eba994805f03a774fc0a936d5ded864319</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\image\jpeg\jidctint.c</file>
@@ -14859,7 +14859,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\legato_config.h</file>
-         <hash>b6cf2861981bc647f5ff00be21f5339e3d56cf771f428928ee748400bfe9c263</hash>
+         <hash>83a6c919c3637b69a3a9c2009b5f6afb4517911f21f0ec879405b90a22a5da98</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\memory\legato_fixedheap.c</file>

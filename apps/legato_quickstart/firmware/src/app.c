@@ -67,50 +67,19 @@ static uint32_t icon_idx = 0;
 /* TODO:  Add any necessary callback functions.
 */
 
-void show_icons(bool show)
-{
-	//Screen0_ImageWidget_0->fn->setVisible(Screen0_ImageWidget_0, show);
-	Screen0_ImageWidget_1->fn->setVisible(Screen0_ImageWidget_1, show);
-	Screen0_ImageWidget_2->fn->setVisible(Screen0_ImageWidget_2, show);
-	Screen0_ImageWidget_3->fn->setVisible(Screen0_ImageWidget_3, show);
-	Screen0_ImageWidget_4->fn->setVisible(Screen0_ImageWidget_4, show);
-	Screen0_ImageWidget_5->fn->setVisible(Screen0_ImageWidget_5, show);
-	Screen0_ImageWidget_6->fn->setVisible(Screen0_ImageWidget_6, show);
-	Screen0_ImageWidget_7->fn->setVisible(Screen0_ImageWidget_7, show);
-	Screen0_ImageWidget_8->fn->setVisible(Screen0_ImageWidget_8, show);
-}
 
-void show_settings(bool show)
-{
-	Screen0_PanelButton->fn->setVisible(Screen0_PanelButton, show);
-}
 
 void Screen0_OnShow(void)
 {
-	show_settings(false);
 	LCDC_BrightnessSet(0);
 	Panel_Initialize();
 	LCDC_BrightnessSet(100);
 	TC1_CH0_TimerStart();
+	TC1_CH1_TimerStart();
 	screen_show = true;
 	printf("bl on\r\n");
 }
 
-void event_Screen0_ButtonWidget_0_OnPressed(leButtonWidget* btn)
-{
-	appData.state = APP_STATE_SETTINGS;
-	// show_icons(false);
-	// show_settings(true);
-	//Screen0_ButtonWidget_0->fn->setVisible(Screen0_ButtonWidget_0, false);
-}
-
-void event_Screen0_ButtonWidget_1_OnReleased(leButtonWidget* btn)
-{
-	appData.state = APP_STATE_SERVICE_TASKS;
-	// show_icons(true);
-	// show_settings(false);
-	//Screen0_ButtonWidget_0->fn->setVisible(Screen0_ButtonWidget_0, true);
-}
 
 void TC1_CH1_TimerInterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
 {
@@ -230,7 +199,7 @@ static void write_data(unsigned char data)
 	PA14_SetOutput(true); //CS 1
 }
 
-#if 1  //??
+#if 1  //
 void BOARD_InitLCD_SPI(void)
 {
 	PC31_SetOutput(true);
@@ -840,7 +809,7 @@ void LCDC_REG_Dump(void)
 	printf("LCDC_REGS->LCDC_BASECFG5: %x\r\n", LCDC_REGS->LCDC_BASECFG5);
 	printf("LCDC_REGS->LCDC_BASECFG6: %x\r\n", LCDC_REGS->LCDC_BASECFG6);
 }
-#endif
+
 
 static void pulseBlur(void)
 {
@@ -903,7 +872,7 @@ static void icon_seqence(bool hide)
 	}
 	
 }
-
+#endif
 
 
 void APP_Initialize ( void )
@@ -918,31 +887,32 @@ void APP_Initialize ( void )
  
     gfxcSetLayer(BACKGROUND_CANVAS_ID, BACKGROUND_LAYER_ID);
 	gfxcSetLayer(BLUR_CANVAS_ID, BLUR_LAYER_ID);
-	gfxcSetLayer(LOGO_CANVAS_ID, LOGO_LAYER_ID);
-    gfxcSetLayer(WELCOME_CANVAS_ID, WELCOME_LAYER_ID);
+	// gfxcSetLayer(LOGO_CANVAS_ID, LOGO_LAYER_ID);
+    // gfxcSetLayer(WELCOME_CANVAS_ID, WELCOME_LAYER_ID);
 
     gfxcSetWindowPosition(BACKGROUND_CANVAS_ID, 0, 0);
     gfxcSetWindowSize(BACKGROUND_CANVAS_ID, 240, 240);
 
-	gfxcSetWindowPosition(BLUR_CANVAS_ID, 56, 86);
-    gfxcSetWindowSize(BLUR_CANVAS_ID, 148, 70);
+	gfxcSetWindowPosition(BLUR_CANVAS_ID, 52, 97);
+    gfxcSetWindowSize(BLUR_CANVAS_ID, 136, 46);
 
-	gfxcSetWindowPosition(LOGO_CANVAS_ID, 80, 80);
-    gfxcSetWindowSize(LOGO_CANVAS_ID, 80, 80);
+	// gfxcSetWindowPosition(LOGO_CANVAS_ID, 80, 80);
+    // gfxcSetWindowSize(LOGO_CANVAS_ID, 80, 80);
 
-    gfxcSetWindowPosition(WELCOME_CANVAS_ID, 50, 71);
-    gfxcSetWindowSize(WELCOME_CANVAS_ID, 146, 100);
+    // gfxcSetWindowPosition(WELCOME_CANVAS_ID, 50, 71);
+    // gfxcSetWindowSize(WELCOME_CANVAS_ID, 146, 100);
     
     gfxcShowCanvas(BACKGROUND_CANVAS_ID);
-	gfxcHideCanvas(BLUR_CANVAS_ID);
-	gfxcShowCanvas(LOGO_CANVAS_ID);
-    gfxcHideCanvas(WELCOME_CANVAS_ID);
+	gfxcShowCanvas(BLUR_CANVAS_ID);
+	// gfxcShowCanvas(LOGO_CANVAS_ID);
+    // gfxcHideCanvas(WELCOME_CANVAS_ID);
     
     gfxcCanvasUpdate(BACKGROUND_CANVAS_ID);
 	gfxcCanvasUpdate(BLUR_CANVAS_ID);
-	gfxcCanvasUpdate(LOGO_CANVAS_ID);
-    gfxcCanvasUpdate(WELCOME_CANVAS_ID);
+	// gfxcCanvasUpdate(LOGO_CANVAS_ID);
+    // gfxcCanvasUpdate(WELCOME_CANVAS_ID);
 	//printf("APP_Initialized\r\n");
+	
 }
 
 void Panel_Initialize(void)
@@ -968,104 +938,85 @@ void APP_Tasks ( void )
         /* Application's initial state. */
         case APP_STATE_INIT:
         {
-            bool appInitialized = true;
-
-
-            if (appInitialized)
-            {
-
-                appData.state = APP_STATE_SHOW_BASE;
-            }
-            break;
-        }
-
-        case APP_STATE_SHOW_BASE:
-        {
-			if (screen_show)
-			{
-				//Screen0_ButtonWidget_0->fn->setVisible(Screen0_ButtonWidget_0, false);
-				//Screen0_ButtonWidget_1->fn->setVisible(Screen0_ButtonWidget_1, false);
-				//Screen0_LabelWidget_0->fn->setVisible(Screen0_LabelWidget_0, false);
-				//Screen0_LabelWidget_1->fn->setVisible(Screen0_LabelWidget_1, false);
-				if (sec_tick != prev_sec_tick)
-				{
-					sec2++;            
-					prev_sec_tick = sec_tick; 
-					if(sec2>0)
-					{
-						sec2=0;
-						TC1_CH1_TimerStart();
-						appData.state = APP_STATE_HIDE_ICONS;
-					}
-				}
-			}
-            break;
-        }
-
-		case APP_STATE_HIDE_ICONS:
-        {
-			if (tick != prev_tick)
+            if (tick != prev_tick)
 			{
 				ms2++;            
                 prev_tick = tick; 
-                if(ms2>100)
+                if(ms2>800)
                 {
                     ms2=0;
-                    icon_seqence(false);
-					//Screen0_ImageWidget_0->fn->setVisible(Screen0_ImageWidget_0, false);
-					icon_idx++;
-					if (icon_idx > 7)
+					switch (icon_idx++)
 					{
-						icon_idx = 0;
-						TC1_CH1_TimerStop();
-						appData.state = APP_STATE_FADEOUT_LOGO;
+						case 0:
+							Screen0_bper->fn->setString(Screen0_bper, (leString*)&string_s20);
+							gfxcSetPixelBuffer(BLUR_CANVAS_ID,
+												135,
+												45,
+												GFX_COLOR_MODE_RGBA_8888,
+												(void *) b20.buffer.pixels);
+							gfxcCanvasUpdate(BLUR_CANVAS_ID);
+							break;
+						
+						case 1:
+							Screen0_bper->fn->setString(Screen0_bper, (leString*)&string_s40);
+							gfxcSetPixelBuffer(BLUR_CANVAS_ID,
+												135,
+												45,
+												GFX_COLOR_MODE_RGBA_8888,
+												(void *) b40.buffer.pixels);
+							gfxcCanvasUpdate(BLUR_CANVAS_ID);
+							break;
+
+						case 2:
+							Screen0_bper->fn->setString(Screen0_bper, (leString*)&string_s60);
+							gfxcSetPixelBuffer(BLUR_CANVAS_ID,
+												135,
+												45,
+												GFX_COLOR_MODE_RGBA_8888,
+												(void *) b60.buffer.pixels);
+							gfxcCanvasUpdate(BLUR_CANVAS_ID);
+							break;
+
+						case 3:
+							Screen0_bper->fn->setString(Screen0_bper, (leString*)&string_s80);
+							gfxcSetPixelBuffer(BLUR_CANVAS_ID,
+												135,
+												45,
+												GFX_COLOR_MODE_RGBA_8888,
+												(void *) b80.buffer.pixels);
+							gfxcCanvasUpdate(BLUR_CANVAS_ID);
+							break;
+
+						case 4:
+							Screen0_bper->fn->setString(Screen0_bper, (leString*)&string_s100);
+							gfxcSetPixelBuffer(BLUR_CANVAS_ID,
+												135,
+												45,
+												GFX_COLOR_MODE_RGBA_8888,
+												(void *) b100.buffer.pixels);
+							gfxcCanvasUpdate(BLUR_CANVAS_ID);
+							break;
+
+						default:
+							icon_idx = 0;
+							appData.state = APP_STATE_FADEOUT_LOGO;
+							break;
 					}
+
                 }
 			}
-			
             break;
         }
 
 		case APP_STATE_FADEOUT_LOGO:
         {
-			//gfxcStartEffectFade(BLUR_CANVAS_ID, FADE_IN_END_ALPHA, FADE_IN_START_ALPHA, 10);
-			gfxcStartEffectFade(LOGO_CANVAS_ID, FADE_IN_END_ALPHA, FADE_IN_START_ALPHA, 10);
-			appData.state = APP_STATE_FADEIN_WELCOME;
+			gfxcStartEffectFade(BLUR_CANVAS_ID, FADE_IN_END_ALPHA, FADE_IN_START_ALPHA, 10);
+			appData.state = APP_STATE_FADEIN_LOGO;
 
             break;
         }
 
-		case APP_STATE_FADEIN_WELCOME:
-        {
-			if (sec_tick != prev_sec_tick)
-            {   
-				sec2++;            
-                prev_sec_tick = sec_tick; 
-                if(sec2>1)
-                {
-					TC1_CH1_TimerStart();
-					appData.state = APP_STATE_SHOW_ICONS;
-					#if 0
-                    sec2=0;
-					gfxcHideCanvas(LOGO_CANVAS_ID);
-    				gfxcCanvasUpdate(LOGO_CANVAS_ID);
-					gfxcStartEffectFade(BLUR_CANVAS_ID, FADE_IN_START_ALPHA, FADE_IN_END_ALPHA, 10);
-					gfxcShowCanvas(BLUR_CANVAS_ID);
-    				gfxcCanvasUpdate(BLUR_CANVAS_ID);
-					//Screen0_ButtonWidget_0->fn->setVisible(Screen0_ButtonWidget_0, false);
-					//Screen0_ImageWidget_0->fn->setVisible(Screen0_ImageWidget_0, false);
-					//Screen0_ButtonWidget_1->fn->setVisible(Screen0_ButtonWidget_1, false);
-					//Screen0_LabelWidget_0->fn->setVisible(Screen0_LabelWidget_0, true);
-					//Screen0_LabelWidget_1->fn->setVisible(Screen0_LabelWidget_1, true);
-                    appData.state = APP_STATE_SHOW_WELCOME;
-					#endif
-                }
-            }
-
-            break;
-        }
-
-		case APP_STATE_SHOW_WELCOME:
+		case APP_STATE_FADEIN_LOGO:
         {
 			if (sec_tick != prev_sec_tick)
             {   
@@ -1074,77 +1025,10 @@ void APP_Tasks ( void )
                 if(sec2>2)
                 {
                     sec2=0;
-					
-                    appData.state = APP_STATE_FADEOUT_WELCOME;
+					gfxcStartEffectFade(BLUR_CANVAS_ID, FADE_IN_START_ALPHA, FADE_IN_END_ALPHA, 10);
+                    appData.state = APP_STATE_RUNNING;
                 }
             }
-
-            break;
-        }
-
-		case APP_STATE_FADEOUT_WELCOME:
-        {
-			if (sec_tick != prev_sec_tick)
-            {   
-				sec2++;            
-                prev_sec_tick = sec_tick; 
-                if(sec2 == 1)
-                {
-                    
-					gfxcStartEffectFade(BLUR_CANVAS_ID, FADE_IN_END_ALPHA, FADE_IN_START_ALPHA, 10);
-					//Screen0_ButtonWidget_0->fn->setVisible(Screen0_ButtonWidget_0, false);
-					//Screen0_ImageWidget_0->fn->setVisible(Screen0_ImageWidget_0, false);
-					//Screen0_ButtonWidget_1->fn->setVisible(Screen0_ButtonWidget_1, false);
-					//Screen0_LabelWidget_0->fn->setVisible(Screen0_LabelWidget_0, true);
-					//Screen0_LabelWidget_1->fn->setVisible(Screen0_LabelWidget_1, true);
-					
-                }
-
-				if (sec2 > 2)
-				{
-					sec2=0;
-					TC1_CH1_TimerStart();
-					appData.state = APP_STATE_SHOW_ICONS;
-				}
-            }
-
-            break;
-        }
-
-		case APP_STATE_SHOW_ICONS:
-        {
-			if (tick != prev_tick)
-			{
-				ms2++;            
-                prev_tick = tick; 
-                if(ms2>100)
-                {
-                    ms2=0;
-					gfxcHideCanvas(BLUR_CANVAS_ID);
-    				gfxcCanvasUpdate(BLUR_CANVAS_ID);
-                    icon_seqence(true);
-					//Screen0_ImageWidget_0->fn->setVisible(Screen0_ImageWidget_0, true);
-					//Screen0_ButtonWidget_0->fn->setVisible(Screen0_ButtonWidget_0, true);
-					icon_idx++;
-					if (icon_idx > 7)
-					{
-						icon_idx = 0;
-						TC1_CH1_TimerStop();
-						appData.state = APP_STATE_FADEIN_LOGO;
-					}
-                }
-			}
-
-            break;
-        }
-
-		case APP_STATE_FADEIN_LOGO:
-        {
-			//gfxcStartEffectFade(BLUR_CANVAS_ID, FADE_IN_START_ALPHA, FADE_IN_END_ALPHA, 10);
-			gfxcStartEffectFade(LOGO_CANVAS_ID, FADE_IN_START_ALPHA, FADE_IN_END_ALPHA, 10);
-			gfxcShowCanvas(LOGO_CANVAS_ID);
-    		gfxcCanvasUpdate(LOGO_CANVAS_ID);
-			appData.state = APP_STATE_RUNNING;
 
             break;
         }
@@ -1155,41 +1039,15 @@ void APP_Tasks ( void )
             {   
 				sec2++;            
                 prev_sec_tick = sec_tick; 
-                if(sec2>1)
+                if(sec2>2)
                 {
                     sec2=0;
-					pulseBlur();
+                    appData.state = APP_STATE_INIT;
                 }
             }
 
             break;
         }
-
-		case APP_STATE_SETTINGS:
-		{
-			show_icons(false);
-			//gfxcHideCanvas(BLUR_CANVAS_ID);
-			gfxcHideCanvas(LOGO_CANVAS_ID);
-			//gfxcCanvasUpdate(BLUR_CANVAS_ID);
-			gfxcCanvasUpdate(LOGO_CANVAS_ID);
-			show_settings(true);
-			break;
-		}
-
-		case APP_STATE_SERVICE_TASKS:
-		{
-			show_settings(false);
-			show_icons(true);
-			//gfxcShowCanvas(BLUR_CANVAS_ID);
-			gfxcShowCanvas(LOGO_CANVAS_ID);
-			//gfxcCanvasUpdate(BLUR_CANVAS_ID);
-			gfxcCanvasUpdate(LOGO_CANVAS_ID);
-			appData.state = APP_STATE_RUNNING;
-			break;
-		}
-
-        /* TODO: implement your application state machine.*/
-
 
         /* The default state should never be executed. */
         default:

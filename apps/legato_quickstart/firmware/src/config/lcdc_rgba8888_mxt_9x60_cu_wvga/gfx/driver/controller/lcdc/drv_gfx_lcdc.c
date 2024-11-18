@@ -67,13 +67,11 @@
 #define LCDC_SYNC_EDGE LCDC_SYNC_EDGE_FIRST
 #define LCDC_PWM_POLARITY LCDC_POLARITY_NEGATIVE
 #define GFX_LCDC_BACKGROUND_COLOR 0xffffffff
-#define GFX_LCDC_LAYERS 4
+#define GFX_LCDC_LAYERS 2
 #define LCDC_DEFAULT_BRIGHTNESS_PCT 0
 
 #define SYNC_RECT_COUNT 200
 
-#define XPHIDEF 0
-#define YPHIDEF 0
 
 #define LCDC_VSYNC_POLARITY LCDC_POLARITY_NEGATIVE
 
@@ -116,8 +114,6 @@ typedef struct
 
 LCDC_DMA_DESC __attribute__ ((section(".region_nocache"), aligned (64))) channelDesc0;
 LCDC_DMA_DESC __attribute__ ((section(".region_nocache"), aligned (64))) channelDesc1;
-LCDC_DMA_DESC __attribute__ ((section(".region_nocache"), aligned (64))) channelDesc2;
-LCDC_DMA_DESC __attribute__ ((section(".region_nocache"), aligned (64))) channelDesc3;
 
 static volatile DRV_STATE state[GFX_LCDC_LAYERS];
 static gfxRect srcRect, destRect;
@@ -164,8 +160,6 @@ static LCDC_LAYER_ID lcdcLayerZOrder[GFX_LCDC_LAYERS] =
 {
     LCDC_LAYER_BASE,
     LCDC_LAYER_OVR1,
-    LCDC_LAYER_HEO,
-    LCDC_LAYER_OVR2,
 };
 
 
@@ -252,58 +246,6 @@ static LCDC_INPUT_COLOR_MODE getLCDCColorModeFromGFXColorMode(gfxColorMode mode)
     }
 }
 
-static void layerHEOGetScalingFactors(uint16_t xmemsize,
-                                     uint16_t ymemsize,
-                                     uint16_t xsize,
-                                     uint16_t ysize,
-                                     uint16_t* xfactor,
-                                     uint16_t* yfactor)
-{
-    uint16_t xfactor1st, yfactor1st;
-
-    xmemsize--;
-    ymemsize--;
-    xsize--;
-    ysize--;
-
-    xfactor1st = ((2048 * xmemsize - 256 * XPHIDEF)/ xsize) + 1;
-    yfactor1st = ((2048 * ymemsize - 256 * XPHIDEF)/ ysize) + 1;
-
-    if ((xfactor1st * xsize / 2048) > xmemsize)
-        *xfactor = xfactor1st - 1;
-    else
-        *xfactor = xfactor1st;
-
-    if ((yfactor1st * ysize / 2048) > ymemsize)
-        *yfactor = yfactor1st - 1;
-    else
-        *yfactor = yfactor1st;
-}
-
-static void layerHEOSetSize(uint16_t s_width, uint16_t s_height, uint16_t w_width, uint16_t w_height)
-{
-    LCDC_SetWindowSize(LCDC_LAYER_HEO, w_width, w_height);
-    LCDC_SetHEOImageMemSize(s_width, s_height);
-
-    //Source and window size are not the same, use scaler
-    if (s_width != w_width || s_height != w_height)
-    {
-        uint16_t scale_w, scale_h;
-
-        layerHEOGetScalingFactors(s_width,
-                                s_height,
-                                w_width,
-                                w_height,
-                                &scale_w,
-                                &scale_h);
-
-        LCDC_SetHEOScaler(scale_h, scale_w, true);
-    }
-    else
-    {
-        LCDC_SetHEOScaler(0, 0, false);
-    }
-}
 
 static gfxColorMode getGFXColorModeFromLCDC(LCDC_INPUT_COLOR_MODE mode)
 {
@@ -436,8 +378,6 @@ gfxResult DRV_LCDC_Initialize()
 
     drvLayer[0].desc = &channelDesc0;
     drvLayer[1].desc = &channelDesc1;
-    drvLayer[2].desc = &channelDesc2;
-    drvLayer[3].desc = &channelDesc3;
 
     for (layerCount = 0; layerCount < GFX_LCDC_LAYERS; layerCount++)
     {
@@ -460,9 +400,6 @@ gfxResult DRV_LCDC_Initialize()
 
         LCDC_SetLayerClockGatingDisable(drvLayer[layerCount].hwLayerID, false);
         LCDC_SetWindowPosition(drvLayer[layerCount].hwLayerID, drvLayer[layerCount].startx, drvLayer[layerCount].starty);
-        if (drvLayer[layerCount].hwLayerID == LCDC_LAYER_HEO)
-            layerHEOSetSize(drvLayer[layerCount].resx, drvLayer[layerCount].resy, drvLayer[layerCount].resx, drvLayer[layerCount].resy);
-        else
         LCDC_SetWindowSize(drvLayer[layerCount].hwLayerID, drvLayer[layerCount].resx, drvLayer[layerCount].resy);
         LCDC_SetUseDMAPathEnable(drvLayer[layerCount].hwLayerID, true);
         LCDC_SetRGBModeInput(drvLayer[layerCount].hwLayerID, drvLayer[layerCount].colorspace);
@@ -498,8 +435,6 @@ gfxResult DRV_LCDC_Initialize()
 
     }
 
-    //Set HEO layer on top of OVL1
-    LCDC_SetHEOVideoPriority(true);
 
     //Register the interrupt handler
     LCDC_IRQ_CallbackRegister(_IntHandlerLayerReadComplete, (uintptr_t) NULL);

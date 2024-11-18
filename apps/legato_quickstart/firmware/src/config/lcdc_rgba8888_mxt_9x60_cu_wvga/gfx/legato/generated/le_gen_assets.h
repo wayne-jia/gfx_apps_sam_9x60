@@ -72,78 +72,6 @@ extern leImage bg240;
 
 /*********************************
  * Legato Image Asset
- * Name:   bulb_m
- * Size:   40x40 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage bulb_m;
-
-/*********************************
- * Legato Image Asset
- * Name:   clock_m
- * Size:   32x32 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage clock_m;
-
-/*********************************
- * Legato Image Asset
- * Name:   fan_m
- * Size:   32x32 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage fan_m;
-
-/*********************************
- * Legato Image Asset
- * Name:   gear_m
- * Size:   32x32 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage gear_m;
-
-/*********************************
- * Legato Image Asset
- * Name:   home_m
- * Size:   32x32 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage home_m;
-
-/*********************************
- * Legato Image Asset
- * Name:   leaf_m
- * Size:   32x28 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage leaf_m;
-
-/*********************************
- * Legato Image Asset
- * Name:   sound_m
- * Size:   36x28 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage sound_m;
-
-/*********************************
- * Legato Image Asset
- * Name:   thermo_m
- * Size:   24x44 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage thermo_m;
-
-/*********************************
- * Legato Image Asset
  * Name:   m
  * Size:   80x80 pixels
  * Type:   RGB Data
@@ -153,12 +81,48 @@ extern leImage m;
 
 /*********************************
  * Legato Image Asset
- * Name:   lbbg
- * Size:   148x70 pixels
+ * Name:   b20
+ * Size:   135x45 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage lbbg;
+extern leImage b20;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   b40
+ * Size:   135x45 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage b40;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   b60
+ * Size:   135x45 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage b60;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   b80
+ * Size:   135x45 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage b80;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   b100
+ * Size:   135x45 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage b100;
 
 /*****************************************************************************
  * Legato Graphics Font Assets
@@ -170,33 +134,10 @@ extern leImage lbbg;
  * Baseline:     14
  * Style:        Antialias
  * Glyph Count:  95
- * Range Count:  11
+ * Range Count:  6
  * Glyph Ranges: 0x20-0x7E
 ***********************************/
 extern leRasterFont NotoSansBoldItalic20;
-
-/*********************************
- * Legato Font Asset
- * Name:         sc22
- * Height:       23
- * Baseline:     21
- * Style:        Antialias
- * Glyph Count:  106
- * Range Count:  12
- * Glyph Ranges: 0x20-0x7E
-                 0x4F60
-                 0x56DE
-                 0x597D
-                 0x6469
-                 0x6839
-                 0x7CFB
-                 0x7EDF
-                 0x7F6E
-                 0x8BBE
-                 0x8FD4
-                 0xFF01
-***********************************/
-extern leRasterFont sc22;
 
 /*****************************************************************************
  * Legato String Table
@@ -209,21 +150,21 @@ extern leRasterFont sc22;
 #define language_English    0
 
 // string IDs
-#define stringID_ret    0
-#define stringID_set    1
-#define stringID_sc    2
-#define stringID_Hello    3
-#define stringID_Shezhi    4
+#define stringID_s20    0
+#define stringID_s40    1
+#define stringID_s100    2
+#define stringID_s80    3
+#define stringID_s60    4
 
 extern const leStringTable stringTable;
 
 
 // string list
-extern leTableString string_ret;
-extern leTableString string_set;
-extern leTableString string_sc;
-extern leTableString string_Hello;
-extern leTableString string_Shezhi;
+extern leTableString string_s20;
+extern leTableString string_s40;
+extern leTableString string_s100;
+extern leTableString string_s80;
+extern leTableString string_s60;
 
 void initializeStrings(void);
 //DOM-IGNORE-BEGIN
