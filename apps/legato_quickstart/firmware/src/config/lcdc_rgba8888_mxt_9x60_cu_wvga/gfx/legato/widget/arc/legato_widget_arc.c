@@ -29,12 +29,14 @@
 #if LE_ARC_WIDGET_ENABLED == 1
 
 #include <string.h>
+#include <stdlib.h>
 
 #include "gfx/legato/common/legato_error.h"
 #include "gfx/legato/common/legato_utils.h"
 #include "gfx/legato/memory/legato_memory.h"
 #include "gfx/legato/string/legato_string.h"
 #include "gfx/legato/widget/legato_widget.h"
+#include "gfx/legato/common/legato_math.h"
 
 #if LE_DEBUG == 1
 #include "gfx/legato/core/legato_debug.h"
@@ -201,7 +203,7 @@ static leResult setCenterAngle(leArcWidget* _this,
     
     if(_this->centerAngle == angle)
         return LE_SUCCESS;
-        
+
     _this->centerAngle = angle;
     
     _this->fn->invalidate(_this);
@@ -212,6 +214,118 @@ static leResult setCenterAngle(leArcWidget* _this,
 
     return LE_SUCCESS;
 }
+
+/* CUSTOM CODE START - Do not modify or remove */
+//All points are in standard cartesian
+void expandTopLeft(lePoint * topLeft, lePoint * newPoint)
+{
+    if (newPoint->x < topLeft->x)
+        topLeft->x = newPoint->x;
+    
+    if (newPoint->y > topLeft->y)
+        topLeft->y = newPoint->y;
+}
+
+void expandBottomRight(lePoint * bottomRight, lePoint * newPoint)
+{
+    if (newPoint->x > bottomRight->x)
+        bottomRight->x = newPoint->x;
+    
+    if (newPoint->y < bottomRight->y)
+        bottomRight->y = newPoint->y;
+}
+
+void translatePoint(leArcWidget * arcWidget, int16_t * x, int16_t * y)
+{
+    *x += arcWidget->widget.rect.width / 2;
+    *y = arcWidget->widget.rect.height / 2 - *y;
+}
+
+leResult updateCenterAngle(leArcWidget* _this,
+                               int32_t angle)
+{
+    int32_t deltaAngle;
+    LE_ASSERT_THIS();
+    
+    if(_this->centerAngle == angle)
+        return LE_SUCCESS;
+
+    _this->prevCenterAngle = _this->centerAngle;
+    _this->centerAngle = angle;
+    
+    deltaAngle = abs(_this->prevCenterAngle - _this->centerAngle);
+    if (deltaAngle < 45)
+    {
+        int32_t oldAngle, newAngle, midAngle;
+        lePoint oldLine0, oldLine1;
+        lePoint newLine0, newLine1;
+        lePoint midLine0, midLine1;
+        leRect damagedRect;
+            
+        lePoint topLeft = {0, 0};
+        lePoint bottomRight = {0, 0};
+            
+        oldAngle = (_this->startAngle + _this->prevCenterAngle + 360) % 360 ;
+        newAngle = (_this->startAngle + _this->centerAngle + 360) % 360 ;
+        midAngle = ((newAngle + oldAngle)/2) % 360;
+            
+        //1. Calculate 3 lines - edges and midline
+        lePolarToXY(_this->radius - (_this->thickness / 2), oldAngle, &oldLine0);
+        lePolarToXY(_this->radius + (_this->thickness / 2), oldAngle, &oldLine1);
+            
+        lePolarToXY(_this->radius - (_this->thickness / 2), newAngle, &newLine0);
+        lePolarToXY(_this->radius + (_this->thickness / 2), newAngle, &newLine1);
+            
+        lePolarToXY(_this->radius - (_this->thickness / 2), midAngle, &midLine0);
+        lePolarToXY(_this->radius + (_this->thickness / 2), midAngle, &midLine1);
+            
+            //2. Create a rectangle based those points
+        topLeft = oldLine0;
+        expandTopLeft(&topLeft, &oldLine1);
+        expandTopLeft(&topLeft, &newLine0);
+        expandTopLeft(&topLeft, &newLine1);
+        expandTopLeft(&topLeft, &midLine0);
+        expandTopLeft(&topLeft, &midLine1);
+            
+        bottomRight = oldLine0;
+        expandBottomRight(&bottomRight, &oldLine1);
+        expandBottomRight(&bottomRight, &newLine0);
+        expandBottomRight(&bottomRight, &newLine1);
+        expandBottomRight(&bottomRight, &midLine0);
+        expandBottomRight(&bottomRight, &midLine1);
+            
+        damagedRect.x = topLeft.x;
+        damagedRect.y = topLeft.y;
+        damagedRect.height = topLeft.y - bottomRight.y;
+        damagedRect.width = bottomRight.x - topLeft.x;
+            
+        //3. translate the rectangle
+        translatePoint(_this, &damagedRect.x, &damagedRect.y);
+            
+        leUtils_RectToScreenSpace((const leWidget*) _this, &damagedRect);
+            
+        //increase the rect size to account for round off errors
+        damagedRect.x -= 4;
+        damagedRect.y -= 4;
+        damagedRect.height += 8;
+        damagedRect.width += 8;            
+            
+        _this->fn->_damageArea(_this, &damagedRect);
+        _this->damagedRect = damagedRect;
+    }
+    else
+    {
+        _this->fn->invalidate(_this);
+    }
+    
+
+#if LE_DEBUG == 1
+    _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);
+#endif
+
+    return LE_SUCCESS;
+}
+/* CUSTOM CODE END */
 
 static leBool getRoundEdge(const leArcWidget* _this)
 {

@@ -565,7 +565,7 @@ leBool leGetLayerRenderHorizontal(uint32_t idx)
     leLayerState* layer;
 
     if(_initialized == LE_FALSE || idx >= _state.layerList.size)
-        return LE_FALSE;
+        return LE_FAILURE;
 
     layer = (leLayerState*)leList_Get(&_state.layerList, idx);
 
@@ -592,7 +592,7 @@ leLayerClearMode leGetLayerClearMode(uint32_t lyrIdx)
     leLayerState* layer;
 
     if(_initialized == LE_FALSE || lyrIdx >= _state.layerList.size)
-        return LE_LAYERCLEARMODE_DEFAULT;
+        return LE_FAILURE;
 
     layer = (leLayerState*)leList_Get(&_state.layerList, lyrIdx);
 

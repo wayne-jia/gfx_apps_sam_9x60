@@ -1025,7 +1025,7 @@ static leBool getItemEnable(const leListWidget* _this,
     LE_ASSERT_THIS();
     
     if(idx < 0 || idx >= (int32_t)_this->items.size)
-        return LE_FALSE;
+        return LE_FAILURE;
         
     item = _this->items.values[idx];
     

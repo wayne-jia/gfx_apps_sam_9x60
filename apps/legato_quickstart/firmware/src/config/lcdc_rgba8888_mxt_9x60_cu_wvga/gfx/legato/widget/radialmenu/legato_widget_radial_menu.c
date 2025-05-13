@@ -473,7 +473,7 @@ static leResult setProminent(leRadialMenuWidget* _this,
     item = _getWidgetItem(_this, widget);
     
     if(item == NULL)
-        return LE_FAILURE;
+        return LE_FALSE;
 
 #if LE_DEBUG == 1
     _leDebugNotify_WidgetPropertyChanged((leWidget*)_this);

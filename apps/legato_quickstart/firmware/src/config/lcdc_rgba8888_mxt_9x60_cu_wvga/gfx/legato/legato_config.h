@@ -66,9 +66,6 @@ extern "C" {
 #define LE_DEBUG                             0 // internal use only, do not change
 #define LE_DEBUG_RENDERER                    0 // internal use only, do not change
 
-#define LE_DEFAULT_SCREEN_WIDTH              800
-#define LE_DEFAULT_SCREEN_HEIGHT             480
-
 // image decoder configuration
 #define LE_ENABLE_RAW_DECODER                1
 #define LE_ENABLE_JPEG_DECODER               1
@@ -85,7 +82,7 @@ extern "C" {
 #define LE_ASSET_DECODER_MASK_CACHE_SIZE     128
 #define LE_ASSET_DECODER_BLEND_CACHE_SIZE    128
 #define LE_JPEG_DECODER_CACHE_SIZE           2048
-#define LE_RASTERFONT_GLYPH_CACHE_SIZE       1024
+#define LE_RASTERFONT_GLYPH_CACHE_SIZE       256
 #endif
 
 // default Font Support
@@ -93,7 +90,7 @@ extern "C" {
 #define LE_INCLUDE_DEFAULT_8BPP_FONT         0
 
 // widget inclusion
-#define LE_ARC_WIDGET_ENABLED              0
+#define LE_ARC_WIDGET_ENABLED              1
 #define LE_BARGRAPH_WIDGET_ENABLED         0
 #define LE_BUTTON_WIDGET_ENABLED           1
 #define LE_CHECKBOX_WIDGET_ENABLED         0
@@ -106,7 +103,7 @@ extern "C" {
 #define LE_IMAGE_WIDGET_ENABLED            1
 #define LE_IMAGEROTATE_WIDGET_ENABLED      0
 #define LE_IMAGESCALE_WIDGET_ENABLED       0
-#define LE_IMAGESEQUENCE_WIDGET_ENABLED    0
+#define LE_IMAGESEQUENCE_WIDGET_ENABLED    1
 #define LE_KEYPAD_WIDGET_ENABLED           0
 #define LE_LABEL_WIDGET_ENABLED            1
 #define LE_LINE_WIDGET_ENABLED             0
@@ -133,7 +130,7 @@ extern "C" {
 
 // variable heap configuration
 #define LE_VARIABLEHEAP_DEBUGLEVEL         0
-#define LE_VARIABLEHEAP_SIZE               262144
+#define LE_VARIABLEHEAP_SIZE               524288
 #define LE_VARIABLEHEAP_MINALLOCSIZE       32
 #define LE_VARIABLEHEAP_ALIGNMENT          4
 #define LE_VARIABLEHEAP_BESTFIT            1
@@ -141,32 +138,30 @@ extern "C" {
 // fixed heap configuration
 #define LE_FIXEDHEAP_ENABLE                1
 #define LE_FIXEDHEAP_DEBUG                 0
-#define LE_FIXEDHEAP_SIZE_16               300
-#define LE_FIXEDHEAP_SIZE_32               96
-#define LE_FIXEDHEAP_SIZE_64               96
-#define LE_FIXEDHEAP_SIZE_128              32
-#define LE_FIXEDHEAP_SIZE_196              48
-#define LE_FIXEDHEAP_SIZE_256              24
+#define LE_FIXEDHEAP_SIZE_16               400
+#define LE_FIXEDHEAP_SIZE_32               380
+#define LE_FIXEDHEAP_SIZE_64               300
+#define LE_FIXEDHEAP_SIZE_128              200
+#define LE_FIXEDHEAP_SIZE_196              150
+#define LE_FIXEDHEAP_SIZE_256              150
 
 // renderer configuration
 //#define LE_VSYNC_STALL
 
-#define LE_LAYER_COUNT                     3
+#define LE_LAYER_COUNT                     2
 
 #define LE_WIDGET_MAX_EVENT_FILTERS        2
 
 // renderer config
 #define LE_ALPHA_BLENDING_ENABLED          1
 #define LE_SCRATCH_BUFFER_COUNT            1
-#define LE_SCRATCH_BUFFER_SIZE_KB          256
+#define LE_SCRATCH_BUFFER_SIZE_KB          1536
 #define LE_SCRATCH_BUFFER_PADDING          0
 #define LE_SCRATCH_BIG_ENDIAN              0
 #define LE_USE_ARC_SCAN_FILL               1
 #define LE_ARC_SMOOTH_EDGE                 LE_FALSE
 
 #define LE_MONOCHROME_ON                   1
-
-#define LE_WIDGET_BUFFER_ENABLE            0
 
 
 //DOM-IGNORE-BEGIN

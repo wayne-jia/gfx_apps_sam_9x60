@@ -31,7 +31,6 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdlib.h>
-#include <stdio.h>
 #include "configuration.h"
 
 // DOM-IGNORE-BEGIN
@@ -47,13 +46,7 @@ extern "C" {
 // Section: Type Definitions
 // *****************************************************************************
 // *****************************************************************************
-#define HOME_LAYER_ID 0
-#define SETTING_LAYER_ID 1
-#define WIFI_LAYER_ID 2
 
-#define HOME_CANVAS_ID 0
-#define SETTING_CANVAS_ID 1
-#define WIFI_CANVAS_ID 2
 // *****************************************************************************
 /* Application states
 
@@ -176,6 +169,7 @@ void APP_Initialize ( void );
  */
 
 void APP_Tasks( void );
+uint32_t APP_GetFPS(void);
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

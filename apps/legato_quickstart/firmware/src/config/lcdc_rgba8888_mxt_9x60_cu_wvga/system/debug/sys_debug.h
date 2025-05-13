@@ -206,7 +206,7 @@ typedef struct
     objectHandle = SYS_DEBUG_Initialize(SYS_DEBUG_INDEX_0, (SYS_MODULE_INIT*)&debugInit);
     if (objectHandle == SYS_MODULE_OBJ_INVALID)
     {
-        
+
     }
     </code>
 
@@ -256,13 +256,13 @@ SYS_MODULE_OBJ SYS_DEBUG_Initialize(
 
   Example:
     <code>
-    SYS_MODULE_OBJ      object;     
+    SYS_MODULE_OBJ      object;
     SYS_STATUS          debugStatus;
 
     debugStatus = SYS_DEBUG_Status (object);
     if (debugStatus == SYS_STATUS_READY)
     {
-        
+
     }
     </code>
 
@@ -364,10 +364,10 @@ SYS_ERROR_LEVEL SYS_DEBUG_ErrorLevelGet(void);
 
   Example:
     <code>
-    
+
     if (SYS_DEBUG_Redirect(SYS_CONSOLE_INDEX_1) == true)
     {
-       
+
     }
     </code>
 
@@ -438,7 +438,7 @@ SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void);
 
   Example:
     <code>
-   
+
     SYS_DEBUG_MESSAGE(SYS_ERROR_WARNING, "My debug warning message\r\n");
     </code>
 
@@ -484,13 +484,13 @@ SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void);
 
   Example:
     <code>
-    
+
     int result;
 
     result = SomeOperation();
     if (result > MAX_VALUE)
     {
-        SYS_DEBUG_PRINT(SYS_ERROR_WARNING, "Result of %d exceeds max value\r\n", result);       
+        SYS_DEBUG_PRINT(SYS_ERROR_WARNING, "Result of %d exceeds max value\r\n", result);
     }
     </code>
 
@@ -566,7 +566,7 @@ SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void);
     None.
 
   Example:
-    <code>   
+    <code>
 
     SYS_DEBUG_ErrorLevelSet(SYS_ERROR_DEBUG);
     SYS_DEBUG_MESSAGE(SYS_ERROR_WARNING, "System Debug Message \r\n");
@@ -617,13 +617,13 @@ SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void);
 
   Example:
     <code>
-   
+
     int result;
 
     result = SomeOperation();
     if (result > MAX_VALUE)
     {
-        SYS_DEBUG_PRINT(SYS_ERROR_WARNING, "Result of %d exceeds max value\r\n", result);       
+        SYS_DEBUG_PRINT(SYS_ERROR_WARNING, "Result of %d exceeds max value\r\n", result);
     }
     </code>
 

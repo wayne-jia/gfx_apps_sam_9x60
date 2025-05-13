@@ -63,287 +63,383 @@ extern const lePalette leGlobalPalette;
  *****************************************************************************/
 /*********************************
  * Legato Image Asset
- * Name:   figmaImg_imgWifiIcon_0
- * Size:   17x17 pixels
+ * Name:   HeadlightOff
+ * Size:   41x41 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage figmaImg_imgWifiIcon_0;
+extern leImage HeadlightOff;
 
 /*********************************
  * Legato Image Asset
- * Name:   figmaImg_imgWifiAdd
- * Size:   24x17 pixels
+ * Name:   HeadlightOn
+ * Size:   41x41 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage figmaImg_imgWifiAdd;
+extern leImage HeadlightOn;
 
 /*********************************
  * Legato Image Asset
- * Name:   figmaImg_imgHome
- * Size:   160x134 pixels
+ * Name:   FuelOff
+ * Size:   41x41 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage figmaImg_imgHome;
+extern leImage FuelOff;
 
 /*********************************
  * Legato Image Asset
- * Name:   figmaImg_imgWifi
- * Size:   160x134 pixels
+ * Name:   FuelOn
+ * Size:   41x41 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage figmaImg_imgWifi;
+extern leImage FuelOn;
 
 /*********************************
  * Legato Image Asset
- * Name:   figmaImg_imgQRCode
- * Size:   239x239 pixels
+ * Name:   WarningOff
+ * Size:   41x41 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage figmaImg_imgQRCode;
+extern leImage WarningOff;
 
 /*********************************
  * Legato Image Asset
- * Name:   figmaImg_imgSettings
- * Size:   160x134 pixels
+ * Name:   WarningOn
+ * Size:   41x41 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage figmaImg_imgSettings;
+extern leImage WarningOn;
 
 /*********************************
  * Legato Image Asset
- * Name:   figmaImg_imgFan
- * Size:   37x38 pixels
+ * Name:   LeftTurnOff
+ * Size:   76x92 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage figmaImg_imgFan;
+extern leImage LeftTurnOff;
 
 /*********************************
  * Legato Image Asset
- * Name:   figmaImg_imgCool
- * Size:   34x34 pixels
+ * Name:   LeftTurnOn
+ * Size:   76x92 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage figmaImg_imgCool;
+extern leImage LeftTurnOn;
 
 /*********************************
  * Legato Image Asset
- * Name:   figmaImg_imgSettingsSelect
- * Size:   160x134 pixels
+ * Name:   RightTurnOff
+ * Size:   75x92 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage figmaImg_imgSettingsSelect;
+extern leImage RightTurnOff;
 
 /*********************************
  * Legato Image Asset
- * Name:   figmaImg_imgWifiDefault
- * Size:   160x134 pixels
+ * Name:   RightTurnOn
+ * Size:   75x92 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage figmaImg_imgWifiDefault;
+extern leImage RightTurnOn;
 
 /*********************************
  * Legato Image Asset
- * Name:   figmaImg_imgHomeSelect
- * Size:   160x134 pixels
+ * Name:   DirectionsBox
+ * Size:   322x77 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage figmaImg_imgHomeSelect;
+extern leImage DirectionsBox;
 
 /*********************************
  * Legato Image Asset
- * Name:   figmaImg_imgUp
- * Size:   57x35 pixels
+ * Name:   PurpleProgress
+ * Size:   169x9 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage figmaImg_imgUp;
+extern leImage PurpleProgress;
 
 /*********************************
  * Legato Image Asset
- * Name:   figmaImg_imgDown
- * Size:   57x35 pixels
+ * Name:   OrangeProgress
+ * Size:   169x9 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage figmaImg_imgDown;
+extern leImage OrangeProgress;
 
 /*********************************
  * Legato Image Asset
- * Name:   figmaImg_imgEllipse
- * Size:   382x197 pixels
+ * Name:   battery_charging_full
+ * Size:   25x25 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage figmaImg_imgEllipse;
+extern leImage battery_charging_full;
 
 /*********************************
  * Legato Image Asset
- * Name:   figmaImg_imgKnob
- * Size:   24x24 pixels
+ * Name:   rpm_front
+ * Size:   279x329 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage figmaImg_imgKnob;
+extern leImage rpm_front;
 
 /*********************************
  * Legato Image Asset
- * Name:   figmaImg_imgMchp
- * Size:   117x18 pixels
+ * Name:   speedofront
+ * Size:   433x330 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage figmaImg_imgMchp;
+extern leImage speedofront;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   rpm_back_fill
+ * Size:   279x329 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage rpm_back_fill;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   speedoback_fill
+ * Size:   433x330 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage speedoback_fill;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   turn_left
+ * Size:   43x43 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage turn_left;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   turn_right
+ * Size:   43x43 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage turn_right;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   straigh
+ * Size:   30x44 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage straigh;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   mchp_logo_small
+ * Size:   117x17 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage mchp_logo_small;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   MegaM
+ * Size:   130x110 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage MegaM;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   mchp_logo_big
+ * Size:   220x30 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage mchp_logo_big;
+
+/*********************************
+ * Legato Image Asset
+ * Name:   MegaM2
+ * Size:   220x63 pixels
+ * Type:   RGB Data
+ * Format: RGBA_8888
+ ***********************************/
+extern leImage MegaM2;
 
 /*****************************************************************************
  * Legato Graphics Font Assets
  *****************************************************************************/
 /*********************************
  * Legato Font Asset
- * Name:         Inter_24
+ * Name:         DistanceFont
  * Height:       21
  * Baseline:     18
  * Style:        Antialias
- * Glyph Count:  95
+ * Glyph Count:  22
  * Range Count:  13
- * Glyph Ranges: 0x20-0x7E
+ * Glyph Ranges: 0x20
+                 0x2E
+                 0x30-0x39
+                 0x4D
+                 0x53
+                 0x65
+                 0x69
+                 0x6C
+                 0x6F-0x70
+                 0x72-0x74
 ***********************************/
-extern leRasterFont Inter_24;
+extern leRasterFont DistanceFont;
 
 /*********************************
  * Legato Font Asset
- * Name:         Inter_16
+ * Name:         SpeedoFont
  * Height:       21
- * Baseline:     13
+ * Baseline:     109
  * Style:        Antialias
- * Glyph Count:  95
- * Range Count:  17
- * Glyph Ranges: 0x20-0x7E
-***********************************/
-extern leRasterFont Inter_16;
-
-/*********************************
- * Legato Font Asset
- * Name:         Inter_80
- * Height:       21
- * Baseline:     62
- * Style:        Antialias
- * Glyph Count:  95
+ * Glyph Count:  10
  * Range Count:  3
- * Glyph Ranges: 0x20-0x7E
+ * Glyph Ranges: 0x30-0x39
 ***********************************/
-extern leRasterFont Inter_80;
+extern leRasterFont SpeedoFont;
 
 /*********************************
  * Legato Font Asset
- * Name:         Inter_32
+ * Name:         DirectionFont
+ * Height:       23
+ * Baseline:     16
+ * Style:        Antialias
+ * Glyph Count:  28
+ * Range Count:  16
+ * Glyph Ranges: 0x20
+                 0x2D
+                 0x30-0x32
+                 0x34-0x35
+                 0x37-0x38
+                 0x3A
+                 0x43-0x45
+                 0x49
+                 0x4E-0x4F
+                 0x53
+                 0x65-0x66
+                 0x68-0x69
+                 0x6D-0x6F
+                 0x72
+                 0x74-0x75
+                 0x78
+***********************************/
+extern leRasterFont DirectionFont;
+
+/*********************************
+ * Legato Font Asset
+ * Name:         GearNumFont
  * Height:       21
- * Baseline:     26
+ * Baseline:     51
+ * Style:        Antialias
+ * Glyph Count:  10
+ * Range Count:  2
+ * Glyph Ranges: 0x30-0x39
+***********************************/
+extern leRasterFont GearNumFont;
+
+/*********************************
+ * Legato Font Asset
+ * Name:         mphFont
+ * Height:       21
+ * Baseline:     24
+ * Style:        Antialias
+ * Glyph Count:  3
+ * Range Count:  3
+ * Glyph Ranges: 0x68
+                 0x6D
+                 0x70
+***********************************/
+extern leRasterFont mphFont;
+
+/*********************************
+ * Legato Font Asset
+ * Name:         Font0
+ * Height:       37
+ * Baseline:     12
  * Style:        Antialias
  * Glyph Count:  96
- * Range Count:  2
- * Glyph Ranges: 0x20-0x7E
-                 0xB0
+ * Range Count:  18
+ * Glyph Ranges: 0xA
+                 0x20-0x7E
 ***********************************/
-extern leRasterFont Inter_32;
-
-/*********************************
- * Legato Font Asset
- * Name:         Inter_160
- * Height:       21
- * Baseline:     123
- * Style:        Antialias
- * Glyph Count:  95
- * Range Count:  3
- * Glyph Ranges: 0x20-0x7E
-***********************************/
-extern leRasterFont Inter_160;
-
-/*********************************
- * Legato Font Asset
- * Name:         Inter_64
- * Height:       21
- * Baseline:     50
- * Style:        Antialias
- * Glyph Count:  96
- * Range Count:  2
- * Glyph Ranges: 0x20-0x7E
-                 0xB0
-***********************************/
-extern leRasterFont Inter_64;
+extern leRasterFont Font0;
 
 /*****************************************************************************
  * Legato String Table
  * Encoding        ASCII
  * Language Count: 1
- * String Count:   23
+ * String Count:   18
  *****************************************************************************/
 
 // language IDs
-#define language_Default    0
+#define language_English    0
 
 // string IDs
-#define stringID_figmaStr_lblOtherNet1    0
-#define stringID_figmaStr_lblCool    1
-#define stringID_figmaStr_lblTime    2
-#define stringID_figmaStr_lblCommision    3
-#define stringID_figmaStr_lblCurrentTemp    4
-#define stringID_figmaStr_lblSettings    5
-#define stringID_figmaStr_lblMode    6
-#define stringID_figmaStr_lblChangeNetType    7
-#define stringID_figmaStr_Set_to    8
-#define stringID_figmaStr_lblAuto    9
-#define stringID_figmaStr_lblTargetDeg    10
-#define stringID_figmaStr_Connected    11
-#define stringID_figmaStr_lblOtherNetworks    12
-#define stringID_figmaStr_lblScan    13
-#define stringID_figmaStr_lblFan    14
-#define stringID_figmaStr_Wifi_configuration    15
-#define stringID_figmaStr_lblTempValue    16
-#define stringID_figmaStr_lblOtherNet2    17
-#define stringID_figmaStr_lblDegree    18
-#define stringID_figmaStr_lblCurrentWifi    19
-#define stringID_figmaStr_lblTargetTempValue    20
-#define stringID_figmaStr_lblInstructions    21
-#define stringID_figmaStr_lblOtherNet3    22
+#define stringID_DistanceStringContinue    0
+#define stringID_DirectionStringLeft    1
+#define stringID_DirectionStringContinue    2
+#define stringID_ModeString    3
+#define stringID_MPH_Default    4
+#define stringID_RPMString    5
+#define stringID_MetricsString    6
+#define stringID_DistanceStringLeft    7
+#define stringID_DirectionStringRight    8
+#define stringID_RangeValueString    9
+#define stringID_GearNumber    10
+#define stringID_FreeRTOS    11
+#define stringID_StatsString    12
+#define stringID_DistanceStringRight    13
+#define stringID_mphString    14
+#define stringID_DemoOff    15
+#define stringID_DemoOn    16
+#define stringID_RangeUnitString    17
 
 extern const leStringTable stringTable;
 
 
 // string list
-extern leTableString string_figmaStr_lblOtherNet1;
-extern leTableString string_figmaStr_lblCool;
-extern leTableString string_figmaStr_lblTime;
-extern leTableString string_figmaStr_lblCommision;
-extern leTableString string_figmaStr_lblCurrentTemp;
-extern leTableString string_figmaStr_lblSettings;
-extern leTableString string_figmaStr_lblMode;
-extern leTableString string_figmaStr_lblChangeNetType;
-extern leTableString string_figmaStr_Set_to;
-extern leTableString string_figmaStr_lblAuto;
-extern leTableString string_figmaStr_lblTargetDeg;
-extern leTableString string_figmaStr_Connected;
-extern leTableString string_figmaStr_lblOtherNetworks;
-extern leTableString string_figmaStr_lblScan;
-extern leTableString string_figmaStr_lblFan;
-extern leTableString string_figmaStr_Wifi_configuration;
-extern leTableString string_figmaStr_lblTempValue;
-extern leTableString string_figmaStr_lblOtherNet2;
-extern leTableString string_figmaStr_lblDegree;
-extern leTableString string_figmaStr_lblCurrentWifi;
-extern leTableString string_figmaStr_lblTargetTempValue;
-extern leTableString string_figmaStr_lblInstructions;
-extern leTableString string_figmaStr_lblOtherNet3;
+extern leTableString string_DistanceStringContinue;
+extern leTableString string_DirectionStringLeft;
+extern leTableString string_DirectionStringContinue;
+extern leTableString string_ModeString;
+extern leTableString string_MPH_Default;
+extern leTableString string_RPMString;
+extern leTableString string_MetricsString;
+extern leTableString string_DistanceStringLeft;
+extern leTableString string_DirectionStringRight;
+extern leTableString string_RangeValueString;
+extern leTableString string_GearNumber;
+extern leTableString string_FreeRTOS;
+extern leTableString string_StatsString;
+extern leTableString string_DistanceStringRight;
+extern leTableString string_mphString;
+extern leTableString string_DemoOff;
+extern leTableString string_DemoOn;
+extern leTableString string_RangeUnitString;
 
 void initializeStrings(void);
 //DOM-IGNORE-BEGIN

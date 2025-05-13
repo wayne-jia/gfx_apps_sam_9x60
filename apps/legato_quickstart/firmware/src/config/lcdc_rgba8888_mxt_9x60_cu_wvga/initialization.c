@@ -70,9 +70,6 @@
 /* I2C Client Objects Pool */
 static DRV_I2C_CLIENT_OBJ drvI2C0ClientObjPool[DRV_I2C_CLIENTS_NUMBER_IDX0];
 
-/* I2C Transfer Objects Pool */
-static DRV_I2C_TRANSFER_OBJ drvI2C0TransferObj[DRV_I2C_QUEUE_SIZE_IDX0];
-
 /* I2C PLib Interface Initialization */
 static const DRV_I2C_PLIB_INTERFACE drvI2C0PLibAPI = {
 
@@ -100,15 +97,6 @@ static const DRV_I2C_PLIB_INTERFACE drvI2C0PLibAPI = {
 };
 
 
-static const DRV_I2C_INTERRUPT_SOURCES drvI2C0InterruptSources =
-{
-    /* Peripheral has single interrupt vector */
-    .isSingleIntSrc                        = true,
-
-    /* Peripheral interrupt line */
-    .intSources.i2cInterrupt             = (int32_t)FLEXCOM6_IRQn,
-};
-
 /* I2C Driver Initialization Data */
 static const DRV_I2C_INIT drvI2C0InitData =
 {
@@ -120,15 +108,6 @@ static const DRV_I2C_INIT drvI2C0InitData =
 
     /* I2C Client Objects Pool */
     .clientObjPool = (uintptr_t)&drvI2C0ClientObjPool[0],
-
-    /* I2C TWI Queue Size */
-    .transferObjPoolSize = DRV_I2C_QUEUE_SIZE_IDX0,
-
-    /* I2C Transfer Objects */
-    .transferObjPool = (uintptr_t)&drvI2C0TransferObj[0],
-
-    /* I2C interrupt sources */
-    .interruptSources = &drvI2C0InterruptSources,
 
     /* I2C Clock Speed */
     .clockSpeed = DRV_I2C_CLOCK_SPEED_IDX0,
@@ -243,14 +222,6 @@ static void SYSC_Disable( void )
     rstc_mr = rstc_mr & (~RSTC_MR_URSTIEN_Msk);
     RSTC_REGS->RSTC_MR = RSTC_MR_KEY_PASSWD | rstc_mr;
 
-    /* ----------------------------   PIT  -------------------------------*/
-    //Disable Timer and interrupt
-    uint32_t pit_mr = PIT_REGS->PIT_MR & PIT_MR_PIV_Msk;
-    PIT_REGS->PIT_MR = pit_mr & ~(PIT_MR_PITEN_Msk | PIT_MR_PITIEN_Msk);
-
-    //Clear status
-    PIT_REGS->PIT_SR;
-
    //Context restore SYSC write protect registers
    SYSCWP_REGS->SYSCWP_SYSC_WPMR = (SYSCWP_SYSC_WPMR_WPKEY_PASSWD | sysc_wpmr);
 }
@@ -308,6 +279,8 @@ void SYS_Initialize ( void* data )
 
 
 
+	PIT_TimerInitialize();
+
     MMU_Initialize();
 
     AIC_INT_Initialize();
@@ -315,12 +288,12 @@ void SYS_Initialize ( void* data )
     /* Disable WDT   */
     WDT_REGS->WDT_MR = WDT_MR_WDDIS_Msk;
 
+    FLEXCOM6_TWI_Initialize();
+
  
     TC0_CH0_TimerInitialize(); 
      
     
-    FLEXCOM6_TWI_Initialize();
-
     DBGU_Initialize();
 
 	BSP_Initialize();
@@ -336,7 +309,7 @@ void SYS_Initialize ( void* data )
 
     DRV_LCDC_Initialize();
 
-    GFX_CANVAS_Initialize();
+    DRV_GFX2D_Initialize();
 
 
     sysObj.drvMAXTOUCH = DRV_MAXTOUCH_Initialize(0, (SYS_MODULE_INIT *)&drvMAXTOUCHInitData);

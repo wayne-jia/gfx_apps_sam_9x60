@@ -23,12 +23,10 @@
             <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/driver/driver_common.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f1" displayName="gfx" projectFiles="true">
-            <logicalFolder name="canvas" displayName="canvas" projectFiles="true">
-              <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/canvas/gfx_canvas_config.h</itemPath>
-              <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/canvas/gfx_canvas_api.h</itemPath>
-              <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/canvas/gfx_canvas.h</itemPath>
-            </logicalFolder>
             <logicalFolder name="f2" displayName="driver" projectFiles="true">
+              <logicalFolder name="f2" displayName="gfx2d" projectFiles="true">
+                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/driver/processor/gfx2d/drv_gfx2d.h</itemPath>
+              </logicalFolder>
               <logicalFolder name="f1" displayName="lcdc" projectFiles="true">
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/driver/gfx_driver.h</itemPath>
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/driver/controller/lcdc/drv_gfx_lcdc.h</itemPath>
@@ -60,8 +58,9 @@
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/font/legato_font.h</itemPath>
               </logicalFolder>
               <logicalFolder name="f10" displayName="generated" projectFiles="true">
-                <logicalFolder name="screen" displayName="screen" projectFiles="true">
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/generated/screen/le_gen_screen_HomeScreen.h</itemPath>
+                <logicalFolder name="f1" displayName="screen" projectFiles="true">
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/generated/screen/le_gen_screen_Screen0.h</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/generated/screen/le_gen_screen_Splash.h</itemPath>
                 </logicalFolder>
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/generated/le_gen_assets.h</itemPath>
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/generated/le_gen_harmony.h</itemPath>
@@ -104,19 +103,6 @@
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/string/legato_stringtable.h</itemPath>
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/string/legato_tablestring.h</itemPath>
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/string/legato_stringutils.h</itemPath>
-              </logicalFolder>
-              <logicalFolder name="vector" displayName="vector" projectFiles="true">
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_plane.h</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_point.h</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_rectf.h</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_aabb.h</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_obb.h</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_vector.h</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/core/legato_real_u8.h</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_vector2.h</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_vector_kernel.h</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_linef.h</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/core/legato_real_i16.h</itemPath>
               </logicalFolder>
               <logicalFolder name="f9" displayName="widget" projectFiles="true">
                 <logicalFolder name="f1" displayName="arc" projectFiles="true">
@@ -221,7 +207,7 @@
           <logicalFolder name="f6" displayName="osal" projectFiles="true">
             <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/osal/osal.h</itemPath>
             <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/osal/osal_definitions.h</itemPath>
-            <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/osal/osal_impl_basic.h</itemPath>
+            <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/osal/osal_freertos.h</itemPath>
           </logicalFolder>
           <logicalFolder name="f2" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f4" displayName="aic" projectFiles="true">
@@ -231,8 +217,8 @@
               <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/clk/plib_clk.h</itemPath>
             </logicalFolder>
             <logicalFolder name="dbgu" displayName="dbgu" projectFiles="true">
-              <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/dbgu/plib_dbgu.h</itemPath>
               <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/dbgu/plib_dbgu_common.h</itemPath>
+              <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/dbgu/plib_dbgu.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f5" displayName="flexcom" projectFiles="true">
               <logicalFolder name="f1" displayName="twi" projectFiles="true">
@@ -241,6 +227,9 @@
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/flexcom/twi/master/plib_flexcom_twi_master_common.h</itemPath>
                 </logicalFolder>
               </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="f8" displayName="gfx2d" projectFiles="true">
+              <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/gfx2d/plib_gfx2d.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f7" displayName="lcdc" projectFiles="true">
               <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/lcdc/plib_lcdc.h</itemPath>
@@ -251,6 +240,9 @@
             </logicalFolder>
             <logicalFolder name="f3" displayName="pio" projectFiles="true">
               <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/pio/plib_pio.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="pit" displayName="pit" projectFiles="true">
+              <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/pit/plib_pit.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f6" displayName="tc" projectFiles="true">
               <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/tc/plib_tc0.h</itemPath>
@@ -293,6 +285,38 @@
           <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/user.h</itemPath>
           <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/configuration.h</itemPath>
           <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/sys_tasks.h</itemPath>
+          <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/FreeRTOSConfig.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="FreeRTOS" displayName="FreeRTOS" projectFiles="true">
+        <logicalFolder name="Source" displayName="Source" projectFiles="true">
+          <logicalFolder name="include" displayName="include" projectFiles="true">
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/stream_buffer.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/task.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/croutine.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/stack_macros.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/event_groups.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_prototypes.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/deprecated_definitions.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/queue.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/semphr.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/message_buffer.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/portable.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/list.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/timers.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="portable" displayName="portable" projectFiles="true">
+            <logicalFolder name="XC32" displayName="XC32" projectFiles="true">
+              <logicalFolder name="SAM" displayName="SAM" projectFiles="true">
+                <logicalFolder name="ARM926" displayName="ARM926" projectFiles="true">
+                  <itemPath>../src/third_party/rtos/FreeRTOS/Source/portable/XC32/SAM/ARM926/portmacro.h</itemPath>
+                </logicalFolder>
+              </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="packs" displayName="packs" projectFiles="true">
@@ -602,12 +626,10 @@
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f1" displayName="gfx" projectFiles="true">
-            <logicalFolder name="canvas" displayName="canvas" projectFiles="true">
-              <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/canvas/gfx_canvas_config.c</itemPath>
-              <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/canvas/gfx_canvas_api.c</itemPath>
-              <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/canvas/gfx_canvas.c</itemPath>
-            </logicalFolder>
             <logicalFolder name="f2" displayName="driver" projectFiles="true">
+              <logicalFolder name="f2" displayName="gfx2d" projectFiles="true">
+                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/driver/processor/gfx2d/drv_gfx2d.c</itemPath>
+              </logicalFolder>
               <logicalFolder name="f1" displayName="lcdc" projectFiles="true">
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/driver/gfx_driver.c</itemPath>
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/driver/controller/lcdc/drv_gfx_lcdc.c</itemPath>
@@ -651,8 +673,9 @@
                 <logicalFolder name="f2" displayName="image" projectFiles="true">
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/generated/image/le_gen_images.c</itemPath>
                 </logicalFolder>
-                <logicalFolder name="screen" displayName="screen" projectFiles="true">
-                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/generated/screen/le_gen_screen_HomeScreen.c</itemPath>
+                <logicalFolder name="f3" displayName="screen" projectFiles="true">
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/generated/screen/le_gen_screen_Screen0.c</itemPath>
+                  <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/generated/screen/le_gen_screen_Splash.c</itemPath>
                 </logicalFolder>
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/generated/le_gen_globalpalette.c</itemPath>
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/generated/le_gen_harmony.c</itemPath>
@@ -718,28 +741,6 @@
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/string/legato_stringtable.c</itemPath>
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/string/legato_tablestring.c</itemPath>
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/string/legato_stringutils.c</itemPath>
-              </logicalFolder>
-              <logicalFolder name="vector" displayName="vector" projectFiles="true">
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_vector_line.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_vector_arc_stroke.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_plane.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_vector_rect_fill.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_point.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_aa.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_rectf.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_vector_convexpoly_fill.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_vector_vline.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_vector_rect_stroke.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_vector_point.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_aabb.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_obb.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/core/legato_real_i16.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_vector2.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_vector_arc_fill.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_vector_kernel.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/core/legato_real_u8.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_linef.c</itemPath>
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/legato/vector/legato_vector_hline.c</itemPath>
               </logicalFolder>
               <logicalFolder name="f9" displayName="widget" projectFiles="true">
                 <logicalFolder name="f1" displayName="arc" projectFiles="true">
@@ -871,6 +872,9 @@
               </logicalFolder>
             </logicalFolder>
           </logicalFolder>
+          <logicalFolder name="osal" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/osal/osal_freertos.c</itemPath>
+          </logicalFolder>
           <logicalFolder name="f3" displayName="peripheral" projectFiles="true">
             <logicalFolder name="f4" displayName="aic" projectFiles="true">
               <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/aic/plib_aic.c</itemPath>
@@ -888,6 +892,9 @@
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
+            <logicalFolder name="f8" displayName="gfx2d" projectFiles="true">
+              <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/gfx2d/plib_gfx2d.c</itemPath>
+            </logicalFolder>
             <logicalFolder name="f7" displayName="lcdc" projectFiles="true">
               <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/lcdc/plib_lcdc.c</itemPath>
             </logicalFolder>
@@ -896,6 +903,9 @@
             </logicalFolder>
             <logicalFolder name="f3" displayName="pio" projectFiles="true">
               <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/pio/plib_pio.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="pit" displayName="pit" projectFiles="true">
+              <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/pit/plib_pit.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f6" displayName="tc" projectFiles="true">
               <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/tc/plib_tc0.c</itemPath>
@@ -924,11 +934,40 @@
           <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/cstartup.S</itemPath>
           <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/fault_handlers.c</itemPath>
           <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/tasks.c</itemPath>
+          <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/freertos_hooks.c</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="FreeRTOS" displayName="FreeRTOS" projectFiles="true">
+        <logicalFolder name="Source" displayName="Source" projectFiles="true">
+          <logicalFolder name="portable" displayName="portable" projectFiles="true">
+            <logicalFolder name="MemMang" displayName="MemMang" projectFiles="true">
+              <itemPath>../src/third_party/rtos/FreeRTOS/Source/portable/MemMang/heap_1.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="XC32" displayName="XC32" projectFiles="true">
+              <logicalFolder name="SAM" displayName="SAM" projectFiles="true">
+                <logicalFolder name="ARM926" displayName="ARM926" projectFiles="true">
+                  <itemPath>../src/third_party/rtos/FreeRTOS/Source/portable/XC32/SAM/ARM926/portASM.S</itemPath>
+                  <itemPath>../src/third_party/rtos/FreeRTOS/Source/portable/XC32/SAM/ARM926/FreeRTOS_tick_config.c</itemPath>
+                  <itemPath>../src/third_party/rtos/FreeRTOS/Source/portable/XC32/SAM/ARM926/port.c</itemPath>
+                </logicalFolder>
+              </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/queue.c</itemPath>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/FreeRTOS_tasks.c</itemPath>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/event_groups.c</itemPath>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/timers.c</itemPath>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/croutine.c</itemPath>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/list.c</itemPath>
+          <itemPath>../src/third_party/rtos/FreeRTOS/Source/stream_buffer.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/pin_configurations.csv</itemPath>
+      <itemPath>../src/app_screen.c</itemPath>
+      <itemPath>../src/app_screen.h</itemPath>
+      <itemPath>../src/app_splash.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -942,13 +981,13 @@
         <targetDevice>SAM9X60D1G</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>samice</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.45</languageToolchainVersion>
+        <languageToolchainVersion>4.35</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAM9X6_DFP" vendor="Microchip" version="1.11.227"/>
+        <pack name="SAM9X6_DFP" vendor="Microchip" version="1.7.85"/>
       </packs>
       <ScriptingSettings>
         <ScriptingSetting key="boot.load_adr" value=""/>
@@ -1007,7 +1046,7 @@
         <property key="programoptions.preserveuserid" value="false"/>
       </AtmelIceTool>
       <C32>
-        <property key="additional-warnings" value="false"/>
+        <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
         <property key="appendMe" value="-marm"/>
         <property key="enable-app-io" value="false"/>
@@ -1016,12 +1055,12 @@
         <property key="enable-unroll-loops" value="false"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga;../src/packs/SAM9X60D1G_DFP;../src/packs/SAM9X60_DFP"/>
+                  value="../src;../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga;../src/packs/SAM9X60D1G_DFP;../src/packs/SAM9X60_DFP;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/XC32/SAM/ARM926"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
-        <property key="make-warnings-into-errors" value="false"/>
-        <property key="optimization-level" value="-O1"/>
+        <property key="make-warnings-into-errors" value="true"/>
+        <property key="optimization-level" value="-O3"/>
         <property key="place-data-into-section" value="true"/>
         <property key="post-instruction-scheduling" value="default"/>
         <property key="pre-instruction-scheduling" value="default"/>
@@ -1117,7 +1156,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga;../src/packs/SAM9X60D1G_DFP;../src/packs/SAM9X60_DFP"/>
+                  value="../src;../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga;../src/packs/SAM9X60D1G_DFP;../src/packs/SAM9X60_DFP;../src/third_party/rtos/FreeRTOS/Source/include;../src/third_party/rtos/FreeRTOS/Source/portable/XC32/SAM/ARM926"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -1631,7 +1670,6 @@
         <property key="communication.speed" value="4"/>
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
-        <property key="event.recorder.debugger.behavior" value="Running"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
         <property key="jlink.override" value=""/>
@@ -1667,8 +1705,6 @@
         <property key="programoptions.eraseb4program" value="false"/>
         <property key="programoptions.preservebootflash" value="false"/>
         <property key="programoptions.preserveprogrammemory" value="false"/>
-        <property key="programoptions.preserveprogrammemory.ranges"
-                  value="0x300000-0x4fffff"/>
         <property key="programoptions.preserveprogramrange.ranges"
                   value="0x300000-0x4fffff"/>
         <property key="programoptions.resetafterprogram" value="true"/>
@@ -2122,7 +2158,6 @@
         <property key="warningmessagebreakoptions.displaywarningmessagesoption"
                   value=""/>
         <property key="warningmessagebreakoptions.warningmessages" value="holdstate"/>
-        <property key="x.recover.delay" value="100000"/>
       </Tool>
       <j32>
         <property key="AutoSelectMemRanges" value="auto"/>
@@ -2157,41 +2192,6 @@
         <property key="script.reset_delay" value="0"/>
         <property key="script.show_output" value="false"/>
       </j32>
-      <samice>
-        <property key="AutoSelectMemRanges" value="auto"/>
-        <property key="communication.adaptivespeed" value="false"/>
-        <property key="communication.autoselectspeed" value="true"/>
-        <property key="communication.interface" value="4wire"/>
-        <property key="communication.speed" value="4"/>
-        <property key="debugoptions.debug-startup" value="Use system settings"/>
-        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
-        <property key="event.recorder.debugger.behavior" value="Running"/>
-        <property key="event.recorder.enabled" value="false"/>
-        <property key="event.recorder.scvd.files" value=""/>
-        <property key="jlink.override" value=""/>
-        <property key="lastid" value=""/>
-        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
-        <property key="memories.bootflash" value="true"/>
-        <property key="memories.configurationmemory" value="true"/>
-        <property key="memories.eeprom" value="true"/>
-        <property key="memories.id" value="true"/>
-        <property key="memories.instruction.ram" value="true"/>
-        <property key="memories.instruction.ram.ranges"
-                  value="${memories.instruction.ram.ranges.default}"/>
-        <property key="memories.programmemory" value="true"/>
-        <property key="memories.programmemory.ranges" value="0x300000-0x4fffff"/>
-        <property key="programoptions.eraseb4program" value="false"/>
-        <property key="programoptions.preservebootflash" value="false"/>
-        <property key="programoptions.preserveprogrammemory" value="false"/>
-        <property key="programoptions.preserveprogrammemory.ranges"
-                  value="0x300000-0x4fffff"/>
-        <property key="programoptions.resetafterprogram" value="true"/>
-        <property key="script.has_reset" value="true"/>
-        <property key="script.log_level" value="1"/>
-        <property key="script.reset_delay" value="0"/>
-        <property key="script.show_output" value="false"/>
-        <property key="x.recover.delay" value="100000"/>
-      </samice>
     </conf>
   </confs>
 </configurationDescriptor>

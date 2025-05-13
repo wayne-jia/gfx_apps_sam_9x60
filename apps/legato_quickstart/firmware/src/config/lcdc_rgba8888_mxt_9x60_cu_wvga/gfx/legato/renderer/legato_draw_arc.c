@@ -142,6 +142,7 @@ leResult leRenderer_ArcLine(int32_t x,
     return LE_SUCCESS;
 }
 
+/* CUSTOM CODE START - Do not modify or remove */
 static void drawQ1(const ArcDrawState* state,
                    int32_t startAngle,
                    int32_t endAngle)
@@ -160,6 +161,12 @@ static void drawQ1(const ArcDrawState* state,
 
     lePoint pt0Sin;
     lePoint pt1Sin;
+
+    int32_t scanx, scany;
+    leRect renderRect;
+    leRect qRect;
+    leRect scanRect;
+
 
     if(partial == LE_TRUE)
     {
@@ -189,11 +196,28 @@ static void drawQ1(const ArcDrawState* state,
         pt1Sin.y = -ARC_MAX;
     }
 
-    for(y = 1; y <= height; y++)
+    //clip the scan width and height here
+    leRenderer_GetClipRect(&renderRect);
+
+    qRect.x = centerX;
+    qRect.y = centerY - height;
+    qRect.height = height;
+    qRect.width = width;
+
+    //Check if the quadrant and the damagedRect intersect
+    if (leRectIntersects(&qRect, &renderRect) == LE_FALSE)
+        return;
+
+    //Clip to intersecting rects
+    leRectClip(&renderRect, &qRect, &scanRect);
+
+    scanx = scanRect.x - centerX;
+    scany = centerY - scanRect.y;
+
+    for(y = scany; y >= scany - scanRect.height; y--)
     {
         testPt.y = y;
-
-        for(x = 1; x <= width; x++)
+        for(x = scanx; x <= scanx + scanRect.width; x++)
         {
             int32_t mag = (x * x) + (y * y);
             float rad = leSqrt((float)mag);
@@ -212,7 +236,7 @@ static void drawQ1(const ArcDrawState* state,
                     continue;
             }
 
-#if LE_ALPHA_BLENDING_ENABLED == 1
+#if 0 //LE_ALPHA_BLENDING_ENABLED == 1
             leRenderer_BlendPixel_Safe(centerX + x - 1, centerY - y, state->clr, state->alpha);
 #else
             leRenderer_PutPixel_Safe(centerX + x - 1, centerY - y, state->clr);
@@ -220,7 +244,9 @@ static void drawQ1(const ArcDrawState* state,
         }
     }
 }
+/* CUSTOM CODE END */
 
+/* CUSTOM CODE START - Do not modify or remove */
 static void drawQ2(const ArcDrawState* state,
                    int32_t startAngle,
                    int32_t endAngle)
@@ -239,6 +265,11 @@ static void drawQ2(const ArcDrawState* state,
 
     lePoint pt0Sin;
     lePoint pt1Sin;
+
+    int32_t scanx, scany;
+    leRect renderRect;
+    leRect qRect;
+    leRect scanRect;
 
     if(partial == LE_TRUE)
     {
@@ -268,11 +299,30 @@ static void drawQ2(const ArcDrawState* state,
         pt1Sin.y = ARC_MAX;
     }
 
-    for(y = 1; y <= height; y++)
+    //clip the scan width and height here
+    leRenderer_GetClipRect(&renderRect);
+
+    qRect.x = centerX - width;
+    qRect.y = centerY - height;
+    qRect.height = height;
+    qRect.width = width;
+
+    //Check if the quadrant and the damagedRect intersect
+    if (leRectIntersects(&qRect, &renderRect) == LE_FALSE)
+        return;
+
+    //Clip to intersecting rects
+    leRectClip(&renderRect, &qRect, &scanRect);
+
+    scanx = scanRect.x - centerX;
+    scany = centerY - scanRect.y;
+
+
+    for(y = scany; y >= scany - scanRect.height; y--)
     {
         testPt.y = y;
 
-        for(x = -width; x < 0; x++)
+        for(x = scanx; x <= scanx + scanRect.width; x++)
         {
             int32_t mag = (x * x) + (y * y);
             float rad = leSqrt((float)mag);
@@ -281,7 +331,12 @@ static void drawQ2(const ArcDrawState* state,
             // if point is outside outer circle, skip
             if(!(rad >= state->fiCirRad && rad <= state->foCirRad))
                 continue;
-
+            
+            if (rad < state->fiCirRad)
+            {
+                x = 0;
+            }
+            
             testPt.x = x;
 
             if(partial == LE_TRUE)
@@ -291,7 +346,7 @@ static void drawQ2(const ArcDrawState* state,
                     continue;
             }
 
-#if LE_ALPHA_BLENDING_ENABLED == 1
+#if 0 //LE_ALPHA_BLENDING_ENABLED == 1
             leRenderer_BlendPixel_Safe(centerX + x, centerY - y, state->clr, state->alpha);
 #else
             leRenderer_PutPixel_Safe(centerX + x, centerY - y, state->clr);
@@ -299,7 +354,9 @@ static void drawQ2(const ArcDrawState* state,
         }
     }
 }
+/* CUSTOM CODE END */
 
+/* CUSTOM CODE START - Do not modify or remove */
 static void drawQ3(const ArcDrawState* state,
                    int32_t startAngle,
                    int32_t endAngle)
@@ -318,6 +375,11 @@ static void drawQ3(const ArcDrawState* state,
 
     lePoint pt0Sin;
     lePoint pt1Sin;
+
+    int32_t scanx, scany;
+    leRect renderRect;
+    leRect qRect;
+    leRect scanRect;    
 
     if(partial == LE_TRUE)
     {
@@ -347,11 +409,29 @@ static void drawQ3(const ArcDrawState* state,
         pt1Sin.y = ARC_MAX;
     }
 
-    for(y = 0; y <= height; y++)
-    {
-        testPt.y = -y;
+    //clip the scan width and height here
+    leRenderer_GetClipRect(&renderRect);
 
-        for(x = -width; x < 0; x++)
+    qRect.x = centerX - width;
+    qRect.y = centerY;
+    qRect.height = height;
+    qRect.width = width;
+
+    //Check if the quadrant and the damagedRect intersect
+    if (leRectIntersects(&qRect, &renderRect) == LE_FALSE)
+        return;
+
+    //Clip to intersecting rects
+    leRectClip(&renderRect, &qRect, &scanRect);
+
+    scanx = scanRect.x - centerX;
+    scany = centerY - scanRect.y;
+
+    for(y = scany; y >= scany - scanRect.height; y--)
+    {
+        testPt.y = y;
+
+        for(x = scanx; x <= scanx + scanRect.width; x++)        
         {
             int32_t mag = (x * x) + (y * y);
             float rad = leSqrt((float)mag);
@@ -360,6 +440,9 @@ static void drawQ3(const ArcDrawState* state,
             // if point is outside outer circle, skip
             if(!(rad >= state->fiCirRad && rad <= state->foCirRad))
                 continue;
+            
+            if (rad < state->fiCirRad)
+                x = 0;
 
             testPt.x = x;
 
@@ -370,15 +453,17 @@ static void drawQ3(const ArcDrawState* state,
                     continue;
             }
 
-#if LE_ALPHA_BLENDING_ENABLED == 1
+#if 0 //LE_ALPHA_BLENDING_ENABLED == 1
             leRenderer_BlendPixel_Safe(centerX + x, centerY + y - 1, state->clr, state->alpha);
 #else
-            leRenderer_PutPixel_Safe(centerX + x, centerY + y - 1, state->clr);
+            leRenderer_PutPixel_Safe(centerX + x, centerY - y - 1, state->clr);
 #endif
         }
     }
 }
+/* CUSTOM CODE END */
 
+/* CUSTOM CODE START - Do not modify or remove */
 static void drawQ4(const ArcDrawState* state,
                    int32_t startAngle,
                    int32_t endAngle)
@@ -397,6 +482,11 @@ static void drawQ4(const ArcDrawState* state,
 
     lePoint pt0Sin;
     lePoint pt1Sin;
+
+    int32_t scanx, scany;
+    leRect renderRect;
+    leRect qRect;
+    leRect scanRect;       
 
     if(partial == LE_TRUE)
     {
@@ -426,11 +516,29 @@ static void drawQ4(const ArcDrawState* state,
         pt1Sin.y = -ARC_MAX;
     }
 
-    for(y = 1; y <= height; y++)
-    {
-        testPt.y = -y;
+    //clip the scan width and height here
+    leRenderer_GetClipRect(&renderRect);
 
-        for(x = 1; x <= width; x++)
+    qRect.x = centerX;
+    qRect.y = centerY;
+    qRect.height = height;
+    qRect.width = width;
+
+    //Check if the quadrant and the damagedRect intersect
+    if (leRectIntersects(&qRect, &renderRect) == LE_FALSE)
+        return;
+
+    //Clip to intersecting rects
+    leRectClip(&renderRect, &qRect, &scanRect);
+
+    scanx = scanRect.x - centerX;
+    scany = centerY - scanRect.y;
+
+    for(y = scany; y >= scany - scanRect.height; y--)
+    {
+        testPt.y = y;
+
+        for(x = scanx; x <= scanx + scanRect.width; x++)         
         {
             int32_t mag = (x * x) + (y * y);
             float rad = leSqrt((float)mag);
@@ -439,6 +547,11 @@ static void drawQ4(const ArcDrawState* state,
             // if point is outside outer circle, skip
             if(!(rad >= state->fiCirRad && rad <= state->foCirRad))
                 continue;
+            
+            if (rad < state->fiCirRad)
+            {
+                x = 0;
+            }
 
             testPt.x = x;
 
@@ -449,14 +562,15 @@ static void drawQ4(const ArcDrawState* state,
                     continue;
             }
 
-#if LE_ALPHA_BLENDING_ENABLED == 1
+#if 0 //LE_ALPHA_BLENDING_ENABLED == 1
             leRenderer_BlendPixel_Safe(centerX + x - 1, centerY + y - 1, state->clr, state->alpha);
 #else
-            leRenderer_PutPixel_Safe(centerX + x - 1, centerY + y - 1, state->clr);
+            leRenderer_PutPixel_Safe(centerX + x - 1, centerY - y - 1, state->clr);
 #endif
         }
     }
 }
+/* CUSTOM CODE END */
 
 leResult leRenderer_ArcFill(const leRect* drawRect,
                             int32_t startAngle,
