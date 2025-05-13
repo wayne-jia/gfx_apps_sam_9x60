@@ -32,6 +32,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include "configuration.h"
+#include "system/fs/sys_fs.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -61,9 +62,26 @@ extern "C" {
 typedef enum
 {
     /* Application's state machine's initial state. */
-    APP_STATE_INIT=0,
-    APP_STATE_SERVICE_TASKS,
-    /* TODO: Define states used by the application state machine. */
+    APP_MOUNT_WAIT = 0,
+
+    /* Set the current drive */
+    APP_SET_CURRENT_DRIVE,
+
+    /* The app opens the file to read */
+    APP_OPEN_FILE,
+
+    /* The app reads from a file and writes to another file */
+    APP_READ_FILE,
+
+    /* The app closes the file and idles */
+    APP_CYCLE_READ,
+
+    APP_PLAY_DEMO,
+
+    APP_TEST,
+
+    /* An app error has occurred */
+    APP_ERROR
 
 } APP_STATES;
 
@@ -83,10 +101,19 @@ typedef enum
 
 typedef struct
 {
-    /* The application's current state */
-    APP_STATES state;
+    /* SYS_FS File handle for 1st file */
+    SYS_FS_HANDLE      fileHandle;
 
-    /* TODO: Define any additional data used by the application. */
+    /* SYS_FS File handle for 2nd file */
+    SYS_FS_HANDLE      fileHandle1;
+
+    /* Application's current state */
+    APP_STATES         state;
+
+    int32_t            nBytesRead;
+
+    /* Flag to indicate SDCARD mount status */
+    volatile bool      sdCardMountFlag;
 
 } APP_DATA;
 
@@ -169,7 +196,6 @@ void APP_Initialize ( void );
  */
 
 void APP_Tasks( void );
-uint32_t APP_GetFPS(void);
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
