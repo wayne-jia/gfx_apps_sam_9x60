@@ -398,7 +398,7 @@ leEventResult handleTouchDown(leWidgetEvent_TouchDown* evt)
     }
 
 #ifdef INPUT_EVENT_DEBUG
-    printf("handling touch down event %i, %i\n", evt->x, evt->y);
+    printf("handling touch down event %i, %i\r\n", evt->x, evt->y);
 #endif
 
     return LE_EVENT_HANDLED;

@@ -63,7 +63,7 @@
 /* Handlers for vectors that are shared by multiple interrupts */
 void SYSC_SharedHandler( void )
 {
-    PIT_InterruptHandler();
+    RTT_InterruptHandler();
 }
 
 

@@ -4,12 +4,10 @@
 #include "gfx/legato/legato.h"
 
 extern const leScheme defaultScheme;
-extern const leScheme BackScheme;
-extern const leScheme ClearScheme;
-extern const leScheme RadialGaugeScheme;
-extern const leScheme EnabledScheme;
-extern const leScheme DisabledScheme;
-extern const leScheme StatsScheme;
+extern const leScheme RedScheme;
+extern const leScheme LayerScheme;
+extern const leScheme GreenScheme;
+extern const leScheme BlueScheme;
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility

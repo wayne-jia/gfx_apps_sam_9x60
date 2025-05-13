@@ -10,12 +10,11 @@ void legato_initializeScreenState(void)
     initializeStrings();
 
     screenInit_Screen0();
-    screenInit_Splash();
 
     currentScreen = -1;
     changingToScreen = -1;
 
-    legato_showScreen(screenID_Splash);
+    legato_showScreen(screenID_Screen0);
 }
 
 uint32_t legato_getCurrentScreen(void)
@@ -30,12 +29,6 @@ static void legato_hideCurrentScreen(void)
         case screenID_Screen0:
         {
             screenHide_Screen0();
-            currentScreen = 0;
-            break;
-        }
-        case screenID_Splash:
-        {
-            screenHide_Splash();
             currentScreen = 0;
             break;
         }
@@ -66,11 +59,6 @@ void legato_updateScreenState(void)
                 screenShow_Screen0();
                 break;
             }
-            case screenID_Splash:
-            {
-                screenShow_Splash();
-                break;
-            }
         }
 
         currentScreen = changingToScreen;
@@ -82,11 +70,6 @@ void legato_updateScreenState(void)
         case screenID_Screen0:
         {
             screenUpdate_Screen0();
-            break;
-        }
-        case screenID_Splash:
-        {
-            screenUpdate_Splash();
             break;
         }
     }

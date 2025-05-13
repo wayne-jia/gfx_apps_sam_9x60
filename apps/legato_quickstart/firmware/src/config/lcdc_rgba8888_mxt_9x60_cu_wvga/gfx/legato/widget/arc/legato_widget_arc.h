@@ -98,22 +98,17 @@ typedef struct leArcWidgetVTable
  * the widget bounds.  All coordinates are expressed in local widget space. The
  * color of the arc is determined by the widget scheme's 'foreground' color.
  */
-/* CUSTOM CODE START - Do not modify or remove */
 typedef struct leArcWidget
 {
     leWidget widget;            /**< base widget header#widget.*/
     const leArcWidgetVTable* fn; /**< virtual function table#fn.*/
     uint32_t radius;            /**< the radius of the arc#radius.*/
     int32_t startAngle;         /**< the start angle of the arc#startAngle. */
-    int32_t prevCenterAngle;    /**< the previous center angle of the arc#centerAngle. */
     int32_t centerAngle;        /**< the center angle of the arc#centerAngle. */
     uint32_t endAngle;          /**< the end angle of the arc#endAngle. */
     uint32_t thickness;         /**< the thickness of the arc#thickness. */
     leBool roundEdge;           /**< draws round edge if true#roundEdge.*/
-    
-    leRect damagedRect;
 } leArcWidget;
-/* CUSTOM CODE END */
 
 // *****************************************************************************
 // *****************************************************************************

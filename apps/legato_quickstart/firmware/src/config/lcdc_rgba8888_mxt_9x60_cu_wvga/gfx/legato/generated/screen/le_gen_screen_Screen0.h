@@ -13,59 +13,32 @@ extern "C" {
 // DOM-IGNORE-END
 
 // screen member widget declarations
-extern leWidget* Screen0_BaseFillPanel;
-extern leImageWidget* Screen0_BackSpeedoGaugeImage;
-extern leImageWidget* Screen0_BackTachoGaugeImage;
-extern leLabelWidget* Screen0_rpmLabel;
-extern leImageWidget* Screen0_MicrochipLogo;
-extern leWidget* Screen0_IndicatorsPanel;
-extern leWidget* Screen0_SpeedoValuePanel;
-extern leWidget* Screen0_RangePanel;
-extern leWidget* Screen0_TurnModePanel;
-extern leImageWidget* Screen0_MicrochipLogo_0;
-extern leImageWidget* Screen0_MGSLogo;
-extern leLabelWidget* Screen0_FreeRTOSLabel;
-extern leImageWidget* Screen0_HeadlightIcon;
-extern leImageWidget* Screen0_WarningIcon;
-extern leImageWidget* Screen0_FuelIcon;
-extern leLabelWidget* Screen0_mphLabel;
-extern leLabelWidget* Screen0_SpeedoValueLabel;
-extern leLabelWidget* Screen0_RangeUnitLabel;
-extern leLabelWidget* Screen0_RangeValueLabel;
-extern leImageWidget* Screen0_RangeValueBarBase;
+extern leWidget* Screen0_default_Layer0_FillPanel;
+extern leImageWidget* Screen0_ImageWidget0;
+extern leImageWidget* Screen0_ImageWidget_1;
+extern leImageWidget* Screen0_ImageWidget_2;
+extern leImageWidget* Screen0_ImageWidget_3;
+extern leImageWidget* Screen0_ImageWidget_4;
 extern leImageWidget* Screen0_ImageWidget_5;
-extern leLabelWidget* Screen0_GearValueLabel;
-extern leLabelWidget* Screen0_DriveModeLabel;
-extern leImageWidget* Screen0_RangeValueBar;
-extern leImageSequenceWidget* Screen0_RightTurnImageSeq;
-extern leImageSequenceWidget* Screen0_LeftTurnImageSeq;
-extern leImageWidget* Screen0_Directions;
-extern leImageWidget* Screen0_DirectionArrows;
-extern leLabelWidget* Screen0_DistanceLabel;
-extern leLabelWidget* Screen0_DirectionLabel;
-extern leWidget* Screen0_BaseFillPanel_0;
-extern leWidget* Screen0_TouchPanelTacho;
-extern leWidget* Screen0_TouchPanelSpeedo;
-extern leButtonWidget* Screen0_StartButton;
-extern leButtonWidget* Screen0_LeftTurnButton;
-extern leButtonWidget* Screen0_RightTurnButton;
-extern leButtonWidget* Screen0_MetricsButton;
-extern leImageWidget* Screen0_ImageWidget_0_1_0;
-extern leImageWidget* Screen0_ImageWidget_0_0;
-extern leArcWidget* Screen0_TachoArc;
-extern leArcWidget* Screen0_SpeedArc;
-extern leLabelWidget* Screen0_MetricsLabel;
+extern leImageWidget* Screen0_ImageWidget_6;
+extern leImageWidget* Screen0_ImageWidget_7;
+extern leImageWidget* Screen0_ImageWidget_8;
+extern leWidget* Screen0_PanelButton;
+extern leButtonWidget* Screen0_ButtonWidget_0;
+extern leLabelWidget* Screen0_LabelWidget_2;
+extern leLabelWidget* Screen0_LabelWidget_3;
+extern leButtonWidget* Screen0_ButtonWidget_1;
+extern leWidget* Screen0_PanelWidget_3;
+extern leImageWidget* Screen0_ImageWidget_9;
+extern leLabelWidget* Screen0_LabelWidget_0;
+extern leLabelWidget* Screen0_LabelWidget_1;
+extern leWidget* Screen0_PanelWidget_2;
+extern leImageWidget* Screen0_ImageWidget_0;
 
 // event handlers
 // !!THESE MUST BE IMPLEMENTED IN THE APPLICATION CODE!!
-void event_Screen0_StartButton_OnPressed(leButtonWidget* btn);
-void event_Screen0_StartButton_OnReleased(leButtonWidget* btn);
-void event_Screen0_LeftTurnButton_OnPressed(leButtonWidget* btn);
-void event_Screen0_LeftTurnButton_OnReleased(leButtonWidget* btn);
-void event_Screen0_RightTurnButton_OnPressed(leButtonWidget* btn);
-void event_Screen0_RightTurnButton_OnReleased(leButtonWidget* btn);
-void event_Screen0_MetricsButton_OnPressed(leButtonWidget* btn);
-void event_Screen0_MetricsButton_OnReleased(leButtonWidget* btn);
+void event_Screen0_ButtonWidget_0_OnPressed(leButtonWidget* btn);
+void event_Screen0_ButtonWidget_1_OnReleased(leButtonWidget* btn);
 
 // screen lifecycle functions
 // DO NOT CALL THESE DIRECTLY
@@ -79,8 +52,6 @@ leWidget* screenGetRoot_Screen0(uint32_t lyrIdx); // gets a root widget for this
 
 // Screen Events:
 void Screen0_OnShow(void); // called when this screen is shown
-void Screen0_OnHide(void); // called when this screen is hidden
-void Screen0_OnUpdate(void); // called when this screen is updated
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus

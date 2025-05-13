@@ -90,7 +90,7 @@ extern "C" {
 #define LE_INCLUDE_DEFAULT_8BPP_FONT         0
 
 // widget inclusion
-#define LE_ARC_WIDGET_ENABLED              1
+#define LE_ARC_WIDGET_ENABLED              0
 #define LE_BARGRAPH_WIDGET_ENABLED         0
 #define LE_BUTTON_WIDGET_ENABLED           1
 #define LE_CHECKBOX_WIDGET_ENABLED         0
@@ -103,7 +103,7 @@ extern "C" {
 #define LE_IMAGE_WIDGET_ENABLED            1
 #define LE_IMAGEROTATE_WIDGET_ENABLED      0
 #define LE_IMAGESCALE_WIDGET_ENABLED       0
-#define LE_IMAGESEQUENCE_WIDGET_ENABLED    1
+#define LE_IMAGESEQUENCE_WIDGET_ENABLED    0
 #define LE_KEYPAD_WIDGET_ENABLED           0
 #define LE_LABEL_WIDGET_ENABLED            1
 #define LE_LINE_WIDGET_ENABLED             0
@@ -130,7 +130,7 @@ extern "C" {
 
 // variable heap configuration
 #define LE_VARIABLEHEAP_DEBUGLEVEL         0
-#define LE_VARIABLEHEAP_SIZE               524288
+#define LE_VARIABLEHEAP_SIZE               1024000
 #define LE_VARIABLEHEAP_MINALLOCSIZE       32
 #define LE_VARIABLEHEAP_ALIGNMENT          4
 #define LE_VARIABLEHEAP_BESTFIT            1
@@ -138,17 +138,17 @@ extern "C" {
 // fixed heap configuration
 #define LE_FIXEDHEAP_ENABLE                1
 #define LE_FIXEDHEAP_DEBUG                 0
-#define LE_FIXEDHEAP_SIZE_16               400
-#define LE_FIXEDHEAP_SIZE_32               380
-#define LE_FIXEDHEAP_SIZE_64               300
-#define LE_FIXEDHEAP_SIZE_128              200
-#define LE_FIXEDHEAP_SIZE_196              150
-#define LE_FIXEDHEAP_SIZE_256              150
+#define LE_FIXEDHEAP_SIZE_16               300
+#define LE_FIXEDHEAP_SIZE_32               96
+#define LE_FIXEDHEAP_SIZE_64               96
+#define LE_FIXEDHEAP_SIZE_128              32
+#define LE_FIXEDHEAP_SIZE_196              48
+#define LE_FIXEDHEAP_SIZE_256              24
 
 // renderer configuration
 //#define LE_VSYNC_STALL
 
-#define LE_LAYER_COUNT                     2
+#define LE_LAYER_COUNT                     4
 
 #define LE_WIDGET_MAX_EVENT_FILTERS        2
 
@@ -156,7 +156,7 @@ extern "C" {
 #define LE_ALPHA_BLENDING_ENABLED          1
 #define LE_SCRATCH_BUFFER_COUNT            1
 #define LE_SCRATCH_BUFFER_SIZE_KB          1536
-#define LE_SCRATCH_BUFFER_PADDING          0
+#define LE_SCRATCH_BUFFER_PADDING          1
 #define LE_SCRATCH_BIG_ENDIAN              0
 #define LE_USE_ARC_SCAN_FILL               1
 #define LE_ARC_SMOOTH_EDGE                 LE_FALSE

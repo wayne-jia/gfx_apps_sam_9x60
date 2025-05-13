@@ -454,7 +454,7 @@ static leResult setPressedEventCallback(leButtonWidget* _this,
     LE_ASSERT_THIS();
     
     _this->pressedEvent = cb;
-    
+    printf("set cb press event\r\n");
     return LE_SUCCESS;
 }
 

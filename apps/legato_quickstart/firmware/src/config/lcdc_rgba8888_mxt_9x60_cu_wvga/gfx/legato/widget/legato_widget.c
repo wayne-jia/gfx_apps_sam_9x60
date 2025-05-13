@@ -1562,16 +1562,22 @@ void _leWidget_HandleEvent(leWidget* _this,
                            leEvent* evt)
 {
     LE_ASSERT_THIS();
-
+//printf("_leWidget_HandleEvent, id:%d\r\n", evt->id);
     switch(evt->id)
     {
         case LE_EVENT_TOUCH_DOWN:
         {
-            if(LE_TEST_FLAG(_this->flags, LE_WIDGET_IGNOREEVENTS) == LE_TRUE)
+            if(LE_TEST_FLAG(_this->flags, LE_WIDGET_IGNOREEVENTS) == LE_TRUE) {
+                //printf("LE_TEST_FLAG is true\r\n");
                 return;
+            }
+                
 
-            if(filterEvent(_this, (leWidgetEvent*)evt) == LE_TRUE)
+            if(filterEvent(_this, (leWidgetEvent*)evt) == LE_TRUE) {
+                //printf("filterEvent is true\r\n");
                 return;
+            }
+
 
             _this->fn->touchDownEvent(_this, (leWidgetEvent_TouchDown*)evt);
 

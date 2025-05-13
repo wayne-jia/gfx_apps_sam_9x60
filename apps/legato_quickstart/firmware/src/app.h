@@ -32,7 +32,6 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include "configuration.h"
-#include "system/fs/sys_fs.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -41,6 +40,23 @@ extern "C" {
 
 #endif
 // DOM-IGNORE-END
+
+//Layer and canvas ID
+#define BACKGROUND_LAYER_ID 0
+#define BLUR_LAYER_ID 1
+#define LOGO_LAYER_ID 2
+#define WELCOME_LAYER_ID 3
+    
+#define BACKGROUND_CANVAS_ID 0
+#define BLUR_CANVAS_ID 1
+#define LOGO_CANVAS_ID 2
+#define WELCOME_CANVAS_ID 3
+
+#define BLUR_ALPHA_LOW         0
+#define BLUR_ALPHA_HIGH        255
+    
+#define FADE_IN_START_ALPHA 0
+#define FADE_IN_END_ALPHA 255  
 
 // *****************************************************************************
 // *****************************************************************************
@@ -62,26 +78,20 @@ extern "C" {
 typedef enum
 {
     /* Application's state machine's initial state. */
-    APP_MOUNT_WAIT = 0,
+    APP_STATE_INIT=0,
+    APP_STATE_SHOW_BASE,
+    APP_STATE_HIDE_ICONS,
+    APP_STATE_FADEOUT_LOGO,
+    APP_STATE_FADEIN_WELCOME,
+    APP_STATE_SHOW_WELCOME,
+    APP_STATE_FADEOUT_WELCOME,
+    APP_STATE_SHOW_ICONS,
+    APP_STATE_FADEIN_LOGO,
+    APP_STATE_RUNNING,
+    APP_STATE_SETTINGS,
+    APP_STATE_SERVICE_TASKS,
 
-    /* Set the current drive */
-    APP_SET_CURRENT_DRIVE,
-
-    /* The app opens the file to read */
-    APP_OPEN_FILE,
-
-    /* The app reads from a file and writes to another file */
-    APP_READ_FILE,
-
-    /* The app closes the file and idles */
-    APP_CYCLE_READ,
-
-    APP_PLAY_DEMO,
-
-    APP_TEST,
-
-    /* An app error has occurred */
-    APP_ERROR
+    /* TODO: Define states used by the application state machine. */
 
 } APP_STATES;
 
@@ -101,19 +111,10 @@ typedef enum
 
 typedef struct
 {
-    /* SYS_FS File handle for 1st file */
-    SYS_FS_HANDLE      fileHandle;
+    /* The application's current state */
+    APP_STATES state;
 
-    /* SYS_FS File handle for 2nd file */
-    SYS_FS_HANDLE      fileHandle1;
-
-    /* Application's current state */
-    APP_STATES         state;
-
-    int32_t            nBytesRead;
-
-    /* Flag to indicate SDCARD mount status */
-    volatile bool      sdCardMountFlag;
+    /* TODO: Define any additional data used by the application. */
 
 } APP_DATA;
 
@@ -164,7 +165,7 @@ typedef struct
 
 void APP_Initialize ( void );
 
-
+void Panel_Initialize(void);
 /*******************************************************************************
   Function:
     void APP_Tasks ( void )

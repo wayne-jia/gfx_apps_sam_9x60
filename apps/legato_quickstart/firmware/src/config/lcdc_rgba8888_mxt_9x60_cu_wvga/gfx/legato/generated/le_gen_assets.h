@@ -63,383 +63,167 @@ extern const lePalette leGlobalPalette;
  *****************************************************************************/
 /*********************************
  * Legato Image Asset
- * Name:   HeadlightOff
- * Size:   41x41 pixels
+ * Name:   bg240
+ * Size:   240x240 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage HeadlightOff;
+extern leImage bg240;
 
 /*********************************
  * Legato Image Asset
- * Name:   HeadlightOn
- * Size:   41x41 pixels
+ * Name:   bulb_m
+ * Size:   40x40 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage HeadlightOn;
+extern leImage bulb_m;
 
 /*********************************
  * Legato Image Asset
- * Name:   FuelOff
- * Size:   41x41 pixels
+ * Name:   clock_m
+ * Size:   32x32 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage FuelOff;
+extern leImage clock_m;
 
 /*********************************
  * Legato Image Asset
- * Name:   FuelOn
- * Size:   41x41 pixels
+ * Name:   fan_m
+ * Size:   32x32 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage FuelOn;
+extern leImage fan_m;
 
 /*********************************
  * Legato Image Asset
- * Name:   WarningOff
- * Size:   41x41 pixels
+ * Name:   gear_m
+ * Size:   32x32 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage WarningOff;
+extern leImage gear_m;
 
 /*********************************
  * Legato Image Asset
- * Name:   WarningOn
- * Size:   41x41 pixels
+ * Name:   home_m
+ * Size:   32x32 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage WarningOn;
+extern leImage home_m;
 
 /*********************************
  * Legato Image Asset
- * Name:   LeftTurnOff
- * Size:   76x92 pixels
+ * Name:   leaf_m
+ * Size:   32x28 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage LeftTurnOff;
+extern leImage leaf_m;
 
 /*********************************
  * Legato Image Asset
- * Name:   LeftTurnOn
- * Size:   76x92 pixels
+ * Name:   sound_m
+ * Size:   36x28 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage LeftTurnOn;
+extern leImage sound_m;
 
 /*********************************
  * Legato Image Asset
- * Name:   RightTurnOff
- * Size:   75x92 pixels
+ * Name:   thermo_m
+ * Size:   24x44 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage RightTurnOff;
+extern leImage thermo_m;
 
 /*********************************
  * Legato Image Asset
- * Name:   RightTurnOn
- * Size:   75x92 pixels
+ * Name:   m
+ * Size:   80x80 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage RightTurnOn;
+extern leImage m;
 
 /*********************************
  * Legato Image Asset
- * Name:   DirectionsBox
- * Size:   322x77 pixels
+ * Name:   lbbg
+ * Size:   148x70 pixels
  * Type:   RGB Data
  * Format: RGBA_8888
  ***********************************/
-extern leImage DirectionsBox;
-
-/*********************************
- * Legato Image Asset
- * Name:   PurpleProgress
- * Size:   169x9 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage PurpleProgress;
-
-/*********************************
- * Legato Image Asset
- * Name:   OrangeProgress
- * Size:   169x9 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage OrangeProgress;
-
-/*********************************
- * Legato Image Asset
- * Name:   battery_charging_full
- * Size:   25x25 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage battery_charging_full;
-
-/*********************************
- * Legato Image Asset
- * Name:   rpm_front
- * Size:   279x329 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage rpm_front;
-
-/*********************************
- * Legato Image Asset
- * Name:   speedofront
- * Size:   433x330 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage speedofront;
-
-/*********************************
- * Legato Image Asset
- * Name:   rpm_back_fill
- * Size:   279x329 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage rpm_back_fill;
-
-/*********************************
- * Legato Image Asset
- * Name:   speedoback_fill
- * Size:   433x330 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage speedoback_fill;
-
-/*********************************
- * Legato Image Asset
- * Name:   turn_left
- * Size:   43x43 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage turn_left;
-
-/*********************************
- * Legato Image Asset
- * Name:   turn_right
- * Size:   43x43 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage turn_right;
-
-/*********************************
- * Legato Image Asset
- * Name:   straigh
- * Size:   30x44 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage straigh;
-
-/*********************************
- * Legato Image Asset
- * Name:   mchp_logo_small
- * Size:   117x17 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage mchp_logo_small;
-
-/*********************************
- * Legato Image Asset
- * Name:   MegaM
- * Size:   130x110 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage MegaM;
-
-/*********************************
- * Legato Image Asset
- * Name:   mchp_logo_big
- * Size:   220x30 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage mchp_logo_big;
-
-/*********************************
- * Legato Image Asset
- * Name:   MegaM2
- * Size:   220x63 pixels
- * Type:   RGB Data
- * Format: RGBA_8888
- ***********************************/
-extern leImage MegaM2;
+extern leImage lbbg;
 
 /*****************************************************************************
  * Legato Graphics Font Assets
  *****************************************************************************/
 /*********************************
  * Legato Font Asset
- * Name:         DistanceFont
+ * Name:         NotoSansBoldItalic20
  * Height:       21
- * Baseline:     18
+ * Baseline:     14
  * Style:        Antialias
- * Glyph Count:  22
- * Range Count:  13
- * Glyph Ranges: 0x20
-                 0x2E
-                 0x30-0x39
-                 0x4D
-                 0x53
-                 0x65
-                 0x69
-                 0x6C
-                 0x6F-0x70
-                 0x72-0x74
+ * Glyph Count:  95
+ * Range Count:  11
+ * Glyph Ranges: 0x20-0x7E
 ***********************************/
-extern leRasterFont DistanceFont;
+extern leRasterFont NotoSansBoldItalic20;
 
 /*********************************
  * Legato Font Asset
- * Name:         SpeedoFont
- * Height:       21
- * Baseline:     109
- * Style:        Antialias
- * Glyph Count:  10
- * Range Count:  3
- * Glyph Ranges: 0x30-0x39
-***********************************/
-extern leRasterFont SpeedoFont;
-
-/*********************************
- * Legato Font Asset
- * Name:         DirectionFont
+ * Name:         sc22
  * Height:       23
- * Baseline:     16
+ * Baseline:     21
  * Style:        Antialias
- * Glyph Count:  28
- * Range Count:  16
- * Glyph Ranges: 0x20
-                 0x2D
-                 0x30-0x32
-                 0x34-0x35
-                 0x37-0x38
-                 0x3A
-                 0x43-0x45
-                 0x49
-                 0x4E-0x4F
-                 0x53
-                 0x65-0x66
-                 0x68-0x69
-                 0x6D-0x6F
-                 0x72
-                 0x74-0x75
-                 0x78
+ * Glyph Count:  106
+ * Range Count:  12
+ * Glyph Ranges: 0x20-0x7E
+                 0x4F60
+                 0x56DE
+                 0x597D
+                 0x6469
+                 0x6839
+                 0x7CFB
+                 0x7EDF
+                 0x7F6E
+                 0x8BBE
+                 0x8FD4
+                 0xFF01
 ***********************************/
-extern leRasterFont DirectionFont;
-
-/*********************************
- * Legato Font Asset
- * Name:         GearNumFont
- * Height:       21
- * Baseline:     51
- * Style:        Antialias
- * Glyph Count:  10
- * Range Count:  2
- * Glyph Ranges: 0x30-0x39
-***********************************/
-extern leRasterFont GearNumFont;
-
-/*********************************
- * Legato Font Asset
- * Name:         mphFont
- * Height:       21
- * Baseline:     24
- * Style:        Antialias
- * Glyph Count:  3
- * Range Count:  3
- * Glyph Ranges: 0x68
-                 0x6D
-                 0x70
-***********************************/
-extern leRasterFont mphFont;
-
-/*********************************
- * Legato Font Asset
- * Name:         Font0
- * Height:       37
- * Baseline:     12
- * Style:        Antialias
- * Glyph Count:  96
- * Range Count:  18
- * Glyph Ranges: 0xA
-                 0x20-0x7E
-***********************************/
-extern leRasterFont Font0;
+extern leRasterFont sc22;
 
 /*****************************************************************************
  * Legato String Table
- * Encoding        ASCII
+ * Encoding        UTF8
  * Language Count: 1
- * String Count:   18
+ * String Count:   5
  *****************************************************************************/
 
 // language IDs
 #define language_English    0
 
 // string IDs
-#define stringID_DistanceStringContinue    0
-#define stringID_DirectionStringLeft    1
-#define stringID_DirectionStringContinue    2
-#define stringID_ModeString    3
-#define stringID_MPH_Default    4
-#define stringID_RPMString    5
-#define stringID_MetricsString    6
-#define stringID_DistanceStringLeft    7
-#define stringID_DirectionStringRight    8
-#define stringID_RangeValueString    9
-#define stringID_GearNumber    10
-#define stringID_FreeRTOS    11
-#define stringID_StatsString    12
-#define stringID_DistanceStringRight    13
-#define stringID_mphString    14
-#define stringID_DemoOff    15
-#define stringID_DemoOn    16
-#define stringID_RangeUnitString    17
+#define stringID_ret    0
+#define stringID_set    1
+#define stringID_sc    2
+#define stringID_Hello    3
+#define stringID_Shezhi    4
 
 extern const leStringTable stringTable;
 
 
 // string list
-extern leTableString string_DistanceStringContinue;
-extern leTableString string_DirectionStringLeft;
-extern leTableString string_DirectionStringContinue;
-extern leTableString string_ModeString;
-extern leTableString string_MPH_Default;
-extern leTableString string_RPMString;
-extern leTableString string_MetricsString;
-extern leTableString string_DistanceStringLeft;
-extern leTableString string_DirectionStringRight;
-extern leTableString string_RangeValueString;
-extern leTableString string_GearNumber;
-extern leTableString string_FreeRTOS;
-extern leTableString string_StatsString;
-extern leTableString string_DistanceStringRight;
-extern leTableString string_mphString;
-extern leTableString string_DemoOff;
-extern leTableString string_DemoOn;
-extern leTableString string_RangeUnitString;
+extern leTableString string_ret;
+extern leTableString string_set;
+extern leTableString string_sc;
+extern leTableString string_Hello;
+extern leTableString string_Shezhi;
 
 void initializeStrings(void);
 //DOM-IGNORE-BEGIN

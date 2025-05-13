@@ -27,85 +27,8 @@
 // *****************************************************************************
 // *****************************************************************************
 
-#include <stdio.h>
 #include "app.h"
 #include "definitions.h"
-
-//#define LOG_FPS_CALCULATION
-
-#define MAX_LUMA_WIDTH   800
-#define MAX_CHROMA_WIDTH 400
-
-#define XPHIDEF 0
-#define YPHIDEF 0
-
-#define SDCARD_MOUNT_NAME    SYS_FS_MEDIA_IDX0_MOUNT_NAME_VOLUME_IDX0
-#define JPEG_FILE_NUM        240
-#define JPEG_FILE_MAX_SIZE   33000
-#define START_PIC_NUM        145
-#define END_PIC_NUM          (START_PIC_NUM + JPEG_FILE_NUM - 1)
-
-typedef struct
-{
-    uint32_t addr;
-    uint32_t ctrl;
-    uint32_t next;
-    uint32_t reserved;
-} dma_desc;
-
-dma_desc __attribute__ ((section(".region_nocache"), aligned (64))) desc_y[2];
-dma_desc __attribute__ ((section(".region_nocache"), aligned (64))) desc_u[2];
-dma_desc __attribute__ ((section(".region_nocache"), aligned (64))) desc_v[2];
-
-unsigned char __attribute__ ((section(".region_nocache"), aligned (64))) buf_y[2][MAX_LUMA_WIDTH * MAX_LUMA_WIDTH];
-unsigned char __attribute__ ((section(".region_nocache"), aligned (64))) buf_u[2][MAX_CHROMA_WIDTH * MAX_CHROMA_WIDTH];
-unsigned char __attribute__ ((section(".region_nocache"), aligned (64))) buf_v[2][MAX_CHROMA_WIDTH * MAX_CHROMA_WIDTH];
-
-static uint8_t pingpong = 0;
-
-#ifdef LOG_FPS_CALCULATION
-static int index = 0;
-#endif
-
-typedef struct
-{
-    uint8_t jpg_buf[JPEG_FILE_MAX_SIZE];
-    uint32_t jpg_len;
-} pic_desc;
-
-
-static uint32_t heo_upscaling_xcoef[] = {
-        0xf74949f7,
-        0x00000000,
-        0xf55f33fb,
-        0x000000fe,
-        0xf5701efe,
-        0x000000ff,
-        0xf87c0dff,
-        0x00000000,
-        0x00800000,
-        0x00000000,
-        0x0d7cf800,
-        0x000000ff,
-        0x1e70f5ff,
-        0x000000fe,
-        0x335ff5fe,
-        0x000000fb,
-};
-
-static uint32_t heo_upscaling_ycoef[] = {
-        0x00004040,
-        0x00075920,
-        0x00056f0c,
-        0x00027b03,
-        0x00008000,
-        0x00037b02,
-        0x000c6f05,
-        0x00205907,
-};
-
-void HEO_Initialize(void);
-extern int djpeg (char *p_jpg, int jpg_len, char *p_y, char *p_u, char *p_v, int *p_width, int *p_height);
 
 // *****************************************************************************
 // *****************************************************************************
@@ -129,46 +52,75 @@ extern int djpeg (char *p_jpg, int jpg_len, char *p_y, char *p_u, char *p_v, int
 */
 
 APP_DATA appData;
-static pic_desc pics;
-static uint32_t jpg_index = START_PIC_NUM;
-static uint8_t jpg_file_name[10];
-uint8_t firstjpg[JPEG_FILE_MAX_SIZE];
+static bool blur_alpha_high;
 
+static uint32_t prev_tick, tick =0;
+static uint32_t prev_sec_tick, sec_tick =0;
+static bool screen_show = false;
+static uint32_t icon_idx = 0;
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Callback Functions
 // *****************************************************************************
 // *****************************************************************************
 
-static void APP_SysFSEventHandler(SYS_FS_EVENT event,void* eventData,uintptr_t context)
+/* TODO:  Add any necessary callback functions.
+*/
+
+void show_icons(bool show)
 {
-    switch(event)
-    {
-        /* If the event is mount then check if SDCARD media has been mounted */
-        case SYS_FS_EVENT_MOUNT:
-            if(strcmp((const char *)eventData, SDCARD_MOUNT_NAME) == 0)
-            {
-                appData.sdCardMountFlag = true;
-                printf("sdCard Mounted\r\n");
-            }
-            break;
+	//Screen0_ImageWidget_0->fn->setVisible(Screen0_ImageWidget_0, show);
+	Screen0_ImageWidget_1->fn->setVisible(Screen0_ImageWidget_1, show);
+	Screen0_ImageWidget_2->fn->setVisible(Screen0_ImageWidget_2, show);
+	Screen0_ImageWidget_3->fn->setVisible(Screen0_ImageWidget_3, show);
+	Screen0_ImageWidget_4->fn->setVisible(Screen0_ImageWidget_4, show);
+	Screen0_ImageWidget_5->fn->setVisible(Screen0_ImageWidget_5, show);
+	Screen0_ImageWidget_6->fn->setVisible(Screen0_ImageWidget_6, show);
+	Screen0_ImageWidget_7->fn->setVisible(Screen0_ImageWidget_7, show);
+	Screen0_ImageWidget_8->fn->setVisible(Screen0_ImageWidget_8, show);
+}
 
-        /* If the event is unmount then check if SDCARD media has been unmount */
-        case SYS_FS_EVENT_UNMOUNT:
-            if(strcmp((const char *)eventData, SDCARD_MOUNT_NAME) == 0)
-            {
-                appData.sdCardMountFlag = false;
+void show_settings(bool show)
+{
+	Screen0_PanelButton->fn->setVisible(Screen0_PanelButton, show);
+}
 
-                appData.state = APP_MOUNT_WAIT;
+void Screen0_OnShow(void)
+{
+	show_settings(false);
+	LCDC_BrightnessSet(0);
+	Panel_Initialize();
+	LCDC_BrightnessSet(100);
+    
+	TC1_CH0_TimerStart();
+	screen_show = true;
+	printf("bl on\r\n");
+}
 
-            }
+void event_Screen0_ButtonWidget_0_OnPressed(leButtonWidget* btn)
+{
+	appData.state = APP_STATE_SETTINGS;
+	// show_icons(false);
+	// show_settings(true);
+	//Screen0_ButtonWidget_0->fn->setVisible(Screen0_ButtonWidget_0, false);
+}
 
-            break;
+void event_Screen0_ButtonWidget_1_OnReleased(leButtonWidget* btn)
+{
+	appData.state = APP_STATE_SERVICE_TASKS;
+	// show_icons(true);
+	// show_settings(false);
+	//Screen0_ButtonWidget_0->fn->setVisible(Screen0_ButtonWidget_0, true);
+}
 
-        case SYS_FS_EVENT_ERROR:
-        default:
-            break;
-    }
+void TC1_CH1_TimerInterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
+{
+    tick++;
+}
+
+void TC1_CH0_TimerInterruptHandler(TC_TIMER_STATUS status, uintptr_t context)
+{
+    sec_tick++;
 }
 
 // *****************************************************************************
@@ -177,9 +129,684 @@ static void APP_SysFSEventHandler(SYS_FS_EVENT event,void* eventData,uintptr_t c
 // *****************************************************************************
 // *****************************************************************************
 
+static void PA14_SetOutput(bool set)
+{
+	GPIO_PA14_IDR();
+	GPIO_PA14_PPUER();
+	if (set)
+		GPIO_PA14_Set();
+	else
+		GPIO_PA14_Clear();
+	GPIO_PA14_OutputEnable();
+	GPIO_PA14_PER();
+}
+
+static void PA13_SetOutput(bool set)
+{
+	GPIO_PA13_IDR();
+	GPIO_PA13_PPUER();
+	if (set)
+		GPIO_PA13_Set();
+	else
+		GPIO_PA13_Clear();
+	GPIO_PA13_OutputEnable();
+	GPIO_PA13_PER();
+}
+
+static void PA12_SetOutput(bool set)
+{
+	GPIO_PA12_IDR();
+	GPIO_PA12_PPUER();
+	if (set)
+		GPIO_PA12_Set();
+	else
+		GPIO_PA12_Clear();
+	GPIO_PA12_OutputEnable();
+	GPIO_PA12_PER();
+}
+
+static void PC31_SetOutput(bool set)
+{
+	GPIO_PC31_IDR();
+	GPIO_PC31_PPUER();
+	if (set)
+		GPIO_PC31_Set();
+	else
+		GPIO_PC31_Clear();
+	GPIO_PC31_OutputEnable();
+	GPIO_PC31_PER();
+}
 
 /* TODO:  Add any necessary local functions.
 */
+static void _LCDC_DelayMS(int ms)
+{
+	SYS_TIME_HANDLE timer = SYS_TIME_HANDLE_INVALID;
+
+	if (SYS_TIME_DelayMS(ms, &timer) != SYS_TIME_SUCCESS)
+	    return;
+	
+	while (SYS_TIME_DelayIsComplete(timer) == false);
+} 
+
+static void write_command(unsigned char data)
+{
+	unsigned char i;
+	PA14_SetOutput(false);
+	PA13_SetOutput(false);
+	PA12_SetOutput(false);
+	PA13_SetOutput(true);
+	
+	for (i=0; i<8; i++) {
+		PA13_SetOutput(false);
+		if (data & 0x80)
+			PA12_SetOutput(true);
+		else
+			PA12_SetOutput(false);
+
+		PA13_SetOutput(true);
+		data = data << 1;
+	}
+	PA14_SetOutput(true); //CS 1
+}
+
+static void write_data(unsigned char data)
+{
+	unsigned char i;
+	PA14_SetOutput(false);
+	PA13_SetOutput(false);
+	PA12_SetOutput(true);
+	PA13_SetOutput(true);
+	
+	for (i=0; i<8; i++) {
+		PA13_SetOutput(false);
+		if (data & 0x80)
+			PA12_SetOutput(true);
+		else
+			PA12_SetOutput(false);
+
+		PA13_SetOutput(true);
+		data = data << 1;
+	}
+	PA14_SetOutput(true); //CS 1
+}
+
+#if 1  //正扫
+void BOARD_InitLCD_SPI(void)
+{
+	PC31_SetOutput(true);
+	_LCDC_DelayMS(5);
+	PC31_SetOutput(false);
+	_LCDC_DelayMS(20);
+	PC31_SetOutput(true);
+	_LCDC_DelayMS(5);
+
+	write_command(0xFE);
+	write_command(0xEF);
+
+	write_command(0xEB);
+	write_data(0x14);
+	write_command(0x84);
+	write_data(0x65);
+	write_command(0x85);
+	write_data(0xFF);
+	write_command(0x86);
+	write_data(0xFF);
+	write_command(0x87);
+	write_data(0xFF);
+	write_command(0x88);
+	write_data(0x0A);
+	write_command(0x89);
+	write_data(0x21);
+	write_command(0x8A);
+	write_data(0x40);
+	write_command(0x8B);
+	write_data(0x80);
+	write_command(0x8C);
+	write_data(0x01);
+	write_command(0x8D);
+	write_data(0x01);
+	write_command(0x8E);
+	write_data(0xFF);
+	write_command(0x8F);
+	write_data(0xFF);
+
+	write_command(0xB6);
+	write_data(0x00);
+	write_data(0x00);
+
+	write_command(0x36);
+	write_data(0x48);
+
+
+	write_command(0x3a);//´«?¸??¡?
+	write_data(0x55);///RGB MODE SELECTED
+
+	write_command(0xf6);//½???ýT?
+	write_data(0xc6);//RGBmode-16/18bit
+
+	write_command(0xb0);//RGB?ºN?
+	write_data(0x42);////40:DE MODE   60:SYNC MODE
+
+	write_command(0xb5);//??T?
+	write_data(0x08);//vfp[7:0]      host  8
+	write_data(0x09);//vbp[6:0]      host  4
+	write_data(0x14);//hbp[4:0]      host 20
+
+
+	write_command(0x90);
+	write_data(0x08);
+	write_data(0x08);
+	write_data(0x08);
+	write_data(0x08);
+
+	write_command(0xBD);
+	write_data(0x06);
+	///////////add///////////////////////
+	write_command(0xA6);
+	write_data(0x74);
+
+	write_command(0xBF);
+	write_data(0x1C);
+
+	write_command(0xA7);
+	write_data(0x45);
+
+	write_command(0xA9);
+	write_data(0xBB);
+
+	write_command(0xB8);
+	write_data(0x63);
+	/////////////////////////////////
+	write_command(0xBC);
+	write_data(0x00);
+
+	write_command(0xFF);
+	write_data(0x60);
+	write_data(0x01);
+	write_data(0x04);
+
+	write_command(0xC3);
+	write_data(0x21);
+	write_command(0xC4);
+	write_data(0x21);
+
+	write_command(0xC9);
+	write_data(0x25);
+
+	write_command(0xBE);
+	write_data(0x11);
+
+	write_command(0xE1);
+	write_data(0x10);
+	write_data(0x0E);
+
+	write_command(0xDF);
+	write_data(0x21);
+	write_data(0x0c);
+	write_data(0x02);
+
+	write_command(0xF0);
+	write_data(0x45);
+	write_data(0x09);
+	write_data(0x08);
+	write_data(0x08);
+	write_data(0x26);
+	write_data(0x2A);
+
+	write_command(0xF1);
+	write_data(0x43);
+	write_data(0x70);
+	write_data(0x72);
+	write_data(0x36);
+	write_data(0x37);
+	write_data(0x6F);
+
+	write_command(0xF2);
+	write_data(0x45);
+	write_data(0x09);
+	write_data(0x08);
+	write_data(0x08);
+	write_data(0x26);
+	write_data(0x2A);
+
+	write_command(0xF3);
+	write_data(0x43);
+	write_data(0x70);
+	write_data(0x72);
+	write_data(0x36);
+	write_data(0x37);
+	write_data(0x6F);
+
+	write_command(0xED);
+	write_data(0x1B);
+	write_data(0x0B);
+
+	write_command(0xAE);
+	write_data(0x77);
+
+	write_command(0xCD);
+	write_data(0x63);
+
+
+	write_command(0x70);
+	write_data(0x07);
+	write_data(0x07);
+	write_data(0x04);
+	write_data(0x0E);
+	write_data(0x0F);
+	write_data(0x09);
+	write_data(0x07);
+	write_data(0x08);
+	write_data(0x03);
+
+	write_command(0xE8);
+	write_data(0x24);
+	/////////////////////////////////////////////
+	write_command(0x60);
+	write_data(0x38); //STV1
+	write_data(0x0B);
+	write_data(0x6D);
+	write_data(0x6D);
+
+	write_data(0x39);//STV2
+	write_data(0xF0);
+	write_data(0x6D);
+	write_data(0x6D);
+
+
+	write_command(0x61);
+	write_data(0x38);//STV3
+	write_data(0xF4);
+	write_data(0x6D);
+	write_data(0x6D);
+
+	write_data(0x38);//STV4
+	write_data(0xF7);
+	write_data(0x6D);
+	write_data(0x6D);
+	/////////////////////////////////////
+	write_command(0x62);
+	write_data(0x38);
+	write_data(0x0D);
+	write_data(0x71);
+	write_data(0xED);
+	write_data(0x70);
+	write_data(0x70);
+	write_data(0x38);
+	write_data(0x0F);
+	write_data(0x71);
+	write_data(0xEF);
+	write_data(0x70);
+	write_data(0x70);
+
+	write_command(0x63);
+	write_data(0x38);
+	write_data(0x11);
+	write_data(0x71);
+	write_data(0xF1);
+	write_data(0x70);
+	write_data(0x70);
+	write_data(0x38);
+	write_data(0x13);
+	write_data(0x71);
+	write_data(0xF3);
+	write_data(0x70);
+	write_data(0x70);
+	///////////////////////////////////////////////////////
+	write_command(0x64);
+	write_data(0x28);
+	write_data(0x29);
+	write_data(0xF1);
+	write_data(0x01);
+	write_data(0xF1);
+	write_data(0x00);
+	write_data(0x07);
+
+	//??
+	write_command(0x66);
+	write_data(0x3C);
+	write_data(0x00);
+	write_data(0xCD);
+	write_data(0x67);
+	write_data(0x45);
+	write_data(0x45);
+	write_data(0x10);
+	write_data(0x00);
+	write_data(0x00);
+	write_data(0x00);
+
+	write_command(0x67);
+	write_data(0x00);
+	write_data(0x3C);
+	write_data(0x00);
+	write_data(0x00);
+	write_data(0x00);
+	write_data(0x01);
+	write_data(0x54);
+	write_data(0x10);
+	write_data(0x32);
+	write_data(0x98);
+
+
+	write_command(0x74);
+	write_data(0x10);
+	write_data(0x85);
+	write_data(0x80);
+	write_data(0x00);
+	write_data(0x00);
+	write_data(0x4E);
+	write_data(0x00);
+
+	write_command(0x98);
+	write_data(0x3e);
+	write_data(0x07);
+
+
+	write_command(0x35);
+	write_data(0x00);
+	write_command(0x21);
+	_LCDC_DelayMS(5);
+	//--------end gamma setting--------------//
+
+	write_command(0x11);
+	_LCDC_DelayMS(5);
+	write_command(0x29);
+	write_command(0x2C);
+}
+
+#else  //反扫
+void BOARD_InitLCD_SPI(void)
+{
+	printf("Reverse Scan...\r\n");
+
+	PC31_SetOutput(true);
+	//dbg_info("read1 RES:%d should be 1\n\r", read_gpio_RES());
+	_LCDC_DelayMS(5);
+	PC31_SetOutput(false);
+	//dbg_info("read2 RES:%d should be 0\n\r", read_gpio_RES());
+	_LCDC_DelayMS(20);
+	PC31_SetOutput(true);
+	//dbg_info("read3 RES:%d should be 1\n\r", read_gpio_RES());
+	_LCDC_DelayMS(5);
+
+	write_command(0xFE);
+	write_command(0xEF);
+
+	write_command(0xEB);
+	write_data(0x14);
+	write_command(0x84);
+	write_data(0x65);
+	write_command(0x85);
+	write_data(0xF1);
+	write_command(0x86);
+	write_data(0x98);
+	write_command(0x87);
+	write_data(0x28);
+	write_command(0x88);
+	write_data(0x0A);
+	write_command(0x89);
+	write_data(0x21);
+	write_command(0x8A);
+	write_data(0x40);
+	write_command(0x8B);
+	write_data(0x80);
+	write_command(0x8C);
+	write_data(0x01);
+	write_command(0x8D);
+	write_data(0x03);//0x00
+	write_command(0x8E);
+	write_data(0xDF);
+	write_command(0x8F);
+	write_data(0x52);
+
+	write_command(0xB6);//正扫/反扫配置
+	write_data(0x00);
+	write_data(0x40);//GS 
+
+	write_command(0x36);//显示XY轴调整，正反色调整
+	write_data(0x08);
+
+	write_command(0xf6);//接口参数配置
+	write_data(0xc6);//RGBmode-16/18bit
+
+	write_command(0xb0);//RGB信号配置
+	write_data(0x40);////40:DE MODE   60:SYNC MODE
+
+	write_command(0x3A); //16/18bit配置
+	write_data(0x55);
+
+	write_command(0xb5);
+	write_data(0x08);
+	write_data(0x09);
+	write_data(0x14);
+
+	write_command(0x90);
+	write_data(0x08);
+	write_data(0x08);
+	write_data(0x08);
+	write_data(0x08);
+
+	write_command(0xBD);
+	write_data(0x06);
+
+	//write_command(0xA6);
+	//write_data(0x74);
+
+	//write_command(0xBF);
+	//write_data(0x1C);
+
+	//write_command(0xA7);
+	//write_data(0x45);
+
+	write_command(0xA9);
+	write_data(0xCC);
+
+	//write_command(0xB8);
+	//write_data(0x63);
+
+
+	write_command(0xBC);
+	write_data(0x00);
+
+	write_command(0xFF);
+	write_data(0x60);
+	write_data(0x01);
+	write_data(0x04);
+
+	write_command(0xC3);///1a 1b		
+	write_data(0x21);//0x17
+
+	write_command(0xC4);///2a 2b		
+	write_data(0x21);//0x17/
+
+	write_command(0xC9);
+	write_data(0x25);///vrg1a  2a 0x25
+
+	write_command(0xBE);
+	write_data(0x11);
+
+	write_command(0xE1);
+	write_data(0x10);
+	write_data(0x0E);
+
+	write_command(0xDF);
+	write_data(0x21);
+	write_data(0x0c);
+	write_data(0x02);
+
+	write_command(0xF0);
+	write_data(0x45);
+	write_data(0x09);
+	write_data(0x08);
+	write_data(0x08);
+	write_data(0x26);
+	write_data(0x2A);
+
+	write_command(0xF1);
+	write_data(0x43);
+	write_data(0x70);
+	write_data(0x72);
+	write_data(0x36);
+	write_data(0x37);
+	write_data(0x6F);
+
+	write_command(0xF2);
+	write_data(0x45);
+	write_data(0x09);
+	write_data(0x08);
+	write_data(0x08);
+	write_data(0x26);
+	write_data(0x2A);
+
+	write_command(0xF3);
+	write_data(0x43);
+	write_data(0x70);
+	write_data(0x72);
+	write_data(0x36);
+	write_data(0x37);
+	write_data(0x6F);
+
+	write_command(0xED);
+	write_data(0x1B);
+	write_data(0x0B);
+
+	//write_command(0xAC);
+	//write_data(0x47);
+	write_command(0xAE);
+	write_data(0x77);
+	//write_command(0xCB);
+	//write_data(0x02);
+	write_command(0xCD);
+	write_data(0x63);
+
+	write_command(0x70);
+	write_data(0x07);
+	write_data(0x07);
+	write_data(0x04);
+	write_data(0x0E);
+	write_data(0x0F);
+	write_data(0x09);
+	write_data(0x07);
+	write_data(0x08);
+	write_data(0x03);
+
+	write_command(0xE8);
+	write_data(0x24);
+
+	write_command(0x60);
+	write_data(0x38);
+	write_data(0x0B);
+	write_data(0x6D);
+	write_data(0x6D);
+
+	write_data(0x39);
+	write_data(0xF0);
+	write_data(0x6D);
+	write_data(0x6D);
+
+
+	write_command(0x61);
+	write_data(0x38);
+	write_data(0xF4);
+	write_data(0x6D);
+	write_data(0x6D);
+
+	write_data(0x38);
+	write_data(0xF7);
+	write_data(0x6D);
+	write_data(0x6D);
+	/////////////////////////////////////
+	write_command(0x62);
+	write_data(0x38);
+	write_data(0x0D);
+	write_data(0x71);
+	write_data(0xED);
+	write_data(0x70);
+	write_data(0x70);
+	write_data(0x38);
+	write_data(0x0F);
+	write_data(0x71);
+	write_data(0xEF);
+	write_data(0x70);
+	write_data(0x70);
+
+	write_command(0x63);
+	write_data(0x38);
+	write_data(0x11);
+	write_data(0x71);
+	write_data(0xF1);
+	write_data(0x70);
+	write_data(0x70);
+	write_data(0x38);
+	write_data(0x13);
+	write_data(0x71);
+	write_data(0xF3);
+	write_data(0x70);
+	write_data(0x70);
+	///////////////////////////////////////////////////////
+	write_command(0x64);
+	write_data(0x28);
+	write_data(0x29);
+	write_data(0xF1);
+	write_data(0x01);
+	write_data(0xF1);
+	write_data(0x00);
+	write_data(0x07);
+
+
+	//·´ɨ
+	write_command(0x66);
+	write_data(0x3C);
+	write_data(0x00);
+	write_data(0x98);
+	write_data(0x10);
+	write_data(0x32);
+	write_data(0x45);
+	write_data(0x01);
+	write_data(0x00);
+	write_data(0x00);
+	write_data(0x00);
+
+	write_command(0x67);
+	write_data(0x00);
+	write_data(0x3C);
+	write_data(0x00);
+	write_data(0x00);
+	write_data(0x00);
+	write_data(0x10);
+	write_data(0x54);
+	write_data(0x67);
+	write_data(0x45);
+	write_data(0xcd);
+	////////////////////////////////////////////////
+
+	write_command(0x74);
+	write_data(0x10);
+	write_data(0x85);
+	write_data(0x80);
+	write_data(0x00);
+	write_data(0x00);
+	write_data(0x4E);
+	write_data(0x00);
+
+	write_command(0x98);
+	write_data(0x3e);
+	write_data(0x07);
+	write_command(0x99);
+	write_data(0x3e);
+	write_data(0x07);
+
+	write_command(0x35);//撕裂作用线
+	write_command(0x21);//画面反色
+	_LCDC_DelayMS(5);
+
+	write_command(0x11);//退出
+	_LCDC_DelayMS(5);
+	write_command(0x29);
+	write_command(0x2C);
+}
+#endif
 
 
 // *****************************************************************************
@@ -195,180 +822,133 @@ static void APP_SysFSEventHandler(SYS_FS_EVENT event,void* eventData,uintptr_t c
   Remarks:
     See prototype in app.h.
  */
+#if 0
+void LCDC_REG_Dump(void)
+{
+	printf("PMC_REGS->PMC_PCR: %x\r\n", PMC_REGS->PMC_PCR);
+	printf("LCDC_REGS->LCDC_LCDCFG0: %x\r\n", LCDC_REGS->LCDC_LCDCFG0);
+	printf("LCDC_REGS->LCDC_LCDCFG1: %x\r\n", LCDC_REGS->LCDC_LCDCFG1);
+	printf("LCDC_REGS->LCDC_LCDCFG2: %x\r\n", LCDC_REGS->LCDC_LCDCFG2);
+	printf("LCDC_REGS->LCDC_LCDCFG3: %x\r\n", LCDC_REGS->LCDC_LCDCFG3);
+	printf("LCDC_REGS->LCDC_LCDCFG4: %x\r\n", LCDC_REGS->LCDC_LCDCFG4);
+	printf("LCDC_REGS->LCDC_LCDCFG5: %x\r\n", LCDC_REGS->LCDC_LCDCFG5);
+	printf("LCDC_REGS->LCDC_LCDCFG6: %x\r\n", LCDC_REGS->LCDC_LCDCFG6);
+	printf("LCDC_REGS->LCDC_BASECFG0: %x\r\n", LCDC_REGS->LCDC_BASECFG0);
+	printf("LCDC_REGS->LCDC_BASECFG1: %x\r\n", LCDC_REGS->LCDC_BASECFG1);
+	printf("LCDC_REGS->LCDC_BASECFG2: %x\r\n", LCDC_REGS->LCDC_BASECFG2);
+	printf("LCDC_REGS->LCDC_BASECFG3: %x\r\n", LCDC_REGS->LCDC_BASECFG3);
+	printf("LCDC_REGS->LCDC_BASECFG4: %x\r\n", LCDC_REGS->LCDC_BASECFG4);
+	printf("LCDC_REGS->LCDC_BASECFG5: %x\r\n", LCDC_REGS->LCDC_BASECFG5);
+	printf("LCDC_REGS->LCDC_BASECFG6: %x\r\n", LCDC_REGS->LCDC_BASECFG6);
+}
+#endif
+
+static void pulseBlur(void)
+{
+    if(blur_alpha_high == true)
+    {
+        blur_alpha_high = false;
+        gfxcStartEffectFade(LOGO_CANVAS_ID,
+                                BLUR_ALPHA_HIGH,
+                                BLUR_ALPHA_LOW,
+                                10);
+    }
+    else
+    {
+        blur_alpha_high = true;
+        gfxcStartEffectFade(LOGO_CANVAS_ID,
+                                BLUR_ALPHA_LOW,
+                                BLUR_ALPHA_HIGH,
+                                10);
+    }
+}
+
+static void icon_seqence(bool hide)
+{
+	switch (icon_idx)
+	{
+		case 0:
+			Screen0_ImageWidget_1->fn->setVisible(Screen0_ImageWidget_1, hide);
+			break;
+
+		case 1:
+			Screen0_ImageWidget_2->fn->setVisible(Screen0_ImageWidget_2, hide);
+			break;
+
+		case 2:
+			Screen0_ImageWidget_3->fn->setVisible(Screen0_ImageWidget_3, hide);
+			break;
+
+		case 3:
+			Screen0_ImageWidget_4->fn->setVisible(Screen0_ImageWidget_4, hide);
+			break;
+
+		case 4:
+			Screen0_ImageWidget_5->fn->setVisible(Screen0_ImageWidget_5, hide);
+			break;
+
+		case 5:
+			Screen0_ImageWidget_6->fn->setVisible(Screen0_ImageWidget_6, hide);
+			break;
+
+		case 6:
+			Screen0_ImageWidget_7->fn->setVisible(Screen0_ImageWidget_7, hide);
+			break;
+
+		case 7:
+			Screen0_ImageWidget_8->fn->setVisible(Screen0_ImageWidget_8, hide);
+			break;
+
+		default:
+			break;
+	}
+	
+}
+
+
 
 void APP_Initialize ( void )
 {
     /* Place the App state machine in its initial state. */
-    appData.state = APP_MOUNT_WAIT;
+    appData.state = APP_STATE_INIT;
+	blur_alpha_high = true;
+	//LCDC_REG_Dump();
 
-    HEO_Initialize();
+	TC1_CH0_TimerCallbackRegister(TC1_CH0_TimerInterruptHandler, (uintptr_t) NULL); 
+    TC1_CH1_TimerCallbackRegister(TC1_CH1_TimerInterruptHandler, (uintptr_t) NULL); 
+ 
+    gfxcSetLayer(BACKGROUND_CANVAS_ID, BACKGROUND_LAYER_ID);
+	gfxcSetLayer(BLUR_CANVAS_ID, BLUR_LAYER_ID);
+	gfxcSetLayer(LOGO_CANVAS_ID, LOGO_LAYER_ID);
+    gfxcSetLayer(WELCOME_CANVAS_ID, WELCOME_LAYER_ID);
 
-    SYS_FS_EventHandlerSet((void const*)APP_SysFSEventHandler,(uintptr_t)NULL);
-    /* TODO: Initialize your application's state machine and other
-     * parameters.
-     */
-    printf("APP_Initialize done, heap size: 28000\r\n");
+    gfxcSetWindowPosition(BACKGROUND_CANVAS_ID, 0, 0);
+    gfxcSetWindowSize(BACKGROUND_CANVAS_ID, 240, 240);
+
+	gfxcSetWindowPosition(BLUR_CANVAS_ID, 56, 86);
+    gfxcSetWindowSize(BLUR_CANVAS_ID, 148, 70);
+
+	gfxcSetWindowPosition(LOGO_CANVAS_ID, 80, 80);
+    gfxcSetWindowSize(LOGO_CANVAS_ID, 80, 80);
+
+    gfxcSetWindowPosition(WELCOME_CANVAS_ID, 50, 71);
+    gfxcSetWindowSize(WELCOME_CANVAS_ID, 146, 100);
+    
+    gfxcShowCanvas(BACKGROUND_CANVAS_ID);
+	gfxcHideCanvas(BLUR_CANVAS_ID);
+	gfxcShowCanvas(LOGO_CANVAS_ID);
+    gfxcHideCanvas(WELCOME_CANVAS_ID);
+    
+    gfxcCanvasUpdate(BACKGROUND_CANVAS_ID);
+	gfxcCanvasUpdate(BLUR_CANVAS_ID);
+	gfxcCanvasUpdate(LOGO_CANVAS_ID);
+    gfxcCanvasUpdate(WELCOME_CANVAS_ID);
+	//printf("APP_Initialized\r\n");
 }
 
-static void set_phicoeff(uint32_t reg_base, const uint32_t *coeff_tab, uint32_t size)
+void Panel_Initialize(void)
 {
-        uint32_t i;
-
-        for (i = 0; i < size; i++)
-                *(volatile unsigned int *)(reg_base + (i * 4)) = coeff_tab[i];
-}
-
-static void layerHEOGetScalingFactors(uint16_t xmemsize,
-                                     uint16_t ymemsize,
-                                     uint16_t xsize,
-                                     uint16_t ysize,
-                                     uint16_t* xfactor,
-                                     uint16_t* yfactor)
-{
-    uint16_t xfactor1st, yfactor1st;
-
-    xmemsize--;
-    ymemsize--;
-    xsize--;
-    ysize--;
-
-    xfactor1st = ((2048 * xmemsize - 256 * XPHIDEF)/ xsize) + 1;
-    yfactor1st = ((2048 * ymemsize - 256 * XPHIDEF)/ ysize) + 1;
-
-    if ((xfactor1st * xsize / 2048) > xmemsize)
-        *xfactor = xfactor1st - 1;
-    else
-        *xfactor = xfactor1st;
-
-    if ((yfactor1st * ysize / 2048) > ymemsize)
-        *yfactor = yfactor1st - 1;
-    else
-        *yfactor = yfactor1st;
-}
-
-void update_desc(uint8_t id)
-{
-#ifdef LOG_FPS_CALCULATION
-    static bool is_logging = true;
-    if (index == 0 && is_logging) {
-        printf(".\r\n");
-    }
-    if (index == 239 && is_logging) {
-        printf("..\r\n");
-        is_logging = false;
-    }  
-#endif
-#if 1
-    desc_y[0].addr = &buf_y[id];
-    desc_u[0].addr = &buf_u[id];
-    desc_v[0].addr = &buf_v[id];
-#else
-    LCDC_REGS->LCDC_HEOHEAD = &buf_y[id];
-    //LCDC_REGS->LCDC_HEOCTRL = LCDC_HEOCTRL_DFETCH(1);
-    //LCDC_REGS->LCDC_HEONEXT = &desc_y[id];
-
-    LCDC_REGS->LCDC_HEOUHEAD = &buf_u[id];
-    //LCDC_REGS->LCDC_HEOUCTRL = LCDC_HEOCTRL_DFETCH(1);
-    //LCDC_REGS->LCDC_HEOUNEXT = &desc_u[id];
-
-    LCDC_REGS->LCDC_HEOVHEAD = &buf_v[id];
-    //LCDC_REGS->LCDC_HEOVCTRL = LCDC_HEOCTRL_DFETCH(1);
-    //LCDC_REGS->LCDC_HEOVNEXT = &desc_v[id];
-
-    LCDC_REGS->LCDC_HEOCHER = LCDC_HEOCHER_A2QEN(1);
-#endif
-}
-
-void HEO_Initialize(void)
-{
-    uint16_t xfactor, yfactor;
-
-    //printf("haha %s called\n\r", __func__);
-    LCDC_REGS->LCDC_LCDCFG0 |= LCDC_LCDCFG0_CGDISHEO(1);
-
-    LCDC_REGS->LCDC_HEOCFG0 = LCDC_HEOCFG0_ROTDIS(1);
-    LCDC_REGS->LCDC_HEOCFG1 = LCDC_HEOCFG1_YUVEN(1) | LCDC_HEOCFG1_YUVMODE(8);
-    //LCDC_REGS->LCDC_HEOCFG1 = LCDC_HEOCFG1_RGBMODE(13);
-    LCDC_REGS->LCDC_HEOCFG2 = LCDC_HEOCFG2_XPOS(0) | LCDC_HEOCFG2_YPOS(61);
-    //LCDC_REGS->LCDC_HEOCFG3 = LCDC_HEOCFG3_XSIZE(800 - 1) | LCDC_HEOCFG3_YSIZE(360 - 1);
-    LCDC_REGS->LCDC_HEOCFG3 = LCDC_HEOCFG3_XSIZE(800 - 1) | LCDC_HEOCFG3_YSIZE(360 - 1);
-    LCDC_REGS->LCDC_HEOCFG4 = LCDC_HEOCFG4_XMEMSIZE(600 - 1) | LCDC_HEOCFG4_YMEMSIZE(270 - 1);
-    LCDC_REGS->LCDC_HEOCFG5 = LCDC_HEOCFG5_XSTRIDE(0);
-    LCDC_REGS->LCDC_HEOCFG6 = LCDC_HEOCFG6_PSTRIDE(0);
-    LCDC_REGS->LCDC_HEOCFG9 = LCDC_HEOCFG9_BDEF(0xFF) | LCDC_HEOCFG9_GDEF(0x00) | LCDC_HEOCFG9_RDEF(0x00);
-    //LCDC_REGS->LCDC_HEOCFG10 = 0xFFFFFF;
-    //LCDC_REGS->LCDC_HEOCFG11 = 0xFFFFFF;
-    LCDC_REGS->LCDC_HEOCFG14 = 0x4c900091;
-    LCDC_REGS->LCDC_HEOCFG15 = 0x7a5f5090;
-    LCDC_REGS->LCDC_HEOCFG16 = 0x40040890;
-    //LCDC_REGS->LCDC_HEOCFG12 = LCDC_HEOCFG12_GA(0x80) | LCDC_HEOCFG12_VIDPRI(1) | LCDC_HEOCFG12_GAEN(1);
-    //LCDC_REGS->LCDC_HEOCFG12 = LCDC_HEOCFG12_GA(0x80) | LCDC_HEOCFG12_DMA(1) | LCDC_HEOCFG12_OVR(1) | LCDC_HEOCFG12_GAEN(1);
-    layerHEOGetScalingFactors(600, 270, 800, 360, &xfactor, &yfactor);
-    LCDC_REGS->LCDC_HEOCFG13 = LCDC_HEOCFG13_SCALEN(1) | LCDC_HEOCFG13_YFACTOR(yfactor) | LCDC_HEOCFG13_XFACTOR(xfactor);
-    set_phicoeff(&LCDC_REGS->LCDC_HEOCFG17, heo_upscaling_xcoef, sizeof(heo_upscaling_xcoef) / sizeof(uint32_t));
-    set_phicoeff(&LCDC_REGS->LCDC_HEOCFG33, heo_upscaling_ycoef, sizeof(heo_upscaling_ycoef) / sizeof(uint32_t));
-
-#if 1
-    desc_y[0].addr = &buf_y[0];
-    desc_y[0].ctrl = LCDC_HEOCTRL_DFETCH(1);
-    desc_y[0].next = (uint32_t)&desc_y[0];
-    desc_y[1].addr = &buf_y[1];
-    desc_y[1].ctrl = LCDC_HEOCTRL_DFETCH(1);
-    desc_y[1].next = (uint32_t)&desc_y[1];
-    LCDC_REGS->LCDC_HEOADDR = &buf_y[0];
-    LCDC_REGS->LCDC_HEOCTRL = LCDC_HEOCTRL_DFETCH(1);
-    LCDC_REGS->LCDC_HEONEXT = &desc_y[0];
-
-    desc_u[0].addr = &buf_u[0];
-    desc_u[0].ctrl = LCDC_HEOCTRL_DFETCH(1);
-    desc_u[0].next = (uint32_t)&desc_u[0];
-    desc_u[1].addr = &buf_u[1];
-    desc_u[1].ctrl = LCDC_HEOCTRL_DFETCH(1);
-    desc_u[1].next = (uint32_t)&desc_u[1];
-    LCDC_REGS->LCDC_HEOUADDR = &buf_u[0];
-    LCDC_REGS->LCDC_HEOUCTRL = LCDC_HEOCTRL_DFETCH(1);
-    LCDC_REGS->LCDC_HEOUNEXT = &desc_u[0];
-
-    desc_v[0].addr = &buf_v[0];
-    desc_v[0].ctrl = LCDC_HEOCTRL_DFETCH(1);
-    desc_v[0].next = (uint32_t)&desc_v[0];
-    desc_v[1].addr = &buf_v[1];
-    desc_v[1].ctrl = LCDC_HEOCTRL_DFETCH(1);
-    desc_v[1].next = (uint32_t)&desc_v[1];
-    LCDC_REGS->LCDC_HEOVADDR = &buf_v[0];
-    LCDC_REGS->LCDC_HEOVCTRL = LCDC_HEOCTRL_DFETCH(1);
-    LCDC_REGS->LCDC_HEOVNEXT = &desc_v[0];
-
-#else
-    desc_y[0].addr = &buf_y[0];
-    desc_y[0].ctrl = LCDC_HEOCTRL_DFETCH(1);
-    desc_y[0].next = (uint32_t)&desc_y[0];
-    desc_y[0].reserved = 0; 
-    LCDC_REGS->LCDC_HEOADDR = &buf_y[0];
-    LCDC_REGS->LCDC_HEOCTRL = LCDC_HEOCTRL_DFETCH(1);
-    LCDC_REGS->LCDC_HEONEXT = &desc_y[0];
-
-    desc_u[0].addr = &buf_u[0];
-    desc_u[0].ctrl = LCDC_HEOCTRL_DFETCH(1);
-    desc_u[0].next = (uint32_t)&desc_u[0];
-    desc_u[0].reserved = 0;
-    LCDC_REGS->LCDC_HEOUADDR = &buf_u[0];
-    LCDC_REGS->LCDC_HEOUCTRL = LCDC_HEOCTRL_DFETCH(1);
-    LCDC_REGS->LCDC_HEOUNEXT = &desc_u[0];
-
-    desc_v[0].addr = &buf_v[0];
-    desc_v[0].ctrl = LCDC_HEOCTRL_DFETCH(1);
-    desc_v[0].next = (uint32_t)&desc_v[0];
-    desc_v[0].reserved = 0;
-    LCDC_REGS->LCDC_HEOVADDR = &buf_v[0];
-    LCDC_REGS->LCDC_HEOVCTRL = LCDC_HEOCTRL_DFETCH(1);
-    LCDC_REGS->LCDC_HEOVNEXT = &desc_v[0];
-#endif
-
-    LCDC_REGS->LCDC_HEOCFG12 = LCDC_HEOCFG12_GA(0xFF) | LCDC_HEOCFG12_DMA(1) | LCDC_HEOCFG12_OVR(1) | LCDC_HEOCFG12_GAEN(1);
-    //LCDC_REGS->LCDC_HEOCFG12 = LCDC_HEOCFG12_GA(0xFF) | LCDC_HEOCFG12_GAEN(1);
-    LCDC_REGS->LCDC_HEOCHER = LCDC_HEOCHER_UPDATEEN(1) | LCDC_HEOCHER_CHEN(1);
-    //printf("haha %s exit\n\r", __func__);
+    BOARD_InitLCD_SPI();
 }
 
 /******************************************************************************
@@ -381,97 +961,243 @@ void HEO_Initialize(void)
 
 void APP_Tasks ( void )
 {
-    int width = 0, height = 0, i; 
-    uint8_t* tptr = NULL;
+	static uint8_t  sec2=0;
+	static uint32_t ms2 = 0;
     /* Check the application's current state. */
     switch ( appData.state )
     {
-        case APP_MOUNT_WAIT:
-            /* Wait for SDCARD to be Auto Mounted */
-            if(appData.sdCardMountFlag == true)
+        /* Application's initial state. */
+        case APP_STATE_INIT:
+        {
+            bool appInitialized = true;
+
+
+            if (appInitialized)
             {
-                appData.state = APP_SET_CURRENT_DRIVE;
+
+                appData.state = APP_STATE_SHOW_BASE;
             }
             break;
+        }
 
-        case APP_SET_CURRENT_DRIVE:
-            if(SYS_FS_CurrentDriveSet(SDCARD_MOUNT_NAME) == SYS_FS_RES_FAILURE)
-            {
-                /* Error while setting current drive */
-                appData.state = APP_ERROR;
-            }
-            else
-            {
-                /* Open a file for reading. */
-                appData.state = APP_OPEN_FILE;
-            }
+        case APP_STATE_SHOW_BASE:
+        {
+			if (screen_show)
+			{
+				//Screen0_ButtonWidget_0->fn->setVisible(Screen0_ButtonWidget_0, false);
+				//Screen0_ButtonWidget_1->fn->setVisible(Screen0_ButtonWidget_1, false);
+				//Screen0_LabelWidget_0->fn->setVisible(Screen0_LabelWidget_0, false);
+				//Screen0_LabelWidget_1->fn->setVisible(Screen0_LabelWidget_1, false);
+				if (sec_tick != prev_sec_tick)
+				{
+					sec2++;            
+					prev_sec_tick = sec_tick; 
+					if(sec2>0)
+					{
+						sec2=0;
+						TC1_CH1_TimerStart();
+						appData.state = APP_STATE_HIDE_ICONS;
+					}
+				}
+			}
             break;
+        }
 
-        case APP_OPEN_FILE:
-            sprintf(jpg_file_name, "images/%d.jpg", jpg_index);
-            appData.fileHandle = SYS_FS_FileOpen(jpg_file_name,
-                    (SYS_FS_FILE_OPEN_READ));
-            if(appData.fileHandle == SYS_FS_HANDLE_INVALID)
-            {
-                /* Could not open the file. Error out*/
-                appData.state = APP_ERROR;
-                printf("Could not open the file\r\n");
-            }
-            else
-            {
-                pics.jpg_len = SYS_FS_FileSize(appData.fileHandle);
-                appData.state = APP_READ_FILE;
-            }
+		case APP_STATE_HIDE_ICONS:
+        {
+			if (tick != prev_tick)
+			{
+				ms2++;            
+                prev_tick = tick; 
+                if(ms2>100)
+                {
+                    ms2=0;
+                    icon_seqence(false);
+					//Screen0_ImageWidget_0->fn->setVisible(Screen0_ImageWidget_0, false);
+					icon_idx++;
+					if (icon_idx > 7)
+					{
+						icon_idx = 0;
+						TC1_CH1_TimerStop();
+						appData.state = APP_STATE_FADEOUT_LOGO;
+					}
+                }
+			}
+			
             break;
+        }
 
-        case APP_READ_FILE:
-            appData.nBytesRead = SYS_FS_FileRead(appData.fileHandle, (void *)pics.jpg_buf, pics.jpg_len);
-            if (appData.nBytesRead == -1)
-            {
-                printf("There was an error while reading the file\r\n");
-                SYS_FS_FileClose(appData.fileHandle);
-                appData.state = APP_ERROR;
-            }
-            else if (appData.nBytesRead == 0)
-            {
-                printf("read 0 len from file[%s]\r\n", jpg_file_name);
-                appData.state = APP_ERROR;
-            }
-            else
-            {
-                jpg_index++;
-                if (jpg_index > END_PIC_NUM)
-                    jpg_index = START_PIC_NUM;
-                SYS_FS_FileClose(appData.fileHandle);
-                appData.state = APP_PLAY_DEMO;            
-            }
-            break;
-
-        case APP_CYCLE_READ:    
-
-            break;
-
-        case APP_PLAY_DEMO:
-            pingpong = 1 - pingpong;        
-            djpeg(pics.jpg_buf, pics.jpg_len, buf_y[pingpong], buf_u[pingpong], buf_v[pingpong], &width, &height);
-            update_desc(pingpong);
-            appData.state = APP_OPEN_FILE;
-#ifdef LOG_FPS_CALCULATION
-            index++;
-#endif
-            break;
-
-        case APP_ERROR:
-            /* The application comes here when the demo has failed. */
+		case APP_STATE_FADEOUT_LOGO:
+        {
+			//gfxcStartEffectFade(BLUR_CANVAS_ID, FADE_IN_END_ALPHA, FADE_IN_START_ALPHA, 10);
+			gfxcStartEffectFade(LOGO_CANVAS_ID, FADE_IN_END_ALPHA, FADE_IN_START_ALPHA, 10);
+			appData.state = APP_STATE_FADEIN_WELCOME;
 
             break;
+        }
 
-        case APP_TEST:
+		case APP_STATE_FADEIN_WELCOME:
+        {
+			if (sec_tick != prev_sec_tick)
+            {   
+				sec2++;            
+                prev_sec_tick = sec_tick; 
+                if(sec2>1)
+                {
+					TC1_CH1_TimerStart();
+					appData.state = APP_STATE_SHOW_ICONS;
+					#if 0
+                    sec2=0;
+					gfxcHideCanvas(LOGO_CANVAS_ID);
+    				gfxcCanvasUpdate(LOGO_CANVAS_ID);
+					gfxcStartEffectFade(BLUR_CANVAS_ID, FADE_IN_START_ALPHA, FADE_IN_END_ALPHA, 10);
+					gfxcShowCanvas(BLUR_CANVAS_ID);
+    				gfxcCanvasUpdate(BLUR_CANVAS_ID);
+					//Screen0_ButtonWidget_0->fn->setVisible(Screen0_ButtonWidget_0, false);
+					//Screen0_ImageWidget_0->fn->setVisible(Screen0_ImageWidget_0, false);
+					//Screen0_ButtonWidget_1->fn->setVisible(Screen0_ButtonWidget_1, false);
+					//Screen0_LabelWidget_0->fn->setVisible(Screen0_LabelWidget_0, true);
+					//Screen0_LabelWidget_1->fn->setVisible(Screen0_LabelWidget_1, true);
+                    appData.state = APP_STATE_SHOW_WELCOME;
+					#endif
+                }
+            }
 
             break;
+        }
 
+		case APP_STATE_SHOW_WELCOME:
+        {
+			if (sec_tick != prev_sec_tick)
+            {   
+				sec2++;            
+                prev_sec_tick = sec_tick; 
+                if(sec2>2)
+                {
+                    sec2=0;
+					
+                    appData.state = APP_STATE_FADEOUT_WELCOME;
+                }
+            }
+
+            break;
+        }
+
+		case APP_STATE_FADEOUT_WELCOME:
+        {
+			if (sec_tick != prev_sec_tick)
+            {   
+				sec2++;            
+                prev_sec_tick = sec_tick; 
+                if(sec2 == 1)
+                {
+                    
+					gfxcStartEffectFade(BLUR_CANVAS_ID, FADE_IN_END_ALPHA, FADE_IN_START_ALPHA, 10);
+					//Screen0_ButtonWidget_0->fn->setVisible(Screen0_ButtonWidget_0, false);
+					//Screen0_ImageWidget_0->fn->setVisible(Screen0_ImageWidget_0, false);
+					//Screen0_ButtonWidget_1->fn->setVisible(Screen0_ButtonWidget_1, false);
+					//Screen0_LabelWidget_0->fn->setVisible(Screen0_LabelWidget_0, true);
+					//Screen0_LabelWidget_1->fn->setVisible(Screen0_LabelWidget_1, true);
+					
+                }
+
+				if (sec2 > 2)
+				{
+					sec2=0;
+					TC1_CH1_TimerStart();
+					appData.state = APP_STATE_SHOW_ICONS;
+				}
+            }
+
+            break;
+        }
+
+		case APP_STATE_SHOW_ICONS:
+        {
+			if (tick != prev_tick)
+			{
+				ms2++;            
+                prev_tick = tick; 
+                if(ms2>100)
+                {
+                    ms2=0;
+					gfxcHideCanvas(BLUR_CANVAS_ID);
+    				gfxcCanvasUpdate(BLUR_CANVAS_ID);
+                    icon_seqence(true);
+					//Screen0_ImageWidget_0->fn->setVisible(Screen0_ImageWidget_0, true);
+					//Screen0_ButtonWidget_0->fn->setVisible(Screen0_ButtonWidget_0, true);
+					icon_idx++;
+					if (icon_idx > 7)
+					{
+						icon_idx = 0;
+						TC1_CH1_TimerStop();
+						appData.state = APP_STATE_FADEIN_LOGO;
+					}
+                }
+			}
+
+            break;
+        }
+
+		case APP_STATE_FADEIN_LOGO:
+        {
+			//gfxcStartEffectFade(BLUR_CANVAS_ID, FADE_IN_START_ALPHA, FADE_IN_END_ALPHA, 10);
+			gfxcStartEffectFade(LOGO_CANVAS_ID, FADE_IN_START_ALPHA, FADE_IN_END_ALPHA, 10);
+			gfxcShowCanvas(LOGO_CANVAS_ID);
+    		gfxcCanvasUpdate(LOGO_CANVAS_ID);
+			appData.state = APP_STATE_RUNNING;
+
+            break;
+        }
+
+		case APP_STATE_RUNNING:
+        {
+			if (sec_tick != prev_sec_tick)
+            {   
+				sec2++;            
+                prev_sec_tick = sec_tick; 
+                if(sec2>1)
+                {
+                    sec2=0;
+					pulseBlur();
+                }
+            }
+
+            break;
+        }
+
+		case APP_STATE_SETTINGS:
+		{
+			show_icons(false);
+			//gfxcHideCanvas(BLUR_CANVAS_ID);
+			gfxcHideCanvas(LOGO_CANVAS_ID);
+			//gfxcCanvasUpdate(BLUR_CANVAS_ID);
+			gfxcCanvasUpdate(LOGO_CANVAS_ID);
+			show_settings(true);
+			break;
+		}
+
+		case APP_STATE_SERVICE_TASKS:
+		{
+			show_settings(false);
+			show_icons(true);
+			//gfxcShowCanvas(BLUR_CANVAS_ID);
+			gfxcShowCanvas(LOGO_CANVAS_ID);
+			//gfxcCanvasUpdate(BLUR_CANVAS_ID);
+			gfxcCanvasUpdate(LOGO_CANVAS_ID);
+			appData.state = APP_STATE_RUNNING;
+			break;
+		}
+
+        /* TODO: implement your application state machine.*/
+
+
+        /* The default state should never be executed. */
         default:
+        {
+            /* TODO: Handle error in application's state machine. */
             break;
+        }
     }
 }
 
