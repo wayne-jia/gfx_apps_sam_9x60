@@ -341,7 +341,7 @@ leEventResult handleTouchDown(leWidgetEvent_TouchDown* evt)
 // however, the driver could be rendering them at different coordinates
 // the event coordinates may need to be adjusted to account for this
 #if LE_DRIVER_LAYER_MODE == 1
-        layerRect.base.id = i;
+        layerRect.layer.id = i;
         layerRect.x = 0;
         layerRect.y = 0;
         layerRect.width = 0;

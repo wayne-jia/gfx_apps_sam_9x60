@@ -63,12 +63,12 @@
 
 
 /*** Macros for BSP_MAXTOUCH_CHG pin ***/
-#define BSP_MAXTOUCH_CHG_Set()               (PIOC_REGS->PIO_SODR = (1<<25))
-#define BSP_MAXTOUCH_CHG_Clear()             (PIOC_REGS->PIO_CODR = (1<<25))
-#define BSP_MAXTOUCH_CHG_Toggle()            (PIOC_REGS->PIO_ODSR ^= (1<<25))
-#define BSP_MAXTOUCH_CHG_OutputEnable()      (PIOC_REGS->PIO_OER = (1<<25))
-#define BSP_MAXTOUCH_CHG_InputEnable()       (PIOC_REGS->PIO_ODR = (1<<25))
-#define BSP_MAXTOUCH_CHG_Get()               ((PIOC_REGS->PIO_PDSR >> 25) & 0x1)
+#define BSP_MAXTOUCH_CHG_Set()               (PIOC_REGS->PIO_SODR = ((uint32_t)1U<<25U))
+#define BSP_MAXTOUCH_CHG_Clear()             (PIOC_REGS->PIO_CODR = ((uint32_t)1U<<25U))
+#define BSP_MAXTOUCH_CHG_Toggle()            (PIOC_REGS->PIO_ODSR ^= ((uint32_t)1U<<25U))
+#define BSP_MAXTOUCH_CHG_OutputEnable()      (PIOC_REGS->PIO_OER = ((uint32_t)1U<<25U))
+#define BSP_MAXTOUCH_CHG_InputEnable()       (PIOC_REGS->PIO_ODR = ((uint32_t)1U<<25U))
+#define BSP_MAXTOUCH_CHG_Get()               ((PIOC_REGS->PIO_PDSR >> 25U) & 0x1U)
 #define BSP_MAXTOUCH_CHG_PIN                  PIO_PIN_PC25
 
 

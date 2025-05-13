@@ -67,7 +67,7 @@
 #define LCDC_SYNC_EDGE LCDC_SYNC_EDGE_FIRST
 #define LCDC_PWM_POLARITY LCDC_POLARITY_POSITIVE
 #define GFX_LCDC_BACKGROUND_COLOR 0xffffffff
-#define GFX_LCDC_LAYERS 3
+#define GFX_LCDC_LAYERS 1
 #define LCDC_DEFAULT_BRIGHTNESS_PCT 100
 
 #define SYNC_RECT_COUNT 200
@@ -104,8 +104,6 @@ typedef enum
 const char* DRIVER_NAME = "LCDC";
 
 FRAMEBUFFER_PIXEL_TYPE  __attribute__ ((section(".region_nocache"), aligned (32))) framebuffer_0[DISPLAY_WIDTH * DISPLAY_HEIGHT];
-FRAMEBUFFER_PIXEL_TYPE  __attribute__ ((section(".region_nocache"), aligned (32))) framebuffer_1[DISPLAY_WIDTH * DISPLAY_HEIGHT];
-FRAMEBUFFER_PIXEL_TYPE  __attribute__ ((section(".region_nocache"), aligned (32))) framebuffer_2[DISPLAY_WIDTH * DISPLAY_HEIGHT];
 
 
 typedef struct
@@ -116,11 +114,8 @@ typedef struct
 } LCDC_DMA_DESC;
 
 LCDC_DMA_DESC __attribute__ ((section(".region_nocache"), aligned (64))) channelDesc0;
-LCDC_DMA_DESC __attribute__ ((section(".region_nocache"), aligned (64))) channelDesc1;
-LCDC_DMA_DESC __attribute__ ((section(".region_nocache"), aligned (64))) channelDesc2;
 
 static volatile DRV_STATE state;
-static gfxRect srcRect, destRect;
 static unsigned int vsyncCount = 0;
 static unsigned int activeLayer = 0;
 
@@ -161,8 +156,6 @@ static DISPLAY_LAYER drvLayer[GFX_LCDC_LAYERS];
 static LCDC_LAYER_ID lcdcLayerZOrder[GFX_LCDC_LAYERS] =
 {
     LCDC_LAYER_BASE,
-    LCDC_LAYER_OVR1,
-    LCDC_LAYER_OVR2,
 };
 
 
@@ -325,11 +318,7 @@ gfxResult DRV_LCDC_Initialize()
     LCDC_SetPWMEnable(true);
 
     drvLayer[0].baseaddr[0] = framebuffer_0;
-    drvLayer[1].baseaddr[0] = framebuffer_1;
-    drvLayer[2].baseaddr[0] = framebuffer_2;
     drvLayer[0].desc = &channelDesc0;
-    drvLayer[1].desc = &channelDesc1;
-    drvLayer[2].desc = &channelDesc2;
     
     for (layerCount = 0; layerCount < GFX_LCDC_LAYERS; layerCount++)
     {
@@ -414,6 +403,9 @@ gfxResult DRV_LCDC_BlitBuffer(int32_t x,
                              int32_t y,
                              gfxPixelBuffer* buf)
 {
+    void* srcPtr;
+    void* destPtr;
+    uint32_t row, rowSize;
 
     if (state != DRAW)
 	{
@@ -421,17 +413,15 @@ gfxResult DRV_LCDC_BlitBuffer(int32_t x,
 	}
 
 
-    srcRect.x = 0;
-    srcRect.y = 0;
-    srcRect.height = buf->size.height;
-    srcRect.width = buf->size.width;
+    rowSize = buf->size.width * gfxColorInfoTable[buf->mode].size;
 
-    destRect.x = x;
-    destRect.y = y;
-    destRect.height = buf->size.height;
-    destRect.width = buf->size.width;
+    for(row = 0; row < buf->size.height; row++)
+    {
+        srcPtr = gfxPixelBufferOffsetGet(buf, 0, row);
+        destPtr = gfxPixelBufferOffsetGet(&drvLayer[activeLayer].pixelBuffer[drvLayer[activeLayer].backBufferIdx], x, y + row);
     
-    gfxGPUInterface.blitBuffer(buf, &srcRect, &drvLayer[activeLayer].pixelBuffer[drvLayer[activeLayer].frontBufferIdx], &destRect);
+        memcpy(destPtr, srcPtr, rowSize);
+    }
 
     return GFX_SUCCESS;
 }
@@ -507,13 +497,13 @@ gfxDriverIOCTLResponse DRV_LCDC_IOCTL(gfxDriverIOCTLRequest request,
         {
             rect = (gfxIOCTLArg_LayerRect*)arg;
             
-            if(rect->base.id >= GFX_LCDC_LAYERS)        
+            if(rect->layer.id >= GFX_LCDC_LAYERS)
                 return GFX_IOCTL_ERROR_UNKNOWN;
             
-            rect->x = drvLayer[rect->base.id].startx;
-            rect->y = drvLayer[rect->base.id].starty;
-            rect->width = drvLayer[rect->base.id].sizex;
-            rect->height = drvLayer[rect->base.id].sizey;
+            rect->x = drvLayer[rect->layer.id].startx;
+            rect->y = drvLayer[rect->layer.id].starty;
+            rect->width = drvLayer[rect->layer.id].sizex;
+            rect->height = drvLayer[rect->layer.id].sizey;
             
             return GFX_IOCTL_OK;
         }
@@ -558,10 +548,10 @@ gfxDriverIOCTLResponse DRV_LCDC_IOCTL(gfxDriverIOCTLRequest request,
         {
             callback = (gfxIOCTLArg_LayerIRQCallback*)arg;
             
-            if(callback->base.id >= GFX_LCDC_LAYERS)        
+            if(callback->layer.id >= GFX_LCDC_LAYERS)
                 return GFX_IOCTL_ERROR_UNKNOWN;
             
-            drvLayer[callback->base.id].irqCallback = callback->callback;                    
+            drvLayer[callback->layer.id].irqCallback = callback->callback;
             
             return GFX_IOCTL_OK;            
         }

@@ -24,9 +24,6 @@
           </logicalFolder>
           <logicalFolder name="f1" displayName="gfx" projectFiles="true">
             <logicalFolder name="f2" displayName="driver" projectFiles="true">
-              <logicalFolder name="f2" displayName="gfx2d" projectFiles="true">
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/driver/processor/gfx2d/drv_gfx2d.h</itemPath>
-              </logicalFolder>
               <logicalFolder name="f1" displayName="lcdc" projectFiles="true">
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/driver/gfx_driver.h</itemPath>
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/driver/controller/lcdc/drv_gfx_lcdc.h</itemPath>
@@ -222,9 +219,6 @@
                   <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/flexcom/twi/master/plib_flexcom_twi_master_common.h</itemPath>
                 </logicalFolder>
               </logicalFolder>
-            </logicalFolder>
-            <logicalFolder name="f8" displayName="gfx2d" projectFiles="true">
-              <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/gfx2d/plib_gfx2d.h</itemPath>
             </logicalFolder>
             <logicalFolder name="f7" displayName="lcdc" projectFiles="true">
               <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/lcdc/plib_lcdc.h</itemPath>
@@ -523,6 +517,38 @@
       </logicalFolder>
       <itemPath>../src/app.h</itemPath>
     </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <logicalFolder name="f1"
+                     displayName="lcdc_rgba8888_mxt_9x60_cu_wvga.mhc"
+                     projectFiles="true">
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/BSP_SAM_9X60_Curiosity.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/core.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/drv_i2c.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/flexcom6.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/gfx_disp_pdatm5000_800x480.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/gfx_hal_le.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/gfx_legato.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/gfx_maxtouch_controller.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/HarmonyCore.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/lcdc.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/legato_gfx_pda_tm5000.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/le_gfx_gfx2d.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/le_gfx_lcdc.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/plib_gfx2d.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/project.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/sys_input.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/sys_time.yml</itemPath>
+        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/tc0.yml</itemPath>
+      </logicalFolder>
+      <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/harmony-manifest-success.yml</itemPath>
+      <itemPath>legato_qs_9x60_cu_wvga.mc3</itemPath>
+    </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
@@ -555,9 +581,6 @@
           </logicalFolder>
           <logicalFolder name="f1" displayName="gfx" projectFiles="true">
             <logicalFolder name="f2" displayName="driver" projectFiles="true">
-              <logicalFolder name="f2" displayName="gfx2d" projectFiles="true">
-                <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/driver/processor/gfx2d/drv_gfx2d.c</itemPath>
-              </logicalFolder>
               <logicalFolder name="f1" displayName="lcdc" projectFiles="true">
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/driver/gfx_driver.c</itemPath>
                 <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/gfx/driver/controller/lcdc/drv_gfx_lcdc.c</itemPath>
@@ -813,9 +836,6 @@
                 </logicalFolder>
               </logicalFolder>
             </logicalFolder>
-            <logicalFolder name="f8" displayName="gfx2d" projectFiles="true">
-              <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/gfx2d/plib_gfx2d.c</itemPath>
-            </logicalFolder>
             <logicalFolder name="f7" displayName="lcdc" projectFiles="true">
               <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/peripheral/lcdc/plib_lcdc.c</itemPath>
             </logicalFolder>
@@ -858,39 +878,6 @@
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/pin_configurations.csv</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <logicalFolder name="f1"
-                     displayName="lcdc_rgba8888_mxt_9x60_cu_wvga.mhc"
-                     projectFiles="true">
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/BSP_SAM_9X60_Curiosity.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/core.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/drv_i2c.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/flexcom6.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/gfx_disp_pdatm5000_800x480.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/gfx_hal_le.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/gfx_legato.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/gfx_maxtouch_controller.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/HarmonyCore.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/lcdc.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/legato_gfx_pda_tm5000.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/le_gfx_gfx2d.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/le_gfx_lcdc.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/plib_gfx2d.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/project.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/sys_input.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/sys_time.yml</itemPath>
-        <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/lcdc_rgba8888_mxt_9x60_cu_wvga.mhc/tc0.yml</itemPath>
-      </logicalFolder>
-      <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/pin_configurations.csv</itemPath>
-      <itemPath>../src/config/lcdc_rgba8888_mxt_9x60_cu_wvga/harmony-manifest-success.yml</itemPath>
-      <itemPath>legato_qs_9x60_cu_wvga.mc3</itemPath>
-    </logicalFolder>
   </logicalFolder>
   <sourceRootList>
     <Elem>../src</Elem>
@@ -903,9 +890,9 @@
         <targetDevice>SAM9X60D1G</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>samice</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.35</languageToolchainVersion>
+        <languageToolchainVersion>4.45</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
@@ -970,7 +957,7 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
+        <property key="appendMe" value="-marm"/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
@@ -995,6 +982,7 @@
         <property key="use-cci" value="false"/>
         <property key="use-iar" value="false"/>
         <property key="use-indirect-calls" value="false"/>
+        <appendMe value="-marm"/>
       </C32>
       <C32-AR>
         <property key="additional-options-chop-files" value="false"/>

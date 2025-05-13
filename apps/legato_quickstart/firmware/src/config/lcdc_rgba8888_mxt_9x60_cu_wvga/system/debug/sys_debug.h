@@ -74,13 +74,13 @@
 // *****************************************************************************
 
 // *****************************************************************************
-/* SYS_ERROR_LEVEL enumeration
+/* SYS_ERROR_LEVEL typedef
 
    Summary:
     System error message priority levels.
 
    Description:
-    This enumeration defines the supported system error message priority values.
+    This defines the supported system error message priority values.
 
    Remarks:
     Used by debug message macros to compare individual message priority against
@@ -88,24 +88,22 @@
     individual message should be displayed.
 */
 
-typedef enum
-{
-    /* Errors that have the potential to cause a system crash. */
-    SYS_ERROR_FATAL     = 0,
+/* Errors that have the potential to cause a system crash. */
+#define SYS_ERROR_FATAL 0
 
-    /* Errors that have the potential to cause incorrect behavior. */
-    SYS_ERROR_ERROR     = 1,
+/* Errors that have the potential to cause incorrect behavior. */
+#define SYS_ERROR_ERROR 1
 
-    /* Warnings about potentially unexpected behavior or side effects. */
-    SYS_ERROR_WARNING   = 2,
+/* Warnings about potentially unexpected behavior or side effects. */
+#define SYS_ERROR_WARNING 2
 
-    /* Information helpful to understanding potential errors and warnings. */
-    SYS_ERROR_INFO      = 3,
+/* Information helpful to understanding potential errors and warnings. */
+#define SYS_ERROR_INFO 3
 
-    /* Verbose information helpful during debugging and testing. */
-    SYS_ERROR_DEBUG     = 4
+/* Verbose information helpful during debugging and testing. */
+#define SYS_ERROR_DEBUG 4
 
-} SYS_ERROR_LEVEL;
+typedef uint32_t SYS_ERROR_LEVEL;
 
 
 // DOM-IGNORE-BEGIN

@@ -389,7 +389,7 @@ leResult leUpdate(uint32_t dt)
 
     for(itr = 0; itr < state->layerList.size; ++itr)
     {
-        layerRect.base.id = itr;
+        layerRect.layer.id = itr;
         layerRect.x = 0;
         layerRect.y = 0;
         layerRect.width = 0;

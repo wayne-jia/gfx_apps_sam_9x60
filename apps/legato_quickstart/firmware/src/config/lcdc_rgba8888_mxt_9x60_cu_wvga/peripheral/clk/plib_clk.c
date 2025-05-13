@@ -56,7 +56,6 @@ static void initPeriphClk(void)
         { ID_FLEXCOM6, 1, 0, 0, 0},
         { ID_TC0, 1, 0, 0, 0},
         { ID_LCDC, 1, 1, 0x3, 0},
-        { ID_GFX2D, 1, 0, 0, 0},
         { ID_PIOD, 1, 0, 0, 0},
         { EOL_MARKER, 0, 0, 0, 0}//end of list marker
     };

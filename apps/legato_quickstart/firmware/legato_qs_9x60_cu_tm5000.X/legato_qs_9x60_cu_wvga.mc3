@@ -1,4 +1,4 @@
-<config configName="lcdc_rgba8888_mxt_9x60_cu_wvga" projectName="legato_qs_9x60_cu_wvga" configVersion="1.1" device="SAM9X60D1G" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.6.1">
+<config configName="lcdc_rgba8888_mxt_9x60_cu_wvga" projectName="legato_qs_9x60_cu_wvga" configVersion="1.1" device="SAM9X60D1G" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.0">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -50,19 +50,11 @@
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
       <entry>
-         <string>le_gfx_gfx2d</string>
-         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
-      </entry>
-      <entry>
          <string>le_gfx_lcdc</string>
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
       <entry>
          <string>legato_gfx_pda_tm5000</string>
-         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
-      </entry>
-      <entry>
-         <string>plib_gfx2d</string>
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
       <entry>
@@ -534,7 +526,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;688&quot; canvasWidth=&quot;1119&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;GraphSettings canvasHeight=&quot;587&quot; canvasWidth=&quot;732&quot; dnOrder=&quot;0&quot;/&gt;
     &lt;PowerProfiles dnOrder=&quot;1&quot;&gt;
       &lt;Profile dnOrder=&quot;0&quot; id=&quot;profile0&quot; name=&quot;Main&quot;/&gt;
     &lt;/PowerProfiles&gt;
@@ -548,16 +540,14 @@
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;flexcom6&quot; x=&quot;25&quot; y=&quot;162&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;gfx_disp_pdatm5000_800x480&quot; x=&quot;109&quot; y=&quot;336&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;gfx_hal_le&quot; x=&quot;394&quot; y=&quot;12&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;gfx_legato&quot; x=&quot;569&quot; y=&quot;451&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;gfx_legato&quot; x=&quot;496&quot; y=&quot;451&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;gfx_maxtouch_controller&quot; x=&quot;336&quot; y=&quot;210&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;lcdc&quot; x=&quot;111&quot; y=&quot;450&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;le_gfx_gfx2d&quot; x=&quot;625&quot; y=&quot;339&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;le_gfx_lcdc&quot; x=&quot;317&quot; y=&quot;403&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;legato_gfx_pda_tm5000&quot; x=&quot;22&quot; y=&quot;90&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;plib_gfx2d&quot; x=&quot;477&quot; y=&quot;339&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;sys_input&quot; x=&quot;412&quot; y=&quot;101&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;sys_time&quot; x=&quot;667&quot; y=&quot;146&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;tc0&quot; x=&quot;529&quot; y=&quot;192&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;le_gfx_lcdc&quot; x=&quot;317&quot; y=&quot;403&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;legato_gfx_pda_tm5000&quot; x=&quot;22&quot; y=&quot;90&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;sys_input&quot; x=&quot;412&quot; y=&quot;101&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;sys_time&quot; x=&quot;667&quot; y=&quot;146&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;tc0&quot; x=&quot;529&quot; y=&quot;192&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -1245,9 +1235,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="GFX2D_CLOCK_ENABLE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;GFX2D_CLOCK_ENABLE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;plib_gfx2d&quot; value=&quot;true&quot;/&gt;
-    &lt;/Values&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
   &lt;/core&gt;
 &lt;/core&gt;
 </value>
@@ -4059,16 +4047,6 @@
           &lt;/String&gt;
         &lt;/Attributes&gt;
       &lt;/DirectDependency&gt;
-      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;gpu_driver&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;le_gfx_gfx2d&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;LE&amp;amp;#160;GPU&amp;amp;#160;Driver&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectDependency&gt;
     &lt;/Attachments&gt;
   &lt;/gfx_legato&gt;
 &lt;/gfx_legato&gt;
@@ -4083,7 +4061,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_legato&gt;
   &lt;gfx_legato dnOrder=&quot;0&quot; id=&quot;LeGPUConnected&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_legato&quot; value=&quot;true&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_legato&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_legato&gt;
 &lt;/gfx_legato&gt;
@@ -4261,51 +4239,6 @@
          <value>__ROOTVIEW</value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_gfx2d" name="!@#harmonyAttachmentState"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_gfx2d&gt;
-  &lt;le_gfx_gfx2d dnOrder=&quot;0&quot;&gt;
-    &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;GFX2D&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;plib_gfx2d&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;GFX2D&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectDependency&gt;
-      &lt;DirectCapability dnOrder=&quot;1&quot; id=&quot;LE GPU Driver&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;gfx_legato&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;gpu_driver&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-    &lt;/Attachments&gt;
-  &lt;/le_gfx_gfx2d&gt;
-&lt;/le_gfx_gfx2d&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_gfx2d" name="#&amp;__MCC_Group_Parrent_id"/>
-         <value>__ROOTVIEW</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_gfx2d" name="DRV_GFX2D_MODE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_gfx2d&gt;
-  &lt;le_gfx_gfx2d dnOrder=&quot;0&quot; id=&quot;DRV_GFX2D_MODE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_gfx2d&quot; value=&quot;Asynchronous&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/le_gfx_gfx2d&gt;
-&lt;/le_gfx_gfx2d&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
   &lt;le_gfx_lcdc dnOrder=&quot;0&quot;&gt;
@@ -4409,11 +4342,33 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="Overlay1LayerEnable"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
+  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;Overlay1LayerEnable&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/le_gfx_lcdc&gt;
+&lt;/le_gfx_lcdc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="Overlay2LayerEnable"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
+  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;Overlay2LayerEnable&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/le_gfx_lcdc&gt;
+&lt;/le_gfx_lcdc&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="TotalNumLayers"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
   &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;TotalNumLayers&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;3&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;1&quot;/&gt;
     &lt;/Values&gt;
   &lt;/le_gfx_lcdc&gt;
 &lt;/le_gfx_lcdc&gt;
@@ -4421,30 +4376,6 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="legato_gfx_pda_tm5000" name="#&amp;__MCC_Group_Parrent_id"/>
-         <value>__ROOTVIEW</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="plib_gfx2d" name="!@#harmonyAttachmentState"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;plib_gfx2d&gt;
-  &lt;plib_gfx2d dnOrder=&quot;0&quot;&gt;
-    &lt;Attachments dnOrder=&quot;0&quot;&gt;
-      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;GFX2D&quot;&gt;
-        &lt;Attributes dnOrder=&quot;0&quot;&gt;
-          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;le_gfx_gfx2d&lt;/Value&gt;
-          &lt;/String&gt;
-          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;GFX2D&lt;/Value&gt;
-          &lt;/String&gt;
-        &lt;/Attributes&gt;
-      &lt;/DirectCapability&gt;
-    &lt;/Attachments&gt;
-  &lt;/plib_gfx2d&gt;
-&lt;/plib_gfx2d&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="plib_gfx2d" name="#&amp;__MCC_Group_Parrent_id"/>
          <value>__ROOTVIEW</value>
       </entry>
       <entry>
@@ -5154,7 +5085,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\definitions.h</file>
-         <hash>bae89fa15d738620a77c3fee28f4e0673b3dcf9eb6cac6ee57c846611d3e9dab</hash>
+         <hash>00ef1e3b4fc29c84e4f3ed769c2e62cffd76fbd6976c4c4407ef6a772e3ca25b</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\device.h</file>
@@ -5202,7 +5133,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\driver\controller\lcdc\drv_gfx_lcdc.c</file>
-         <hash>4c49effde5caaa2cd8ead0ed415247d5eda2feed7c20b85823c04caca0e84ae2</hash>
+         <hash>13ffcce1197456b9e459c638225b67962cb5817294754c3d07e48cd0cb27bdcd</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\driver\controller\lcdc\drv_gfx_lcdc.h</file>
@@ -5214,15 +5145,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\driver\gfx_driver.h</file>
-         <hash>c0b0a01ff978f89cac7d3aa11baf20122297d95a8c28f45506c4e3c1e9217594</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\driver\processor\gfx2d\drv_gfx2d.c</file>
-         <hash>69b7a34d134f7a451c00acf5add6386ac65ca16c2539ad6f607baa58ae012217</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\driver\processor\gfx2d\drv_gfx2d.h</file>
-         <hash>b8928dd67243e292ea99a01a75a4717328ef59ca1f0d56e3a1f03fe5b1840709</hash>
+         <hash>c49e46dfed4d9a1436d5913fe010c723fd41303c85f712b600ef7a146c513edc</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\common\legato_color.c</file>
@@ -5302,7 +5225,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\core\legato_input.c</file>
-         <hash>33d63a672ae146acdf56cbfb86c4da4eb25ea6230f82a84587e6a6e613bee676</hash>
+         <hash>e6c70d567652e1d6596d117edc50391fe11cc2e40c72fcfb8da97a86f3ac296d</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\core\legato_input.h</file>
@@ -5318,7 +5241,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\core\legato_state.c</file>
-         <hash>2b43334893b574253509f4830d0c6ccda57c8b067a315de554a5657160edf918</hash>
+         <hash>de20119a6f0a79a52e2593925f570437c158b53ef3fef53dfdc39d91efa34c76</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\core\legato_state.h</file>
@@ -5422,7 +5345,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\screen\le_gen_screen_Screen0.c</file>
-         <hash>ff521fdbf3349ab585242e8366d401fb550da6fea11da773e8cf3a6a97d3d6b2</hash>
+         <hash>aa9d589a33d4950956b9b1c3cc1964b954e730e5c359f35e3eb85dc451517b3d</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\screen\le_gen_screen_Screen0.h</file>
@@ -5574,7 +5497,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\legato_config.h</file>
-         <hash>16cc29c426a916fca0a16fd0d679b09187d43e83d2474e419ff9b7600c2a4e23</hash>
+         <hash>8d0e69c89a122bd4c164001dcae5dbce6ddc84a0da4d1838b820a2a83cca76e2</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\memory\legato_fixedheap.c</file>
@@ -5618,7 +5541,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\renderer\legato_gpu.c</file>
-         <hash>2c875be18e8daa42c03196428cf7f00b8f9829a595b4c31eb9ebe45397e7b48c</hash>
+         <hash>7678cc065dc87e5caeb67ce0294bf4fede3a5eb6f88bc3adca1951e16478f148</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\renderer\legato_gpu.h</file>
@@ -5850,11 +5773,11 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\imagesequence\legato_widget_imagesequence.c</file>
-         <hash>a65278b8833e71ccf0d999b4c65a4ef65fdd165076c1d36d3d99717945657c6e</hash>
+         <hash>f0cc27ac502df5cae723308a1cd69e34260a943cc6c1e8b0cb95f9f45c7e37eb</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\imagesequence\legato_widget_imagesequence.h</file>
-         <hash>086f9e4bb1dab80958c03075a8ffba4d6cda022a62592107fcfc2fa46879aaea</hash>
+         <hash>5e20f24dbb5786c2c6fb6cc5363c62363a079bc15f886f5d5af4f4d701cb0d6e</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\imagesequence\legato_widget_imagesequence_skin_classic.c</file>
@@ -5882,7 +5805,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\label\legato_widget_label_skin_classic.c</file>
-         <hash>0b3d9c8f6964dcebafd26f1d674e68c01a1895768791143b142688dda8d5c813</hash>
+         <hash>dbdc96905c6f8e1cfb3cbe839ed8249553ea5bc45885f38373d63b24c62adc0e</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\legato_editwidget.c</file>
@@ -6094,7 +6017,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\initialization.c</file>
-         <hash>ab630dc88856f2d4f5cced4f09140f93feb5498a9c7534aa9d93787f95cbc416</hash>
+         <hash>77a37b6aa342c30f5f0378830def6faf10a9e0aa1cc09ca450a03487d966d12c</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\interrupts.c</file>
@@ -6118,15 +6041,15 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\peripheral\aic\plib_aic.c</file>
-         <hash>f5edd5eb4d476ed4ec6a5ee6bc98fe72337cd038be45ef9df0f5d1d4a09cb896</hash>
+         <hash>da7885f3d698d15237b412a9b4267c6297078dd8722c57c9c5903f892ef3b5b7</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\peripheral\aic\plib_aic.h</file>
-         <hash>9ff729f3819887a6769c1a4386db9727e6e88fe6bee25960985d9ccd09229a7d</hash>
+         <hash>150e39620b72b62d7b11a7338040d2c28c888d8714bbaa7462063932076b9081</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\peripheral\clk\plib_clk.c</file>
-         <hash>4b636419a06d1621bfadcec7e40a63490ec196b7bb949f636a0ddc76097f782e</hash>
+         <hash>a2b0c49e6cfe3ae909ee4499415990046d53ecd5f2e48314ae71ac7cf4af5ef0</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\peripheral\clk\plib_clk.h</file>
@@ -6143,14 +6066,6 @@
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\peripheral\flexcom\twi\master\plib_flexcom_twi_master_common.h</file>
          <hash>b167387d3ed43ed5aec18b601bf7d5da73592c102a83e21d56351bb98c67807a</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\peripheral\gfx2d\plib_gfx2d.c</file>
-         <hash>8408b3b847f9a6daf617734399b0d4f0752d6095ba3335b9a0af114ec7e0760b</hash>
-      </entry>
-      <entry>
-         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\peripheral\gfx2d\plib_gfx2d.h</file>
-         <hash>18ddb5eb428222191d9510dd224eefec5333d7271429f5e287e22d248b853108</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\peripheral\lcdc\plib_lcdc.c</file>
@@ -6178,7 +6093,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\peripheral\pio\plib_pio.h</file>
-         <hash>15c3ebe8c5d1a9c443eca6a65e040f2f5b2bb16c9230d8642da195db54fb779c</hash>
+         <hash>94a1a7bef9fc367952a2e6ac447192ca971c179a607e273789a8b98d541446e5</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\peripheral\tc\plib_tc0.c</file>
@@ -6214,7 +6129,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\system\debug\sys_debug.h</file>
-         <hash>9ee0362649aa389b355ecff1ce0e64d124f8f83eda7e40a0c5195ee099c1a0ff</hash>
+         <hash>4162d9e1fab93b8b33f6c8a24726f5dc287ea05c31e3ab984c3c920c725d0882</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\system\input\sys_input.c</file>

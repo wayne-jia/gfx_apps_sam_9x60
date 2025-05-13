@@ -290,12 +290,12 @@ void SYS_Initialize ( void* data )
     /* Disable WDT   */
     WDT_REGS->WDT_MR = WDT_MR_WDDIS_Msk;
 
+    FLEXCOM6_TWI_Initialize();
+
  
     TC0_CH0_TimerInitialize(); 
      
     
-    FLEXCOM6_TWI_Initialize();
-
 	BSP_Initialize();
 
 
@@ -308,8 +308,6 @@ void SYS_Initialize ( void* data )
     sysObj.drvI2C0 = DRV_I2C_Initialize(DRV_I2C_INDEX_0, (SYS_MODULE_INIT *)&drvI2C0InitData);
 
     DRV_LCDC_Initialize();
-
-    DRV_GFX2D_Initialize();
 
 
     sysObj.drvMAXTOUCH = DRV_MAXTOUCH_Initialize(0, (SYS_MODULE_INIT *)&drvMAXTOUCHInitData);
