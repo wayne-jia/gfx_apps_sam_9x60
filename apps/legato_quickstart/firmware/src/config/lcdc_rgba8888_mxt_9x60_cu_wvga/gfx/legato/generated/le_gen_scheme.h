@@ -3,11 +3,13 @@
 
 #include "gfx/legato/legato.h"
 
-extern const leScheme defaultScheme;
-extern const leScheme RedScheme;
-extern const leScheme LayerScheme;
-extern const leScheme GreenScheme;
-extern const leScheme BlueScheme;
+extern const leScheme WhiteScheme;
+extern const leScheme panel_whitesmoke;
+extern const leScheme text_dimgray;
+extern const leScheme panel_white;
+extern const leScheme text_silver;
+extern const leScheme text_darkcyan;
+extern const leScheme ArcScheme;
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility

@@ -66,6 +66,9 @@ extern "C" {
 #define LE_DEBUG                             0 // internal use only, do not change
 #define LE_DEBUG_RENDERER                    0 // internal use only, do not change
 
+#define LE_DEFAULT_SCREEN_WIDTH              800
+#define LE_DEFAULT_SCREEN_HEIGHT             480
+
 // image decoder configuration
 #define LE_ENABLE_RAW_DECODER                1
 #define LE_ENABLE_JPEG_DECODER               1
@@ -82,7 +85,7 @@ extern "C" {
 #define LE_ASSET_DECODER_MASK_CACHE_SIZE     128
 #define LE_ASSET_DECODER_BLEND_CACHE_SIZE    128
 #define LE_JPEG_DECODER_CACHE_SIZE           2048
-#define LE_RASTERFONT_GLYPH_CACHE_SIZE       256
+#define LE_RASTERFONT_GLYPH_CACHE_SIZE       1024
 #endif
 
 // default Font Support
@@ -130,7 +133,7 @@ extern "C" {
 
 // variable heap configuration
 #define LE_VARIABLEHEAP_DEBUGLEVEL         0
-#define LE_VARIABLEHEAP_SIZE               1024000
+#define LE_VARIABLEHEAP_SIZE               262144
 #define LE_VARIABLEHEAP_MINALLOCSIZE       32
 #define LE_VARIABLEHEAP_ALIGNMENT          4
 #define LE_VARIABLEHEAP_BESTFIT            1
@@ -148,20 +151,22 @@ extern "C" {
 // renderer configuration
 //#define LE_VSYNC_STALL
 
-#define LE_LAYER_COUNT                     1
+#define LE_LAYER_COUNT                     3
 
 #define LE_WIDGET_MAX_EVENT_FILTERS        2
 
 // renderer config
 #define LE_ALPHA_BLENDING_ENABLED          1
 #define LE_SCRATCH_BUFFER_COUNT            1
-#define LE_SCRATCH_BUFFER_SIZE_KB          1536
-#define LE_SCRATCH_BUFFER_PADDING          1
+#define LE_SCRATCH_BUFFER_SIZE_KB          256
+#define LE_SCRATCH_BUFFER_PADDING          0
 #define LE_SCRATCH_BIG_ENDIAN              0
 #define LE_USE_ARC_SCAN_FILL               1
 #define LE_ARC_SMOOTH_EDGE                 LE_FALSE
 
 #define LE_MONOCHROME_ON                   1
+
+#define LE_WIDGET_BUFFER_ENABLE            0
 
 
 //DOM-IGNORE-BEGIN

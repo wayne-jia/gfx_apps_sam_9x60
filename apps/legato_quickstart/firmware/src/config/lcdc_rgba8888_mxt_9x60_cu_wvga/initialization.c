@@ -256,6 +256,28 @@ static void SYSC_Disable( void )
 }
 
 
+/*******************************************************************************
+  Function:
+    void STDIO_BufferModeSet ( void )
+
+  Summary:
+    Sets the buffering mode for stdin and stdout
+
+  Remarks:
+ ********************************************************************************/
+static void STDIO_BufferModeSet(void)
+{
+    /* MISRAC 2012 deviation block start */
+    /* MISRA C-2012 Rule 21.6 deviated 2 times in this file.  Deviation record ID -  H3_MISRAC_2012_R_21_6_DR_3 */
+
+    /* Make stdin unbuffered */
+    setbuf(stdin, NULL);
+
+    /* Make stdout unbuffered */
+    setbuf(stdout, NULL);
+}
+
+
 /* MISRAC 2012 deviation block end */
 
 /*******************************************************************************
@@ -276,6 +298,9 @@ void SYS_Initialize ( void* data )
 
 	SYSC_Disable( );
 
+    STDIO_BufferModeSet();
+
+
   
     CLK_Initialize();
 
@@ -290,12 +315,14 @@ void SYS_Initialize ( void* data )
     /* Disable WDT   */
     WDT_REGS->WDT_MR = WDT_MR_WDDIS_Msk;
 
-    FLEXCOM6_TWI_Initialize();
-
  
     TC0_CH0_TimerInitialize(); 
      
     
+    FLEXCOM6_TWI_Initialize();
+
+    DBGU_Initialize();
+
 	BSP_Initialize();
 
 
@@ -308,6 +335,8 @@ void SYS_Initialize ( void* data )
     sysObj.drvI2C0 = DRV_I2C_Initialize(DRV_I2C_INDEX_0, (SYS_MODULE_INIT *)&drvI2C0InitData);
 
     DRV_LCDC_Initialize();
+
+    GFX_CANVAS_Initialize();
 
 
     sysObj.drvMAXTOUCH = DRV_MAXTOUCH_Initialize(0, (SYS_MODULE_INIT *)&drvMAXTOUCHInitData);

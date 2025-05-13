@@ -14,6 +14,10 @@
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
       <entry>
+         <string>dbgu</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+      <entry>
          <string>dfp</string>
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
@@ -27,6 +31,10 @@
       </entry>
       <entry>
          <string>flexcom6</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+      <entry>
+         <string>gfx_canvas</string>
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
       <entry>
@@ -55,6 +63,10 @@
       </entry>
       <entry>
          <string>legato_gfx_pda_tm5000</string>
+         <string>class com.microchip.mcc.harmony.HarmonyModule</string>
+      </entry>
+      <entry>
+         <string>stdio</string>
          <string>class com.microchip.mcc.harmony.HarmonyModule</string>
       </entry>
       <entry>
@@ -526,7 +538,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;587&quot; canvasWidth=&quot;732&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;GraphSettings canvasHeight=&quot;647&quot; canvasWidth=&quot;766&quot; dnOrder=&quot;0&quot;/&gt;
     &lt;PowerProfiles dnOrder=&quot;1&quot;&gt;
       &lt;Profile dnOrder=&quot;0&quot; id=&quot;profile0&quot; name=&quot;Main&quot;/&gt;
     &lt;/PowerProfiles&gt;
@@ -535,19 +547,22 @@
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_9X60_Curiosity&quot; x=&quot;203&quot; y=&quot;54&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;618&quot; y=&quot;14&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core&quot; x=&quot;180&quot; y=&quot;19&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;dfp&quot; x=&quot;21&quot; y=&quot;54&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;drv_i2c&quot; x=&quot;171&quot; y=&quot;148&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;flexcom6&quot; x=&quot;25&quot; y=&quot;162&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;gfx_disp_pdatm5000_800x480&quot; x=&quot;109&quot; y=&quot;336&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;gfx_hal_le&quot; x=&quot;394&quot; y=&quot;12&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;gfx_legato&quot; x=&quot;496&quot; y=&quot;451&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;gfx_maxtouch_controller&quot; x=&quot;336&quot; y=&quot;210&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;lcdc&quot; x=&quot;111&quot; y=&quot;450&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;le_gfx_lcdc&quot; x=&quot;317&quot; y=&quot;403&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;legato_gfx_pda_tm5000&quot; x=&quot;22&quot; y=&quot;90&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;sys_input&quot; x=&quot;412&quot; y=&quot;101&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;sys_time&quot; x=&quot;667&quot; y=&quot;146&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;tc0&quot; x=&quot;529&quot; y=&quot;192&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;dbgu&quot; x=&quot;550&quot; y=&quot;280&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;dfp&quot; x=&quot;21&quot; y=&quot;54&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;drv_i2c&quot; x=&quot;171&quot; y=&quot;148&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;flexcom6&quot; x=&quot;25&quot; y=&quot;162&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;gfx_canvas&quot; x=&quot;472&quot; y=&quot;511&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;gfx_disp_pdatm5000_800x480&quot; x=&quot;109&quot; y=&quot;336&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;gfx_hal_le&quot; x=&quot;394&quot; y=&quot;12&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;gfx_legato&quot; x=&quot;603&quot; y=&quot;393&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;gfx_maxtouch_controller&quot; x=&quot;336&quot; y=&quot;210&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;lcdc&quot; x=&quot;111&quot; y=&quot;450&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;le_gfx_lcdc&quot; x=&quot;317&quot; y=&quot;403&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;legato_gfx_pda_tm5000&quot; x=&quot;22&quot; y=&quot;90&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;stdio&quot; x=&quot;723&quot; y=&quot;294&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;sys_input&quot; x=&quot;412&quot; y=&quot;101&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;sys_time&quot; x=&quot;667&quot; y=&quot;146&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;18&quot; id=&quot;tc0&quot; x=&quot;529&quot; y=&quot;192&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -732,6 +747,61 @@
         &lt;Value dnOrder=&quot;0&quot;&gt;false&lt;/Value&gt;
       &lt;/Boolean&gt;
     &lt;/Attributes&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="DBGU_CLOCK_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;DBGU_CLOCK_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;dbgu&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="DBGU_CLOCK_FREQUENCY"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;DBGU_CLOCK_FREQUENCY&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;200000000&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="DBGU_INTERRUPT_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;DBGU_INTERRUPT_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;dbgu&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="DBGU_INTERRUPT_HANDLER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;DBGU_INTERRUPT_HANDLER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;dbgu&quot; value=&quot;DBGU_Handler&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="DBGU_INTERRUPT_HANDLER_LOCK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;DBGU_INTERRUPT_HANDLER_LOCK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;dbgu&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
 </value>
@@ -1659,6 +1729,50 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_147_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_147_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;DBGU_DTXD&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_147_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_147_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_157_FUNCTION_TYPE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_157_FUNCTION_TYPE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;DBGU_DRXD&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_157_PERIPHERAL_FUNCTION"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
+  &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_157_PERIPHERAL_FUNCTION&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;A&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/core&gt;
+&lt;/core&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="PIN_174_DIR"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIN_174_DIR&quot;&gt;
@@ -2511,7 +2625,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;PIOA_PDR_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;3221225472&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;3221227008&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -3349,6 +3463,311 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="!@#harmonyAttachmentState"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot;&gt;
+    &lt;Attachments dnOrder=&quot;0&quot;&gt;
+      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;DBGU_UART&quot;&gt;
+        &lt;Attributes dnOrder=&quot;0&quot;&gt;
+          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;stdio&lt;/Value&gt;
+          &lt;/String&gt;
+          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;UART&lt;/Value&gt;
+          &lt;/String&gt;
+        &lt;/Attributes&gt;
+      &lt;/DirectCapability&gt;
+    &lt;/Attachments&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="BAUD_RATE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;BAUD_RATE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="BRG_VALUE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;BRG_VALUE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="DBGU_CLK_SRC"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;DBGU_CLK_SRC&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="DBGU_CLOCK_FREQ"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;DBGU_CLOCK_FREQ&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="DBGU_INSTANCE_NAME"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;DBGU_INSTANCE_NAME&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="DBGU_INTERRUPT_MODE_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;DBGU_INTERRUPT_MODE_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;dbgu&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="DBGU_MR_DATA_WIDTH"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;DBGU_MR_DATA_WIDTH&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="DBGU_MR_FILTER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;DBGU_MR_FILTER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="DBGU_MR_PAR"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;DBGU_MR_PAR&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="DBGU_MR_STOP_BITS"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;DBGU_MR_STOP_BITS&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="DBGU_OPERATING_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;DBGU_OPERATING_MODE&quot;&gt;
+    &lt;Attributes dnOrder=&quot;0&quot;&gt;
+      &lt;Boolean dnOrder=&quot;0&quot; id=&quot;readOnly&quot;&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;true&lt;/Value&gt;
+      &lt;/Boolean&gt;
+    &lt;/Attributes&gt;
+    &lt;Values dnOrder=&quot;1&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;dbgu&quot; value=&quot;0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="DBGU_RING_BUFFER_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;DBGU_RING_BUFFER_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="DBGU_RING_BUFFER_MODE_ENABLE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;DBGU_RING_BUFFER_MODE_ENABLE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;dbgu&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="DBGU_RX_RING_BUFFER_SIZE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;DBGU_RX_RING_BUFFER_SIZE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="DBGU_TX_RING_BUFFER_SIZE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;DBGU_TX_RING_BUFFER_SIZE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="RECEIVE_DATA_REGISTER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;RECEIVE_DATA_REGISTER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="TRANSMIT_DATA_REGISTER"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;TRANSMIT_DATA_REGISTER&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="USART_DATA_8_BIT_MASK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;USART_DATA_8_BIT_MASK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="USART_DATA_BITS"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;USART_DATA_BITS&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="USART_FRAMING_ERROR_VALUE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;USART_FRAMING_ERROR_VALUE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="USART_INTERRUPT_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;USART_INTERRUPT_MODE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="USART_OVERRUN_ERROR_VALUE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;USART_OVERRUN_ERROR_VALUE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="USART_PARITY_ERROR_VALUE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;USART_PARITY_ERROR_VALUE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="USART_PARITY_EVEN_MASK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;USART_PARITY_EVEN_MASK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="USART_PARITY_MARK_MASK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;USART_PARITY_MARK_MASK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="USART_PARITY_NONE_MASK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;USART_PARITY_NONE_MASK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="USART_PARITY_ODD_MASK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;USART_PARITY_ODD_MASK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="USART_PARITY_SPACE_MASK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;USART_PARITY_SPACE_MASK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="USART_PLIB_API_PREFIX"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;USART_PLIB_API_PREFIX&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dbgu" name="USART_STOP_1_BIT_MASK"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;dbgu&gt;
+  &lt;dbgu dnOrder=&quot;0&quot; id=&quot;USART_STOP_1_BIT_MASK&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/dbgu&gt;
+&lt;/dbgu&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="dfp" name="#&amp;__MCC_Group_Parrent_id"/>
          <value>__ROOTVIEW</value>
       </entry>
@@ -3808,6 +4227,2014 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="!@#harmonyAttachmentState"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot;&gt;
+    &lt;Attachments dnOrder=&quot;0&quot;&gt;
+      &lt;DirectCapability dnOrder=&quot;0&quot; id=&quot;gfx_canvas&quot;&gt;
+        &lt;Attributes dnOrder=&quot;0&quot;&gt;
+          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;gfx_legato&lt;/Value&gt;
+          &lt;/String&gt;
+          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;gfx_driver&lt;/Value&gt;
+          &lt;/String&gt;
+        &lt;/Attributes&gt;
+      &lt;/DirectCapability&gt;
+      &lt;DirectDependency dnOrder=&quot;1&quot; id=&quot;gfx_display_driver&quot;&gt;
+        &lt;Attributes dnOrder=&quot;0&quot;&gt;
+          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;le_gfx_lcdc&lt;/Value&gt;
+          &lt;/String&gt;
+          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;le_gfx_driver_lcdc&lt;/Value&gt;
+          &lt;/String&gt;
+        &lt;/Attributes&gt;
+      &lt;/DirectDependency&gt;
+    &lt;/Attachments&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas0Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas0Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas0FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas0FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;Auto&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas0Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas0Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;480&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas0Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas0Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;RGBA_8888&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas0Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas0Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;800&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas10Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas10Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas10FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas10FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas10Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas10Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas10Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas10Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas10Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas10Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas11Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas11Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas11FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas11FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas11Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas11Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas11Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas11Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas11Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas11Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas12Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas12Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas12FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas12FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas12Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas12Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas12Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas12Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas12Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas12Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas13Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas13Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas13FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas13FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas13Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas13Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas13Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas13Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas13Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas13Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas14Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas14Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas14FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas14FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas14Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas14Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas14Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas14Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas14Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas14Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas15Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas15Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas15FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas15FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas15Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas15Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas15Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas15Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas15Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas15Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas16Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas16Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas16FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas16FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas16Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas16Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas16Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas16Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas16Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas16Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas17Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas17Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas17FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas17FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas17Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas17Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas17Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas17Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas17Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas17Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas18Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas18Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas18FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas18FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas18Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas18Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas18Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas18Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas18Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas18Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas19Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas19Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas19FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas19FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas19Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas19Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas19Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas19Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas19Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas19Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas1Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas1Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas1FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas1FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;Auto&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas1Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas1Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;480&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas1Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas1Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;RGBA_8888&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas1Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas1Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;620&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas20Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas20Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas20FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas20FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas20Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas20Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas20Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas20Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas20Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas20Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas21Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas21Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas21FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas21FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas21Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas21Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas21Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas21Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas21Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas21Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas22Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas22Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas22FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas22FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas22Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas22Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas22Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas22Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas22Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas22Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas23Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas23Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas23FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas23FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas23Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas23Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas23Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas23Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas23Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas23Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas24Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas24Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas24FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas24FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas24Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas24Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas24Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas24Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas24Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas24Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas25Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas25Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas25FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas25FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas25Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas25Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas25Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas25Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas25Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas25Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas26Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas26Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas26FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas26FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas26Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas26Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas26Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas26Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas26Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas26Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas27Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas27Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas27FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas27FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas27Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas27Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas27Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas27Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas27Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas27Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas28Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas28Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas28FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas28FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas28Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas28Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas28Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas28Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas28Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas28Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas29Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas29Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas29FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas29FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas29Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas29Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas29Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas29Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas29Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas29Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas2Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas2Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas2FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas2FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;Auto&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas2Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas2Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;480&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas2Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas2Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;RGBA_8888&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas2Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas2Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;620&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas30Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas30Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas30FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas30FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas30Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas30Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas30Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas30Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas30Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas30Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas31Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas31Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas31FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas31FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas31Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas31Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas31Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas31Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas31Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas31Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas32Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas32Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas32FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas32FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas32Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas32Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas32Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas32Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas32Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas32Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas33Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas33Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas33FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas33FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas33Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas33Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas33Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas33Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas33Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas33Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas34Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas34Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas34FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas34FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas34Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas34Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas34Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas34Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas34Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas34Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas35Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas35Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas35FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas35FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas35Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas35Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas35Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas35Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas35Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas35Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas36Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas36Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas36FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas36FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas36Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas36Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas36Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas36Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas36Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas36Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas37Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas37Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas37FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas37FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas37Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas37Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas37Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas37Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas37Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas37Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas38Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas38Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas38FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas38FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas38Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas38Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas38Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas38Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas38Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas38Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas39Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas39Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas39FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas39FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas39Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas39Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas39Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas39Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas39Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas39Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas3Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas3Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas3FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas3FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas3Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas3Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas3Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas3Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas3Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas3Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas4Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas4Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas4FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas4FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas4Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas4Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas4Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas4Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas4Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas4Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas5Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas5Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas5FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas5FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas5Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas5Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas5Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas5Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas5Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas5Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas6Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas6Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas6FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas6FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas6Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas6Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas6Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas6Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas6Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas6Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas7Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas7Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas7FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas7FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas7Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas7Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas7Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas7Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas7Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas7Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas8Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas8Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas8FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas8FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas8Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas8Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas8Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas8Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas8Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas8Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas9Address"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas9Address&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas9FrameBufferAlloc"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas9FrameBufferAlloc&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas9Height"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas9Height&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas9Mode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas9Mode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="Canvas9Width"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;Canvas9Width&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="ColorMode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;ColorMode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;RGBA_8888&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="DisplayDriverName"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;DisplayDriverName&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_canvas&quot; value=&quot;lcdcDisplayDriver&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="DriverInitName"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;DriverInitName&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="EffectsEnabled"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;EffectsEnabled&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="EffectsInterval"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;EffectsInterval&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="FadeEffectsEnabled"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;FadeEffectsEnabled&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="GPUBlitEnabled"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;GPUBlitEnabled&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="GraphicsProcessorDriverName"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;GraphicsProcessorDriverName&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="MaXCanvasObjects"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;MaXCanvasObjects&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="MoveEffectsEnabled"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;MoveEffectsEnabled&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="NumCanvasObjects"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;NumCanvasObjects&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="WindowClippingEnabled"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;WindowClippingEnabled&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="rtosEnableTaskDelay"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;rtosEnableTaskDelay&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="rtosTaskDelay"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;rtosTaskDelay&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="rtosTaskPriority"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;rtosTaskPriority&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_canvas" name="rtosTaskSize"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_canvas&gt;
+  &lt;gfx_canvas dnOrder=&quot;0&quot; id=&quot;rtosTaskSize&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/gfx_canvas&gt;
+&lt;/gfx_canvas&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="gfx_disp_pdatm5000_800x480" name="!@#harmonyAttachmentState"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_disp_pdatm5000_800x480&gt;
   &lt;gfx_disp_pdatm5000_800x480 dnOrder=&quot;0&quot;&gt;
@@ -4040,10 +6467,10 @@
       &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;gfx_driver&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;le_gfx_lcdc&lt;/Value&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;gfx_canvas&lt;/Value&gt;
           &lt;/String&gt;
           &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;le_gfx_driver_lcdc&lt;/Value&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;gfx_canvas&lt;/Value&gt;
           &lt;/String&gt;
         &lt;/Attributes&gt;
       &lt;/DirectDependency&gt;
@@ -4072,7 +6499,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;gfx_legato&gt;
   &lt;gfx_legato dnOrder=&quot;0&quot; id=&quot;driverInitName&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_legato&quot; value=&quot;lcdcDisplayDriver&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;gfx_legato&quot; value=&quot;gfxcVirtualDisplayDriver&quot;/&gt;
     &lt;/Values&gt;
   &lt;/gfx_legato&gt;
 &lt;/gfx_legato&gt;
@@ -4266,10 +6693,10 @@
       &lt;DirectCapability dnOrder=&quot;2&quot; id=&quot;le_gfx_driver_lcdc&quot;&gt;
         &lt;Attributes dnOrder=&quot;0&quot;&gt;
           &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;gfx_legato&lt;/Value&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;gfx_canvas&lt;/Value&gt;
           &lt;/String&gt;
           &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
-            &lt;Value dnOrder=&quot;0&quot;&gt;gfx_driver&lt;/Value&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;gfx_display_driver&lt;/Value&gt;
           &lt;/String&gt;
         &lt;/Attributes&gt;
       &lt;/DirectCapability&gt;
@@ -4281,6 +6708,17 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="#&amp;__MCC_Group_Parrent_id"/>
          <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="CanvasModeOnly"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
+  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;CanvasModeOnly&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/le_gfx_lcdc&gt;
+&lt;/le_gfx_lcdc&gt;
+</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="DisplayHeight"/>
@@ -4318,6 +6756,17 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="FrameBufferColorMode"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
+  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;FrameBufferColorMode&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;2&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/le_gfx_lcdc&gt;
+&lt;/le_gfx_lcdc&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="HALComment"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
   &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;HALComment&quot;&gt;
@@ -4346,7 +6795,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
   &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;Overlay1LayerEnable&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/le_gfx_lcdc&gt;
 &lt;/le_gfx_lcdc&gt;
@@ -4357,7 +6806,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
   &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;Overlay2LayerEnable&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/le_gfx_lcdc&gt;
 &lt;/le_gfx_lcdc&gt;
@@ -4368,7 +6817,18 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
   &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;TotalNumLayers&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;1&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;le_gfx_lcdc&quot; value=&quot;3&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/le_gfx_lcdc&gt;
+&lt;/le_gfx_lcdc&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="le_gfx_lcdc" name="UseGPU"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;le_gfx_lcdc&gt;
+  &lt;le_gfx_lcdc dnOrder=&quot;0&quot; id=&quot;UseGPU&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/le_gfx_lcdc&gt;
 &lt;/le_gfx_lcdc&gt;
@@ -4377,6 +6837,59 @@
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="legato_gfx_pda_tm5000" name="#&amp;__MCC_Group_Parrent_id"/>
          <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="stdio" name="!@#harmonyAttachmentState"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;stdio&gt;
+  &lt;stdio dnOrder=&quot;0&quot;&gt;
+    &lt;Attachments dnOrder=&quot;0&quot;&gt;
+      &lt;DirectDependency dnOrder=&quot;0&quot; id=&quot;UART&quot;&gt;
+        &lt;Attributes dnOrder=&quot;0&quot;&gt;
+          &lt;String dnOrder=&quot;0&quot; id=&quot;targetComponentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;dbgu&lt;/Value&gt;
+          &lt;/String&gt;
+          &lt;String dnOrder=&quot;1&quot; id=&quot;targetAttachmentID&quot;&gt;
+            &lt;Value dnOrder=&quot;0&quot;&gt;DBGU_UART&lt;/Value&gt;
+          &lt;/String&gt;
+        &lt;/Attributes&gt;
+      &lt;/DirectDependency&gt;
+    &lt;/Attachments&gt;
+  &lt;/stdio&gt;
+&lt;/stdio&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="stdio" name="#&amp;__MCC_Group_Parrent_id"/>
+         <value>__ROOTVIEW</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="stdio" name="DEBUG_PERIPHERAL"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;stdio&gt;
+  &lt;stdio dnOrder=&quot;0&quot; id=&quot;DEBUG_PERIPHERAL&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;stdio&quot; value=&quot;dbgu&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/stdio&gt;
+&lt;/stdio&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="stdio" name="STDIN_BUFF_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;stdio&gt;
+  &lt;stdio dnOrder=&quot;0&quot; id=&quot;STDIN_BUFF_MODE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/stdio&gt;
+&lt;/stdio&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="stdio" name="STDOUT_BUFF_MODE"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;stdio&gt;
+  &lt;stdio dnOrder=&quot;0&quot; id=&quot;STDOUT_BUFF_MODE&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;/&gt;
+  &lt;/stdio&gt;
+&lt;/stdio&gt;
+</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="sys_input" name="!@#harmonyAttachmentState"/>
@@ -5085,7 +7598,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\definitions.h</file>
-         <hash>00ef1e3b4fc29c84e4f3ed769c2e62cffd76fbd6976c4c4407ef6a772e3ca25b</hash>
+         <hash>193c200f8cfa0da1b33d7148f423ea81876594c2175fd29e12232d67c43f82cd</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\device.h</file>
@@ -5132,12 +7645,36 @@
          <hash>931e951cf7431d3d70d6ab81bcd265ff0ac8b3f473b73cd7a541f59d49786b7c</hash>
       </entry>
       <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\canvas\gfx_canvas.c</file>
+         <hash>e14f69846b0c0f80c064174aa66b6117a790e4400e63a8be10dafe0a29c25489</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\canvas\gfx_canvas.h</file>
+         <hash>9da067f88f522a25581bd09486504a9b820bd3b049b47bdafbe5b86fe3722a24</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\canvas\gfx_canvas_api.c</file>
+         <hash>267d0ea74a1404d4700548ca1a074906428332e8ccc1c2ac2ddc668e2574d161</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\canvas\gfx_canvas_api.h</file>
+         <hash>0e743daeb0a4a55191bebc5dc40ab3e9b1d9f1d82611ced09b45e5daa84bb89d</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\canvas\gfx_canvas_config.c</file>
+         <hash>23d3ad90a844fc5eca39178d03713fc5a04bd08143470c108cf1a2f551594942</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\canvas\gfx_canvas_config.h</file>
+         <hash>c75d3af0e1fef46035d0ec647be615dc05839ebea72841bc1e654c04baf9faef</hash>
+      </entry>
+      <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\driver\controller\lcdc\drv_gfx_lcdc.c</file>
-         <hash>13ffcce1197456b9e459c638225b67962cb5817294754c3d07e48cd0cb27bdcd</hash>
+         <hash>d3dc1cdda9d03433863a977673452b769603852ed401bf2d87dbe10de6a9ecaa</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\driver\controller\lcdc\drv_gfx_lcdc.h</file>
-         <hash>84f99fd6e647743ad32a834fc17956572fcc14fd72d574b64bee468f8e720279</hash>
+         <hash>81910929785573ed4adcc3fadcc001ddf6fd9f3f95c76332649b4ca550002d04</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\driver\gfx_driver.c</file>
@@ -5157,7 +7694,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\common\legato_color_blend.c</file>
-         <hash>51fb4000e925d7eecb3639530d8ccf9e1de121e0baccca96d1b9319f6f1f8cf9</hash>
+         <hash>190ce5594e63699efa4b955d53b353e10c001142fcb26426b3fafc24f924e9e1</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\common\legato_color_convert.c</file>
@@ -5189,7 +7726,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\common\legato_math.h</file>
-         <hash>f794f16f2feab8180837496d1a067cfc023cf2157a199a82989cce01c76442ed</hash>
+         <hash>08186acb20d5412a2abfaa9f75f0048a2b78ca33ff5d28cb5f64ad4a3330e446</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\common\legato_pixelbuffer.c</file>
@@ -5209,7 +7746,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\common\legato_utils.c</file>
-         <hash>f7d528b39dabd79ad9bf209ba8b00232f1741d43c5b349f115a4bfc162deae0e</hash>
+         <hash>7c6874ef8395da851d1590e98290a07445be846f84cb769e524c938b48caaed6</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\common\legato_utils.h</file>
@@ -5225,11 +7762,27 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\core\legato_input.c</file>
-         <hash>e6c70d567652e1d6596d117edc50391fe11cc2e40c72fcfb8da97a86f3ac296d</hash>
+         <hash>6d54fbccee2fe81f89e851d6475ff48b565b93edcdf2a00baae59351405af480</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\core\legato_input.h</file>
          <hash>b64b85f2884b54b5e9fb5c735d91a0ae7923990cdcfd9d28792d6dc1af7d4a62</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\core\legato_real_i16.c</file>
+         <hash>9db8c6f0d9c02080c8a1f9866c1495e034ebf3e48213d1f6c79a12b6ea9c3032</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\core\legato_real_i16.h</file>
+         <hash>b2b25d0899907cf018d568e5791b873cc6ae1670268fcdaf3ea69396b2d032a9</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\core\legato_real_u8.c</file>
+         <hash>1791c25479e446edd8e732dcbc5da06e40de5d5cb4e12f18d80951ae0d5f15c1</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\core\legato_real_u8.h</file>
+         <hash>e7603e76b99f9f6e2a7c2ad973b303c2ee9e7f1beefdd83d3401ebd53ccb896f</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\core\legato_scheme.c</file>
@@ -5241,7 +7794,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\core\legato_state.c</file>
-         <hash>de20119a6f0a79a52e2593925f570437c158b53ef3fef53dfdc39d91efa34c76</hash>
+         <hash>af1498539074956b17a1c496053809a1c7a0af949fe6b307252ac3c5e77270b1</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\core\legato_state.h</file>
@@ -5301,15 +7854,15 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\font\le_gen_fonts.c</file>
-         <hash>c408cf5230bdb6df88ae9e477ae52d2961cb55ca3ef2cd03210678795b51b3fa</hash>
+         <hash>42e6a8f055946b2d710d55571ba61cd352888d512da9813a1bff352651b4eac7</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\image\le_gen_images.c</file>
-         <hash>2cad8b44b405ca92ed28bf7a842c0cccebc8ab0806b9c9cc139bf8e53974a63e</hash>
+         <hash>9942f7e0f5fef6a39deda01b2c4ce510cba328b79979784ae1c4ba90a0716b34</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\le_gen_assets.h</file>
-         <hash>2c0cbe1979d2f7a8a85e233ea4c93547e55758e69386b58d76d964b17b2af41e</hash>
+         <hash>62434f912c9edbceb22fa3927d1de874b75de80cfd5ba5c91cab68ed9942dd6a</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\le_gen_globalpalette.c</file>
@@ -5325,31 +7878,31 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\le_gen_init.c</file>
-         <hash>75ffb17636f0083587b55af305ebc83961548c12c397f0c8e8895a21111f9e16</hash>
+         <hash>63f98be15e85ac928bfb39af6a92c789428a31a0385c2d7a0d39a30a5ee7b236</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\le_gen_init.h</file>
-         <hash>ff64245a1cfefc55213a1ff89de4029ef6f3763069eeb726f329cd26c0452bdb</hash>
+         <hash>38fd9b02a936cf9f3efebbe68d0edef20ded02304e50248cd29fc73c819ec7cb</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\le_gen_scheme.c</file>
-         <hash>bf68ccf6509f90b5972a693c5cf6ad5e0b44036219c443fd44eac81bfd872e0d</hash>
+         <hash>3d63d8ba3063c556ff6755fd5781c2a4dc0bf9dac87a1cfef31c17ac9610f387</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\le_gen_scheme.h</file>
-         <hash>825c57aa4e4e9d57c2660a742058ec3d09450006bfc971711c9607f26a9bc225</hash>
+         <hash>8d7efb7c04e0f7129bc9e998a6dd08c85392ec28c7f34e5051bd1466af1b84ff</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\le_gen_stringtable.c</file>
-         <hash>f48893a0b50f4c1ac388f588a1e30449f5e5ba4bc5a71da6e081f54d6506e799</hash>
+         <hash>f4a0f08669da89de82020bd113d8687a5cf98a39f2585d9b1ebea79c4695514e</hash>
       </entry>
       <entry>
-         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\screen\le_gen_screen_Screen0.c</file>
-         <hash>aa9d589a33d4950956b9b1c3cc1964b954e730e5c359f35e3eb85dc451517b3d</hash>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\screen\le_gen_screen_HomeScreen.c</file>
+         <hash>5f5078ee873eebb3a9707dfc9cc337a70461c518c20ea11339774f335f99b963</hash>
       </entry>
       <entry>
-         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\screen\le_gen_screen_Screen0.h</file>
-         <hash>c7a6dc48df7bb61a5d9f20a74edad5b918260103dbe549927123af40a64cca45</hash>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\generated\screen\le_gen_screen_HomeScreen.h</file>
+         <hash>677006433d3f75f71ffc45da29fdaeafe45971e93a48565377a679c9b5b2a70e</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\image\jpeg\jidctint.c</file>
@@ -5429,7 +7982,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\image\raw\legato_imagedecoder_raw.c</file>
-         <hash>9946d4b12dfb72e2b5a4e41d7111ba2bc963871457948e92b9e381e673f411ab</hash>
+         <hash>89cbf233c8538b3b659e2f7c8ed799aa48a0762401d8f8bb9c5d41fcb60511f0</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\image\raw\legato_imagedecoder_raw.h</file>
@@ -5493,11 +8046,11 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\legato.h</file>
-         <hash>79646dc5498e272741df83cfde01562dc4ea5b59e06e7b3dc10f2d1586080db8</hash>
+         <hash>b4ce875200132b2bf0aa6b5a3271b8bc363107741378e3079cbaa14037fbf807</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\legato_config.h</file>
-         <hash>8d0e69c89a122bd4c164001dcae5dbce6ddc84a0da4d1838b820a2a83cca76e2</hash>
+         <hash>24e11a63d089477bf9f0397ff15ba4b09b695a61cf3c1b509cc7f8a1498da798</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\memory\legato_fixedheap.c</file>
@@ -5525,7 +8078,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\renderer\legato_draw.c</file>
-         <hash>5b3064465b4c94ec45a578e4dbc443d3e1908080847b34c99df0be4f94cff7e9</hash>
+         <hash>c3f545fa2dd7e084db98daa5dd9867c367bcaad14b0246bc248b51a9b4c381b7</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\renderer\legato_draw_arc.c</file>
@@ -5549,11 +8102,11 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\renderer\legato_renderer.c</file>
-         <hash>8670db119b7bd79b2b2ae15ecc57f27c1f345a6fd21c57a824a3d0bdcdfd4c8f</hash>
+         <hash>5c718828afc9b62c3b85a08d52b1ca21f2ff9b97841c26dd79f3b9d43454d059</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\renderer\legato_renderer.h</file>
-         <hash>9a0155fa825cec3a872cc886bd7ee8d91a2a38ff0bc528659edf905963dfe35c</hash>
+         <hash>ab8643482d587c578c9d0451b8df42e0746800c94b2599f26d5f3a1b3fac1324</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\string\legato_dynamicstring.c</file>
@@ -5616,6 +8169,114 @@
          <hash>4551ff37ce3fb51d88140c4c241e9a60967f7b04fe24a939c36aeec829f8656c</hash>
       </entry>
       <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_aa.c</file>
+         <hash>79a3576d8ced5bb98636875014980842758259cb35b84d27705a9b846775420f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_aabb.c</file>
+         <hash>9c09249b6a4a06701c802e6e0b796afd473389b2b9bc03c510f59bddd1fd75c0</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_aabb.h</file>
+         <hash>e9b3af2b0e0bd22d9a60fd3414b006939ef88c5d57579ab2b114de2847c53811</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_linef.c</file>
+         <hash>b178630cc2e41414825a40e1d091610531685980e70668c955d58844569bb473</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_linef.h</file>
+         <hash>60593172d8c6f093fd028170ae88cb00f7d14a1ee48afb5b87faeb3293236d48</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_obb.c</file>
+         <hash>a2e55d1fb5420603f2472c596d795d3056aae1b96d915e8eb06fcba5416d5672</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_obb.h</file>
+         <hash>5c2dcb54f723b4136281ea58ab035cba37df782c23dac3da85fecc2f0bb0629d</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_plane.c</file>
+         <hash>746b35e73b764a30167f4edc906865cfde8fcf883c540fc079b6244e5b6810e5</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_plane.h</file>
+         <hash>8eb200d14d19761ebff9884271a494ff014ff58d9262365c47e9d1bc2d629984</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_point.c</file>
+         <hash>262a8bca00fe2897d85751cb7897cc73cc9646ce998344e57b708dc615810540</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_point.h</file>
+         <hash>b515393f5f474229acf100be5cdf27dc850ddae627fa09e23b15a89c0539e45b</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_rectf.c</file>
+         <hash>6aa692986f48ea3ab60f6f7455de75b7293c81ef0e5597859ca95e096d95736f</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_rectf.h</file>
+         <hash>fdb1b0d5031d1df095930f3c8787fb4767e803e031c540a0e75b2d6c7a985ea5</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_vector.h</file>
+         <hash>69bdd7a700bb3ffe0f5faecc0db1fa5afbf0128dbb0e0eeb451969e56d9bf2da</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_vector2.c</file>
+         <hash>2d75e617cc902e72579f55dcce7159e9f0e31947d727655e2b804edf15053e8c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_vector2.h</file>
+         <hash>bf4fc4125b8496b0fa722de4b66edf9779976b2df235d8e03d2213d1261812df</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_vector_arc_fill.c</file>
+         <hash>03caf47f8b4c56eb1619d6653733755ce515e24382b6a1b598b2ddfc5115d002</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_vector_arc_stroke.c</file>
+         <hash>7d31ee659b86695f57c8eeaf006bb7d2d5819dcedf119324b288d4f09589f956</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_vector_convexpoly_fill.c</file>
+         <hash>cf03bfad4ac13f73acbee31ee77a50fe0da6062d310aea083106b6cc526ec5a3</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_vector_hline.c</file>
+         <hash>c2e58156aa342f5ddf928b24b82937f3ddc15a38496069ff21eb50ec135f41d1</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_vector_kernel.c</file>
+         <hash>387296aeed823c7cd166411f3bc2f0a4897ab351039ca6a624c28f64cd453190</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_vector_kernel.h</file>
+         <hash>663220a80372dcb2a8471977a0c916316de739ce05e843d5b1b7d4b6c2a8a802</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_vector_line.c</file>
+         <hash>549efa4a77d4f567f5e3c0c2cf6554744f3133c056d44a5528f1ccd9efa44dd8</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_vector_point.c</file>
+         <hash>18f85fe34bb0e3e51c88ba215e85c4e8e5ccee35fbbca3ca65de289eda6bc05c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_vector_rect_fill.c</file>
+         <hash>422e95f039566b09393a38f7fdb7a1695b5d22936d83e67ed203951fbde0d67c</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_vector_rect_stroke.c</file>
+         <hash>42924c26b7e7d0e55ba1e36d0a5ec51c932a1d17aef555a301280d4f00ceb99e</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\vector\legato_vector_vline.c</file>
+         <hash>c18b7122df5bf1542c9ade9a41948be5c172d4123e36fc7b211cf9bda4372a04</hash>
+      </entry>
+      <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\arc\legato_widget_arc.c</file>
          <hash>2ed3accad62315ec8a620bdc0bae6f712132eacdc3bbc3b5876eb6ebc264c7c2</hash>
       </entry>
@@ -5625,7 +8286,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\arc\legato_widget_arc_skin_classic.c</file>
-         <hash>b16ef4ef4d4f6d02a02926f912615ea6dc1a4d3e5695e1fbba9faf03184d9daa</hash>
+         <hash>aa8aadda1fe885d37de1a096289fa0affd096bb0a6fd60aa9c9986102fc3a970</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\bargraph\legato_widget_bar_graph.c</file>
@@ -5677,7 +8338,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\circulargauge\legato_widget_circular_gauge.c</file>
-         <hash>187dd3dcb006c1b2edb338b31b598185b850dfd815a1c0da63dafed32a4cbbc6</hash>
+         <hash>ae962aad82924a2f191aa00b22753460be519c26afc277b5d755e53ffbe48e3b</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\circulargauge\legato_widget_circular_gauge.h</file>
@@ -5721,7 +8382,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\gradient\legato_widget_gradient_skin_classic.c</file>
-         <hash>a271a842adeaf4e28a1d12b580e5f408209eb0eec16e2ef197659364a1bff67d</hash>
+         <hash>e2a45006cf7d78470e3388093d8ca5b38fdc116142b1ac73fdb42f38ad9919a5</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\groupbox\legato_widget_groupbox.c</file>
@@ -5773,7 +8434,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\imagesequence\legato_widget_imagesequence.c</file>
-         <hash>f0cc27ac502df5cae723308a1cd69e34260a943cc6c1e8b0cb95f9f45c7e37eb</hash>
+         <hash>e7177d9fd1b9c3acd69bd08b6b5087ad1d3c5761fe96a787c981efb669768c6d</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\imagesequence\legato_widget_imagesequence.h</file>
@@ -5785,7 +8446,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\keypad\legato_widget_keypad.c</file>
-         <hash>7aa5b75e9614a9a99922344e2c425a11d332c1304784c77ae9f42b9a3d37375c</hash>
+         <hash>ae9cfd22c5fd788079a46d6603f649cd7636450aa54d5deb2a7367ba607218a3</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\keypad\legato_widget_keypad.h</file>
@@ -5861,7 +8522,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\list\legato_widget_list.c</file>
-         <hash>76cd79d99adccc089df61da79159d17866877b21cb90d2b4e2d8a31a7706c25d</hash>
+         <hash>2937b837c847318523bc7cb698e7031122832de7128bd73f0b236d1d1883033f</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\list\legato_widget_list.h</file>
@@ -5897,7 +8558,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\progressbar\legato_widget_progressbar.c</file>
-         <hash>afbbff4482f176aa768f2fc83f5717a36c2173e9c5854bcd3af745a4c9102d63</hash>
+         <hash>fe42513f87808e959be8cec47c80a3122d345984bc7edb22d2746bafd7e7c10b</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\progressbar\legato_widget_progressbar.h</file>
@@ -5909,7 +8570,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\radialmenu\legato_widget_radial_menu.c</file>
-         <hash>779eb1d6fa8090878a3c112a1c6d89173420fb92eb53154faa412f3508bd56c2</hash>
+         <hash>dbb2325f5d3f80d10838f010ec6b25ed2f3645041a3d6c8330e27a46126c7a51</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\gfx\legato\widget\radialmenu\legato_widget_radial_menu.h</file>
@@ -6017,7 +8678,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\initialization.c</file>
-         <hash>77a37b6aa342c30f5f0378830def6faf10a9e0aa1cc09ca450a03487d966d12c</hash>
+         <hash>922f8f44de9b02fba839d065d58de38a3987af1c26f3c1c2c66ac72b5a66651d</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\interrupts.c</file>
@@ -6049,11 +8710,23 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\peripheral\clk\plib_clk.c</file>
-         <hash>a2b0c49e6cfe3ae909ee4499415990046d53ecd5f2e48314ae71ac7cf4af5ef0</hash>
+         <hash>d7860b4e52b314560cbe20d6100bf33f527f8a4add48bb4ff250f6e4e0c0422c</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\peripheral\clk\plib_clk.h</file>
          <hash>aa5052a85d632a20d2e9af22b9b37b2cca1b9d5b4cf4cb772354e4d546530eb3</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\peripheral\dbgu\plib_dbgu.c</file>
+         <hash>686f484ae5a37deae6860635e9c688f744042438f3d0bea31ca75f56d9bc2bbc</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\peripheral\dbgu\plib_dbgu.h</file>
+         <hash>0e2937c5c59fa6ae993e979814b39cb3b6035b99f96093029bc2e23353603ff4</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\peripheral\dbgu\plib_dbgu_common.h</file>
+         <hash>3a5532ba83c46095ed55db646a9be166772429df5eac103b28c31a562c9cf1a2</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\peripheral\flexcom\twi\master\plib_flexcom6_twi_master.c</file>
@@ -6089,7 +8762,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\peripheral\pio\plib_pio.c</file>
-         <hash>288893fb2dca787982d6c68db8c65744266f06208b4867d207065221064a1544</hash>
+         <hash>6566ac65d9512b47ef6d569cf6bc07617e481b37f7e3071a0fcb92ea03052d72</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\peripheral\pio\plib_pio.h</file>
@@ -6109,11 +8782,11 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\pin_configurations.csv</file>
-         <hash>f34c7f63cee30f04c3be08144296d3530368ba2f1f8fd623e0cbd86816c828c9</hash>
+         <hash>bc1b92ada6e48c52363433f6fe638fb2e96344292843abec596b99271e52b397</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\stdio\xc32_monitor.c</file>
-         <hash>858f8710d4287200a5ee7f3b3ad7c24f505aed9c05c16956ab0ff9f7bb162a6a</hash>
+         <hash>067d7cfcce60bbb8f1e41d9d3c684469087f20ca89094469a3b5c1891c2b5d77</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\sys_tasks.h</file>
@@ -6205,7 +8878,7 @@
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\tasks.c</file>
-         <hash>d74088a4b55c99cbbdbc08805a3a55ded4baf457f61b22f9642646a657199e2d</hash>
+         <hash>6280782a185a7b43771f24c15c4e3d17c1142dab21b49307f69db33612a627cd</hash>
       </entry>
       <entry>
          <file>..\src\config\lcdc_rgba8888_mxt_9x60_cu_wvga\toolchain_specifics.h</file>

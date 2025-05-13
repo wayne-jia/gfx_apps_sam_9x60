@@ -9,12 +9,12 @@ void legato_initializeScreenState(void)
 
     initializeStrings();
 
-    screenInit_Screen0();
+    screenInit_HomeScreen();
 
     currentScreen = -1;
     changingToScreen = -1;
 
-    legato_showScreen(screenID_Screen0);
+    legato_showScreen(screenID_HomeScreen);
 }
 
 uint32_t legato_getCurrentScreen(void)
@@ -26,9 +26,9 @@ static void legato_hideCurrentScreen(void)
 {
     switch(currentScreen)
     {
-        case screenID_Screen0:
+        case screenID_HomeScreen:
         {
-            screenHide_Screen0();
+            screenHide_HomeScreen();
             currentScreen = 0;
             break;
         }
@@ -54,9 +54,9 @@ void legato_updateScreenState(void)
 
         switch(changingToScreen)
         {
-            case screenID_Screen0:
+            case screenID_HomeScreen:
             {
-                screenShow_Screen0();
+                screenShow_HomeScreen();
                 break;
             }
         }
@@ -67,9 +67,9 @@ void legato_updateScreenState(void)
 
     switch(currentScreen)
     {
-        case screenID_Screen0:
+        case screenID_HomeScreen:
         {
-            screenUpdate_Screen0();
+            screenUpdate_HomeScreen();
             break;
         }
     }

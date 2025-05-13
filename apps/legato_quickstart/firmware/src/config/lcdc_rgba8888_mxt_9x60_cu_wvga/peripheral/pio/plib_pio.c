@@ -61,8 +61,8 @@ void PIO_Initialize ( void )
 
     /************************ PIO A Initialization ************************/
     /* PORTA PIO Disable and Peripheral Enable*/
-    ((pio_registers_t*)PIO_PORT_A)->PIO_PDR = 0xc0000000U;
-    ((pio_registers_t*)PIO_PORT_A)->PIO_PER = ~0xc0000000U;
+    ((pio_registers_t*)PIO_PORT_A)->PIO_PDR = 0xc0000600U;
+    ((pio_registers_t*)PIO_PORT_A)->PIO_PER = ~0xc0000600U;
     /* PORTA Multi Drive or Open Drain Enable */
     ((pio_registers_t*)PIO_PORT_A)->PIO_MDER = 0xc0000000U;
     ((pio_registers_t*)PIO_PORT_A)->PIO_MDDR = ~0xc0000000U;

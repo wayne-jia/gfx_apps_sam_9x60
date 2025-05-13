@@ -2,7 +2,7 @@
 
 manifest_file_version: 1.0.0
 project: legato_qs_9x60_cu_wvga
-creation_date: 2025-02-24T11:13:23.618+08:00[Asia/Shanghai]
+creation_date: 2025-02-25T15:56:08.030+08:00[Asia/Shanghai]
 operating_system: Windows 10
 mcc_mode: IDE
 mcc_mode_version: v6.20
@@ -20,5 +20,5 @@ packs: {name: SAM9X6_DFP, version: 1.11.227}
 modules:
 - {name: core, type: HARMONY, version: v3.13.5}
 - {name: csp, type: HARMONY, version: v3.19.4}
-- {name: gfx, type: HARMONY, version: v3.15.1}
+- {name: gfx, type: HARMONY, version: master}
 - {name: bsp, type: HARMONY, version: v3.20.1}

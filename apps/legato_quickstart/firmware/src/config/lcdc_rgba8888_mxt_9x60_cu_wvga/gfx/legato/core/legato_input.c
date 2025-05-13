@@ -461,33 +461,27 @@ leEventResult _leInput_HandleInputEvent(leEvent* evt)
     {
         case LE_EVENT_TOUCH_DOWN:
         {
-            return handleTouchDown((leWidgetEvent_TouchDown*)evt);
+            #ifdef INPUT_EVENT_DEBUG
+                printf("Handled touch down event\n");
+            #endif
 
-#ifdef INPUT_EVENT_DEBUG                
-            printf("handled touch down\n");
-#endif                
-                
-            break;
+            return handleTouchDown((leWidgetEvent_TouchDown*)evt);
         }
         case LE_EVENT_TOUCH_UP:
         {
-            return handleTouchUp((leWidgetEvent_TouchUp*)evt);
+            #ifdef INPUT_EVENT_DEBUG
+                printf("Handled touch up event\n");
+            #endif
 
-#ifdef INPUT_EVENT_DEBUG               
-            printf("handled touch up\n");
-#endif                
-                
-            break;
+            return handleTouchUp((leWidgetEvent_TouchUp*)evt);
         }
         case LE_EVENT_TOUCH_MOVE:
         {
-            return handleTouchMoved((leWidgetEvent_TouchMove*)evt);
+            #ifdef INPUT_EVENT_DEBUG
+                printf("Handled touch move event\n");
+            #endif
 
-#ifdef INPUT_EVENT_DEBUG                
-            printf("handled touch move\n");
-#endif                
-                
-            break;
+            return handleTouchMoved((leWidgetEvent_TouchMove*)evt);
         }
         default:
             break;

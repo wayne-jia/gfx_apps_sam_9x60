@@ -4,7 +4,7 @@
 
 
 project: legato_quickstart
-creation_date: 2025-02-24T10:44:20.441+08:00[Asia/Shanghai]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2025-02-25T15:50:07.137+08:00[Asia/Shanghai]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mcc_mode: IDE            # [IDE|Standalone|Headless]
 mcc_version: v5.5.0
@@ -16,7 +16,7 @@ compiler: XC32 4.45
 modules:
     - {name: "core", version: "v3.13.5"}
     - {name: "csp", version: "v3.19.4"}
-    - {name: "gfx", version: "v3.15.1"}
+    - {name: "gfx", version: "master"}
     - {name: "bsp", version: "v3.20.1"}
 
 packs:
